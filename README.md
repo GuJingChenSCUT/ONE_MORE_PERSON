@@ -6,6 +6,8 @@
 
 本项目参加 [Monad Blitz@广州](https://mojo.devnads.com/events/18)，目标网络为 **Monad Testnet，chainId 10143**。网页使用明确标注的虚构数据；本地 EVM 测试不能证明 Monad 性能。测试网合约尚未部署，配置中的地址保持 `null`。
 
+[在线演示（当前仅所有者可访问）](https://one-more-person-guangzhou.justdog33.chatgpt.site) · [技术方案](docs/technical-plan.md) · [验证记录](docs/validation.md) · [参赛提交稿](docs/submission.md)
+
 ## 本地运行
 
 需要 Node.js 24 LTS 和 pnpm 11.25.0。
@@ -43,3 +45,9 @@ pnpm dev
 - 往届比较有覆盖限制，不宣称全球首创或已查尽全部项目。
 
 来源与范围见 [来源记录](docs/sources.md)。
+
+## 同步与发布
+
+已连接 `origin/main`。每次代码提交推送后，GitHub Actions 自动运行测试、本地字节码演示、事件复算和静态构建。它不持有 MOJO 凭证或部署私钥。
+
+Sites 更新使用 `pnpm build`、`pnpm stage:sites` 准备隔离的发布源码，再由 Sites 原生工具同步和发布，保留 `config/site.json` 中的项目身份与访问范围。暂存不等于发布；不会在后台悄悄同步本地未提交文件。
