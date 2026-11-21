@@ -16,4 +16,4 @@ GitHub：https://github.com/GuJingChenSCUT/ONE_MORE_PERSON
 
 截图：`docs/screenshots/relay-success.jpg`；可附撤回失败路径和移动端截图。
 
-提交前状态：网站已发布，当前仅所有者可访问；截图已上传并经 MOJO 确认。待确认公开给评委访问及提交本稿。MOJO 提交成功后进入 pending；不代表入选。
+提交前状态：网站已发布并公开访问；截图已上传并经 MOJO 确认。用户明确选择“只公开演示，暂不提交”，因此本稿保留待用，未执行项目提交。将来 MOJO 提交成功后进入 pending；不代表入选。

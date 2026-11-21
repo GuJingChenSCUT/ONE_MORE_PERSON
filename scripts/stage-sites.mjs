@@ -14,6 +14,6 @@ fs.writeFileSync(manifestPath, JSON.stringify({ ...existing, project_id: config.
 for (const name of ['index.html', 'relay.js', 'app.js', 'styles.css', 'evidence.js', 'replay.mjs', 'evidence/local-demo.json', 'evidence/network.json', 'evidence/deployment.json']) {
   fs.copyFileSync(path.join(root, 'dist', name), path.join(checkout, 'web', name));
 }
-fs.writeFileSync(path.join(checkout, 'build.mjs'), "import fs from 'node:fs';\nfs.mkdirSync('dist', { recursive: true });\nfs.cpSync('web', 'dist', { recursive: true });\n");
+fs.writeFileSync(path.join(checkout, 'build.mjs'), "import fs from 'node:fs';\nfs.mkdirSync('dist', { recursive: true });\nfs.cpSync('web', 'dist', { recursive: true });\nconsole.log('Prepared static demo assets');\n");
 fs.writeFileSync(path.join(checkout, '.gitignore'), 'node_modules/\ndist/\n.env\n.env.*\n.mojo/\n');
 console.log(JSON.stringify({ projectId: config.projectId, checkout, staged: true, published: false }));

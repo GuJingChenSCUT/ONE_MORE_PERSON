@@ -6,7 +6,7 @@
 
 本项目参加 [Monad Blitz@广州](https://mojo.devnads.com/events/18)，目标网络为 **Monad Testnet，chainId 10143**。网页使用明确标注的虚构数据；本地 EVM 测试不能证明 Monad 性能。测试网合约尚未部署，配置中的地址保持 `null`。
 
-[在线演示（当前仅所有者可访问）](https://one-more-person-guangzhou.justdog33.chatgpt.site) · [技术方案](docs/technical-plan.md) · [验证记录](docs/validation.md) · [参赛提交稿](docs/submission.md)
+[公开在线演示](https://one-more-person-guangzhou.justdog33.chatgpt.site) · [技术方案](docs/technical-plan.md) · [验证记录](docs/validation.md) · [参赛提交稿（暂不提交）](docs/submission.md)
 
 ## 本地运行
 
