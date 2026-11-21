@@ -4,6 +4,8 @@
 
 [Printable system and demo guide](output/pdf/One_More_Person_Demo_Guide.pdf) · [Editable guide](docs/system-demo-guide.md): local startup, how signatures and atomic exchanges work, exact presenter actions, evidence and recovery.
 
+[Public room deployment status](docs/public-room-deployment.md): the existing public site is available; a dedicated cloud entry point for the three-person room is prepared, but provider authorization is still blocking deployment. The local room remains usable.
+
 ![English homepage](research/validation/final-home-desktop.jpg)
 
 **Change your workshop time without gambling away the seat you already have.**

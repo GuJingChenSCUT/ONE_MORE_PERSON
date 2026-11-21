@@ -61,7 +61,7 @@ function render() {
   text('login-copy','Open one page for each person. Each tab has its own demo login; everyone sees the same live seats.','每个人打开一个页面，分别登录自己的演示身份；三页共享实时席位状态。');
   text('login-note','Demo identities use public local test accounts. This is not production authentication. No wallet extension, payment or real personal data is needed.','演示身份使用公开的本地测试账号，并非正式身份认证。无需钱包插件、付款或真实个人资料。');
   text('proof-link','Monad proof','Monad 链上证据');
-  text('footer','Same product contract as the Monad prototype. Local chain 31337. Three controlled test identities on one laptop; no claim of a human pilot or Monad performance.','与 Monad 原型使用相同产品合约。本地链 31337，一台电脑控制三个测试身份，不代表真人试点或 Monad 性能实测。');
+  text('footer','Same product contract as the Monad prototype. Isolated chain 31337. Three controlled test identities; no claim of a human pilot or Monad performance.','与 Monad 原型使用相同产品合约。隔离链 31337，三个受控测试身份，不代表真人试点或 Monad 性能实测。');
   for(const id of ['feedback','login-feedback']){$(id).textContent=eventText(feedbackMessage);$(id).className=feedbackError?'error':'';}
   $('logout').disabled=busy;
   $('room').setAttribute('aria-busy',String(busy));
@@ -142,8 +142,21 @@ for(const [id,type] of Object.entries({approve:'approve',plan:'plan',sign:'signa
 document.querySelectorAll('[data-login]').forEach(button=>button.onclick=async()=>{if(busy)return;busy=true;feedbackMessage='Working…';feedbackError=false;render();try{login=await api('/api/login',{role:button.dataset.login});sessionStorage.setItem(storageKey,JSON.stringify(login));feedbackMessage='';}catch(error){feedbackMessage=error.message;feedbackError=true;}finally{busy=false;render();}});
 $('logout').onclick=async()=>{if(busy)return;busy=true;render();try{await api('/api/logout',{});feedbackMessage='';}catch(error){feedbackMessage=error.message;feedbackError=true;}finally{login=null;sessionStorage.removeItem(storageKey);busy=false;render();}};
 $('language').onclick=()=>{zh=!zh;sessionStorage.setItem('omp-rehearsal-language',zh?'zh':'en');render();};
-const events=new EventSource('/api/events');
-events.onopen=()=>{connected=true;render();};
-events.onmessage=event=>{acceptState(JSON.parse(event.data));render();};
-events.onerror=()=>{connected=false;render();};
+if(document.documentElement.dataset.transport==='poll') {
+  // Public preview tunnels may buffer SSE. Read the same authoritative room instead.
+  async function refreshRoom() {
+    try {
+      const response=await fetch('/api/state',{cache:'no-store',signal:AbortSignal.timeout(8000)});
+      if(!response.ok)throw new Error('Room unavailable');
+      acceptState(await response.json());connected=true;
+    } catch {connected=false;}
+    render();setTimeout(refreshRoom,1500);
+  }
+  refreshRoom();
+} else {
+  const events=new EventSource('/api/events');
+  events.onopen=()=>{connected=true;render();};
+  events.onmessage=event=>{acceptState(JSON.parse(event.data));render();};
+  events.onerror=()=>{connected=false;render();};
+}
 render();
