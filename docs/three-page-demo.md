@@ -14,7 +14,7 @@ Double-click `Start-Demo.cmd` in the project folder. It reuses a running room or
 | Bob | http://127.0.0.1:4180/?role=bob | Bob |
 | Charlie | http://127.0.0.1:4180/?role=charlie | Charlie |
 
-Use three normal tabs or windows; incognito profiles are unnecessary. Each tab remembers its login when refreshed. Logging out of one does not log out the others. `中文` switches participant controls and guidance; the transaction history retains its original English record.
+Use three normal tabs or windows; incognito profiles are unnecessary. Each tab remembers its login when refreshed. Logging out of one does not log out the others. `中文` switches login, participant controls, guidance, activity and result messages. Downloaded evidence retains the original English record.
 
 Before presenting, confirm **Live room connected** in all three tabs. If already used, Alice → **Presenter controls** → **Restart rehearsal**. Everyone returns to the beginning together and stays logged in. Restart creates a fresh contract; download evidence first to retain the previous round.
 
@@ -31,7 +31,7 @@ Opening: **“Alice and Bob already have workshop seats. Charlie is waiting. We 
 | 5 · 25 sec | Bob: **Withdraw my approval**. Alice: **Try withdrawn plan**. | **WITHDRAWN**, a real local transaction is **REVERTED**, all seats unchanged. **“Bob changed his mind. The whole plan fails, so nobody loses a seat.”** |
 | 6 · 25 sec | Alice: **Create fresh plan**. All three: **Approve my move** again. | Old signatures are cleared. **“We cannot reuse the old permissions.”** |
 | 7 · 20 sec | Alice: **Execute all 3 moves**. Switch through Bob and Charlie. | Every page shows Charlie / Alice / Bob; attendance becomes **3**. **“Same three seats. One more person gets in. All moves happened together.”** |
-| 8 · 20 sec | Expand **Receipts & contract evidence**; optionally **Download this rehearsal record**. Open **Monad proof ↗**. | **“This live rehearsal runs locally. Here is our separately verified deployment and proof on Monad.”** |
+| 8 · 20 sec | Expand **Receipts & contract evidence**; optionally **Download this rehearsal record**. Open **Monad proof**. | **“This live rehearsal runs locally. Here is our separately verified deployment and proof on Monad.”** |
 
 Optional challenges: before signatures, **Try incomplete plan** proves missing-consent rejection. After success, **Try used plan** proves replay rejection. Both leave seats unchanged and add about 10 seconds each.
 
