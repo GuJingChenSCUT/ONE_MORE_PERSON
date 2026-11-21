@@ -1,0 +1,31 @@
+{
+  "mode": "same-browser interaction simulation",
+  "url": "https://gujingchenscut.github.io/ONE_MORE_PERSON/",
+  "trigger": "Charlie header * button",
+  "pages": [
+    {
+      "approvals": "Dr. Alice · 等待\nDr. Bob · 等待",
+      "count": "2/3",
+      "next": "以 Dr. Alice 身份确认",
+      "person": "你是 Alice。",
+      "revision": "共享更新 #8 · 三页自动同步",
+      "room": "房间 showtime · 第 2 轮 · 方案 未创建"
+    },
+    {
+      "approvals": "Dr. Alice · 等待\nDr. Bob · 等待",
+      "count": "2/3",
+      "next": "以 Dr. Bob 身份确认",
+      "person": "你是 Bob。",
+      "revision": "共享更新 #8 · 三页自动同步",
+      "room": "房间 showtime · 第 2 轮 · 方案 未创建"
+    },
+    {
+      "approvals": "Dr. Alice · 等待\nDr. Bob · 等待",
+      "count": "2/3",
+      "next": "等待 Dr. Alice / Dr. Bob",
+      "person": "你是 Charlie。",
+      "revision": "共享更新 #8 · 三页自动同步",
+      "room": "房间 showtime · 第 2 轮 · 方案 未创建"
+    }
+  ]
+}
