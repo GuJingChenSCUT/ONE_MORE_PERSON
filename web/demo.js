@@ -40,6 +40,10 @@ function render() {
   text('menu-copy','Choose a person for this tab. Your shared room stays the same.','仅切换当前页面的人物，保留共享房间进度。');
   $('role-menu-trigger').setAttribute('aria-label',t('Choose participant','选择演示人物'));
   $('role-menu-trigger').title=t('Choose participant','选择演示人物');
+  $('reset-room').hidden=!role;
+  $('reset-room').disabled=busy||!ready;
+  $('reset-room').title=t('Reset demo room — all three pages','重置演示房间（三个页面一起回到初始状态）');
+  $('reset-room').setAttribute('aria-label',$('reset-room').title);
   $('role-menu-close').setAttribute('aria-label',t('Close participant chooser','关闭人物选择'));
   $('role-switcher').setAttribute('aria-label',t('Switch this page’s person','切换当前页面的人物'));
   $('role-switcher').innerHTML=roles.map(r=>`<a class="role-chip ${r===role?'selected':''}" data-person="${r}" href="${href(r)}" ${r===role?'aria-current="page"':''}><span class="chip-avatar" aria-hidden="true">${names[r][0]}</span>${names[r]}${r===role?'<span class="selected-mark" aria-hidden="true">✓</span>':''}</a>`).join('');
@@ -99,11 +103,12 @@ function render() {
 }
 async function act(action){
   if(!ready||busy||!action)return;busy=true;error=false;feedback='';const seen={round:state.round,plan:state.plan};render();
-  try{await navigator.locks.request(key,()=>{const next=changeRoom(read(),role,action,seen);save(next);state=next;});error=action==='execute'&&state.result?.kind==='rejected';feedback=error?t('Plan rejected. Every current seat stays in place.','方案已拒绝，当前所有席位保持不变。'):t('Updated. All open pages receive this change.','已更新，所有打开的页面同步接收。');}
+  try{await navigator.locks.request(key,()=>{const next=changeRoom(read(),role,action,seen);save(next);state=next;});error=action==='execute'&&state.result?.kind==='rejected';feedback=error?t('Plan rejected. Every current seat stays in place.','方案已拒绝，当前所有席位保持不变。'):action==='reset'?t('Room reset. All three pages are ready for a new demo.','房间已重置，三个页面已回到演示初始状态。'):t('Updated. All open pages receive this change.','已更新，所有打开的页面同步接收。');}
   catch(e){feedback=zh?'操作未完成，请查看当前房间状态后重试。':e.message;error=true;}
   finally{busy=false;render();}
 }
 $('primary').onclick=()=>act(primaryAction);$('withdraw').onclick=()=>act('withdraw');$('challenge').onclick=()=>act('execute');$('reset').onclick=()=>act('reset');
+$('reset-room').onclick=()=>act('reset');
 $('language').onclick=()=>{zh=!zh;feedback='';const url=new URL(location.href);url.searchParams.set('lang',zh?'zh':'en');history.replaceState({},'',url);render();};
 $('new-room').onclick=()=>{location.href=`demo.html?room=${crypto.randomUUID().slice(0,8)}&lang=${zh?'zh':'en'}`;};
 $('copy-links').onclick=async()=>{try{await navigator.clipboard.writeText(roles.map(r=>new URL(href(r),location.href).href).join('\n'));$('global-feedback').textContent=t('Three links copied. Open them in the same browser.','已复制三个链接，请在同一浏览器打开。');}catch{$('global-feedback').textContent=t('Use the three role cards above to open the pages.','请使用上面的三张角色卡打开页面。');}};

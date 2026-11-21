@@ -22,7 +22,7 @@ These routes were published as Sites version 4 on 21 November 2026. Three real b
 6. Alice executes all three moves. Every page shows Charlie / Alice / Bob and 3 / 3.
 7. Open the separate Monad proof. Explain that the public interaction is simulated, while the recorded testnet proof is real and uses controlled fictional actors.
 
-Alice's presenter controls also allow incomplete-consent and replay challenges, JSON export, and room reset. A reset affects all three pages in that room. Each role has one primary next-step button, with clear waiting states and a separate withdrawal action.
+Alice's presenter controls also allow incomplete-consent and replay challenges, JSON export, and room reset. A small * button beside # on every participant page resets all three pages in that room, preserves each tab’s person and language, and clears host approvals, plans and consents. Personal planner entries and other rooms are unaffected. Each role has one primary next-step button, with clear waiting states and a separate withdrawal action.
 
 ## What syncs
 

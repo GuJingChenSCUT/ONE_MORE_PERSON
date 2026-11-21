@@ -8,7 +8,7 @@ export function changeRoom(previous, role, action, seen = {}) {
   if (seen.round !== undefined && seen.round !== previous.round) throw new Error('The room restarted. Review the current round.');
   const s = structuredClone(previous);
   if (action === 'reset') {
-    if (role !== 'alice') throw new Error('Alice restarts the room');
+    // Presenter convenience on every simulated role page; never touches a real chain.
     const fresh = initialRoom(s.room, s.round + 1); fresh.revision = s.revision + 1; return fresh;
   }
   if (action === 'host') {

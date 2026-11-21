@@ -1,6 +1,8 @@
-header .identity-switch{width:auto;display:block;border:0;padding:0}
+header .identity-switch{width:auto;display:flex;align-items:center;gap:6px;border:0;padding:0}
 button.role-launcher{display:grid;place-items:center;width:38px;height:38px;padding:0;border:1px solid #ffffff25;border-radius:11px;background:#ffffff07;color:#c6bed9;font:600 23px/1 "Segoe UI",sans-serif;cursor:pointer}
 button.role-launcher:hover{color:#e3d6ff;border-color:#9d80d0;background:#ffffff10}
+button.role-launcher:disabled{opacity:.4;cursor:wait}
+button.role-launcher[hidden]{display:none}
 .role-dialog{color-scheme:dark;width:min(460px,calc(100% - 32px));max-height:85vh;overflow:auto;background:#191720;color:#f3effa;border:1px solid #4e405f;border-radius:24px;padding:28px;box-shadow:0 28px 100px #0009;font-family:Inter,"Segoe UI",system-ui,sans-serif}
 .role-dialog::backdrop{background:#080710bc;backdrop-filter:blur(7px)}
 .role-dialog .dialog-top{display:flex;justify-content:space-between;align-items:flex-start;gap:15px}
