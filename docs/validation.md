@@ -2,7 +2,7 @@
 
 The current release is documented in [final QC](../research/validation/final-qc.md), the [reviewer guide](QC-review.en.md), and [real testnet proof](testnet-proof.md).
 
-- 32 automated tests passed; final wallet readiness checks passed separately.
+- 33 automated tests passed, including the new shared-room integration test. The [three-page rehearsal QC](../research/validation/three-page-qc.md) records the independently logged-in Alice, Bob and Charlie browser flow and exact local-chain boundaries.
 - The complete wallet interface passed browser testing against an isolated local EVM: two host approvals, three distinct signatures, cancellation, old-plan rejection, fresh signatures, and successful relay.
 - Two real Monad Testnet fixtures are deployed and independently verified. The latest proof includes missing consent, actual nonce cancellation, stale-plan rejection, fresh consent, execution, and replay rejection.
 - English/Chinese pages, mobile layouts, proof downloads, and browser RPC rechecking were tested. Public Site version 3 is published.

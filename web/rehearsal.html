@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101016"><title>One More Person · Live room</title><link rel="stylesheet" href="rehearsal.css"></head>
+<body>
+<header><a class="brand" href="/">+ <span>ONE MORE PERSON</span></a><div class="header-links"><span id="connection" role="status">Connecting…</span><a href="https://one-more-person-guangzhou.justdog33.chatgpt.site/break.html" target="_blank" rel="noopener">Monad proof ↗</a><button id="language">中文</button></div></header>
+<div class="notice" id="mode">LOCAL BLOCKCHAIN REHEARSAL · Real signatures and EVM transactions · Fictional people and seats · Not public Monad</div>
+<main>
+<section id="login" class="login"><div class="eyebrow">THREE PEOPLE. ONE SHARED ROOM.</div><h1>Your seat stays yours.<br><em>Until the whole plan works.</em></h1><p>Open one page for each person. Each tab has its own demo login; everyone sees the same live seats.</p><div class="login-cards"><button data-login="alice"><span class="avatar alice">A</span><strong>Alice</strong><span>Has morning. Wants afternoon.</span><small>Participant + Host A · presenter</small></button><button data-login="bob"><span class="avatar bob">B</span><strong>Bob</strong><span>Has afternoon. Can move to Sunday.</span><small>Participant + Host B</small></button><button data-login="charlie"><span class="avatar charlie">C</span><strong>Charlie</strong><span>Waiting. Can only attend morning.</span><small>Participant · waiting list</small></button></div><p class="muted">Demo identities use public local test accounts. This is not production authentication. No wallet extension, payment or real personal data is needed.</p></section>
+<section id="room" hidden>
+<div class="person-heading"><div><div class="eyebrow" id="identity-type"></div><h1 id="greeting"></h1><p id="personal-story"></p></div><div class="person-tools"><span id="identity" class="identity"></span><button id="logout">Log out of this tab</button></div></div>
+<div class="room-top"><div><span class="eyebrow" id="round-label"></span><h2 id="room-title">The same 3 seats. Room for one more.</h2></div><div class="attendance"><strong id="attendees">2</strong><span id="attendee-label">people attending / 3 seats</span></div></div>
+<div id="seats" class="seats"></div>
+<div id="outcome" class="outcome" role="status" hidden></div>
+<div class="columns"><div class="work">
+<section class="panel"><div class="panel-title"><span class="number">1</span><h2 id="hosts-title">Both hosts lock the rules</h2><span id="host-count" class="pill"></span></div><p id="hosts-copy">Alice and Bob each approve this fixed pool. Neither can move a participant alone.</p><div id="hosts" class="host-list"></div><button id="approve" class="secondary">Approve pool as host</button></section>
+<section class="panel plan-panel"><div class="panel-title"><span class="number">2</span><h2 id="plan-title">One plan. Three yeses.</h2><span id="plan-status" class="pill"></span></div><div id="moves" class="moves"></div><div id="signatures" class="signatures"></div><p id="my-consent"></p><div class="actions"><button id="plan" class="secondary">Create shared plan</button><button id="sign" class="primary">Approve my move</button><button id="cancel" class="danger">Withdraw my approval</button></div><div class="execution"><p id="execute-help"></p><button id="execute" class="primary">Execute all 3 moves</button></div><p id="feedback" role="status" aria-live="polite"></p></section>
+</div><aside>
+<section class="panel guide"><div class="eyebrow" id="next-label">YOUR NEXT STEP</div><h2 id="next-step"></h2><p id="next-copy"></p><ol id="rundown"></ol></section>
+<section class="panel"><h2 id="activity-title">Live activity</h2><ol id="activity" class="activity"></ol></section>
+</aside></div>
+<details class="panel evidence"><summary id="evidence-title">Receipts & contract evidence</summary><p id="contract"></p><p id="account"></p><div id="transactions"></div><a class="button" href="/api/evidence" download="one-more-person-local-evidence.json" id="download">Download this rehearsal record</a></details>
+<details class="panel" id="presenter"><summary id="presenter-title">Presenter controls</summary><p id="reset-copy">Restart deploys a fresh local pool and clears this round’s signatures and receipts in all three pages. Download evidence first if you want to keep it.</p><button id="reset" class="secondary">Restart rehearsal</button></details>
+</section>
+<footer id="footer">Same product contract as the Monad prototype. Local chain 31337. Three controlled test identities on one laptop; no claim of a human pilot or Monad performance.</footer>
+</main><script type="module" src="rehearsal.bundle.js"></script></body></html>

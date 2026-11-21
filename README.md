@@ -1,5 +1,7 @@
 # One More Person · 多一个人
 
+**Three-page laptop demo:** run `node scripts/serve-rehearsal.mjs` (or `Start-Demo.cmd` on the prepared laptop), then open the Alice, Bob and Charlie links. Separate demo logins share a live room backed by actual local EVM transactions. [Exact 3–4 minute rundown](docs/three-page-demo.md). This rehearsal uses local chain 31337; the public Monad proof remains separate.
+
 ![English homepage](research/validation/final-home-desktop.jpg)
 
 **Change your workshop time without gambling away the seat you already have.**

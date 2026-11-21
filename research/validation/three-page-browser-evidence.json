@@ -1,0 +1,268 @@
+{
+  "notice": "Fictional identities on isolated local EVM 31337. Not Monad or independent human testing.",
+  "round": 1,
+  "pool": {
+    "chainId": 31337,
+    "contractAddress": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "deployerAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "deploymentTransaction": "0xfd13f9a8dcb020b492b4c3d269e7b17c5b09b0081749ceb8ff256189b37db6d7",
+    "deploymentBlock": "1",
+    "participants": [
+      "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+    ],
+    "closesAt": "1795337104",
+    "termsHash": "0x798a4415423034d9607cbbfa35acbfe4c72c7516f50a41ec5d5b4883852d7b67"
+  },
+  "plan": {
+    "moves": [
+      {
+        "participant": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "fromSeat": "1",
+        "toSeat": "2",
+        "nonce": "0"
+      },
+      {
+        "participant": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "fromSeat": "2",
+        "toSeat": "3",
+        "nonce": "1"
+      },
+      {
+        "participant": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+        "fromSeat": "0",
+        "toSeat": "1",
+        "nonce": "0"
+      }
+    ],
+    "validUntil": "1795337044",
+    "planHash": "0x2d0b419ae5f0cf64c29b42ee5005513d19b17edccc98eaae8ec59ff4fa3309da"
+  },
+  "signatures": {
+    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266": "0x49fd79faad7e089f8588a1000002ed3cc8bbacb96a9ae9e82530d0edbb61c5d019d54d0462482cf9af042c009b115aa6a502f84fe11be966f90f300d284dc0bb1c",
+    "0x70997970c51812dc3a010c7d01b50e0d17dc79c8": "0x314f1923f8f905619db81e091823f238f3e7395b392d095daabbb045c9dcc81d6ad8630ef0a8fd563d7e480f3b987e3dfbecf3162796215d7a34472ec9e7c0f61b",
+    "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc": "0xf62dcbefa0ae0f540604ac1b43b5a54d9664a29bd1026e5deb60b6a791731faa41a122d25217da36fe5df4cc44cdd4eaba9e8f372365a44b328e5484058f285f1c"
+  },
+  "transactions": [
+    {
+      "action": "Deploy verified product contract",
+      "hash": "0xfd13f9a8dcb020b492b4c3d269e7b17c5b09b0081749ceb8ff256189b37db6d7",
+      "status": "success",
+      "blockNumber": "1",
+      "gasUsed": "1648809",
+      "events": [
+        {
+          "eventName": "SeatSeeded",
+          "args": {
+            "seat": "1",
+            "holder": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+          }
+        },
+        {
+          "eventName": "SeatSeeded",
+          "args": {
+            "seat": "2",
+            "holder": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+          }
+        },
+        {
+          "eventName": "SeatSeeded",
+          "args": {
+            "seat": "3",
+            "holder": "0x0000000000000000000000000000000000000000"
+          }
+        }
+      ]
+    },
+    {
+      "action": "Alice approved the pool",
+      "hash": "0x3fbbf4cb255b56551e67527e7a02531e9d6d0b6e7e7108b9f418fd7cd6a8a550",
+      "status": "success",
+      "blockNumber": "2",
+      "gasUsed": "45716",
+      "events": [
+        {
+          "eventName": "PoolApproved",
+          "args": {
+            "host": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+            "configHash": "0x1824924040cc0643ef9979ea6eb90b8f7752336c79b47998d392cacbe7049b35"
+          }
+        }
+      ]
+    },
+    {
+      "action": "Bob approved the pool",
+      "hash": "0x57ab35c019dc997d0aaec60565946289d710d2495e1069aaeff45f0f0dba74a7",
+      "status": "success",
+      "blockNumber": "3",
+      "gasUsed": "28657",
+      "events": [
+        {
+          "eventName": "PoolApproved",
+          "args": {
+            "host": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "configHash": "0x1824924040cc0643ef9979ea6eb90b8f7752336c79b47998d392cacbe7049b35"
+          }
+        }
+      ]
+    },
+    {
+      "action": "Attempt full relay",
+      "hash": "0x22636f66591baf15f9aa21cdc4173434db8b7ca33802f7df01a60fa00dd9c845",
+      "status": "reverted",
+      "blockNumber": "4",
+      "gasUsed": "41861",
+      "events": []
+    },
+    {
+      "action": "Bob withdrew consent",
+      "hash": "0x289b70f1a8dc2277dabe4fa34a592c39feb4424ace3fa174a65655596e17ad9e",
+      "status": "success",
+      "blockNumber": "5",
+      "gasUsed": "47168",
+      "events": [
+        {
+          "eventName": "ConsentCancelled",
+          "args": {
+            "participant": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "nonce": "1"
+          }
+        }
+      ]
+    },
+    {
+      "action": "Attempt full relay",
+      "hash": "0x3dfcbd058ad763aa07c89f1f458d029fd19eade194e595341865fb8e0097ca9f",
+      "status": "reverted",
+      "blockNumber": "6",
+      "gasUsed": "60190",
+      "events": []
+    },
+    {
+      "action": "Attempt full relay",
+      "hash": "0x3226293f82970201676e48827e8a9db92a1f7cbb9a42440f17e7a1e097408825",
+      "status": "success",
+      "blockNumber": "7",
+      "gasUsed": "201592",
+      "events": [
+        {
+          "eventName": "SeatMoved",
+          "args": {
+            "planHash": "0x2d0b419ae5f0cf64c29b42ee5005513d19b17edccc98eaae8ec59ff4fa3309da",
+            "participant": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+            "fromSeat": "1",
+            "toSeat": "2",
+            "nonce": "1"
+          }
+        },
+        {
+          "eventName": "SeatMoved",
+          "args": {
+            "planHash": "0x2d0b419ae5f0cf64c29b42ee5005513d19b17edccc98eaae8ec59ff4fa3309da",
+            "participant": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+            "fromSeat": "2",
+            "toSeat": "3",
+            "nonce": "2"
+          }
+        },
+        {
+          "eventName": "SeatMoved",
+          "args": {
+            "planHash": "0x2d0b419ae5f0cf64c29b42ee5005513d19b17edccc98eaae8ec59ff4fa3309da",
+            "participant": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+            "fromSeat": "0",
+            "toSeat": "1",
+            "nonce": "1"
+          }
+        },
+        {
+          "eventName": "PlanExecuted",
+          "args": {
+            "planHash": "0x2d0b419ae5f0cf64c29b42ee5005513d19b17edccc98eaae8ec59ff4fa3309da",
+            "moved": "3",
+            "additionalPeople": "1"
+          }
+        }
+      ]
+    },
+    {
+      "action": "Attempt full relay",
+      "hash": "0x5bf8d4f2a444b22423bf6dc060aecfff4b663acc50105dc439d36a9d7ffd3809",
+      "status": "reverted",
+      "blockNumber": "8",
+      "gasUsed": "41297",
+      "events": []
+    }
+  ],
+  "activity": [
+    "New rehearsal. Alice holds morning; Bob holds afternoon; Sunday is empty.",
+    "Alice approved the fixed pool as host A.",
+    "Bob approved the fixed pool as host B.",
+    "A fresh shared plan is ready. All three participants must sign this exact version.",
+    "Missing consent rejected by the contract. Every seat is unchanged.",
+    "Alice signed the complete plan in their own browser page.",
+    "Bob signed the complete plan in their own browser page.",
+    "Charlie signed the complete plan in their own browser page.",
+    "Bob withdrew consent on the local chain. Every original seat is still held.",
+    "Withdrawn plan rejected by the contract. Every seat is unchanged.",
+    "A fresh shared plan is ready. All three participants must sign this exact version.",
+    "Alice signed the complete plan in their own browser page.",
+    "Bob signed the complete plan in their own browser page.",
+    "Charlie signed the complete plan in their own browser page.",
+    "All three moves succeeded together. Same 3 seats, now 3 people attending.",
+    "Already-used plan rejected by the contract. Every seat is unchanged."
+  ],
+  "lastResult": {
+    "kind": "rejected",
+    "message": "Already-used plan rejected by the contract. Every seat is unchanged.",
+    "hash": "0x5bf8d4f2a444b22423bf6dc060aecfff4b663acc50105dc439d36a9d7ffd3809",
+    "originalSeatsPreserved": true
+  },
+  "verifiedDeployment": true,
+  "snapshot": {
+    "blockNumber": "8",
+    "blockHash": "0x9f9755024c2626625625e1c7e91a6659f7f1c9eb1f1154666f7345cdf05ea999",
+    "timestamp": "1795250888",
+    "seats": [
+      "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+    ],
+    "approvals": 3,
+    "nonces": [
+      "1",
+      "2",
+      "1"
+    ],
+    "seatOf": [
+      "2",
+      "3",
+      "1"
+    ]
+  },
+  "version": 16,
+  "mode": "local-evm-rehearsal",
+  "chainId": 31337,
+  "actors": [
+    {
+      "role": "alice",
+      "name": "Alice",
+      "address": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+    },
+    {
+      "role": "bob",
+      "name": "Bob",
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8"
+    },
+    {
+      "role": "charlie",
+      "name": "Charlie",
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+    }
+  ],
+  "readiness": {
+    "stage": "completed",
+    "canExecute": false
+  }
+}

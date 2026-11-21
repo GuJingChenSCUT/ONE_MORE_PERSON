@@ -16,6 +16,7 @@
     "stage:sites": "node scripts/stage-sites.mjs",
     "test": "node --test tests/*.test.mjs",
     "demo:local": "node scripts/demo-local.mjs",
+    "demo:room": "node scripts/serve-rehearsal.mjs",
     "verify:events": "node scripts/verify-events.mjs",
     "verify:chain": "node scripts/verify-chain.mjs",
     "mojo": "node scripts/mojo.mjs",

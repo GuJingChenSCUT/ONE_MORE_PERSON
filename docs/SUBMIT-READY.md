@@ -11,6 +11,7 @@ MOJO returned: `当前活动启用了团队功能，仅队长可以提交项目`
 - Repository: https://github.com/GuJingChenSCUT/ONE_MORE_PERSON
 - Copy-ready description: [submission.md](submission.md); structured fields: [submission.json](submission.json).
 - Current screenshots: `research/validation/final-home-desktop.jpg` and `research/validation/final-challenge-desktop.jpg`.
+- Laptop presentation: [three-page live room and exact rundown](three-page-demo.md). Alice, Bob and Charlie use separate demo logins with synchronized real local EVM state. [QC record](../research/validation/three-page-qc.md). This is separate from public Monad Testnet proof.
 - [Presentation](https://one-more-person-guangzhou.justdog33.chatgpt.site/pitch.html), [English spoken pitch](pitch.en.md), [Chinese spoken pitch](pitch.zh.md), [three-minute judge runbook](judge-demo.md).
 
 For the stage demo, open the failure challenge. Let the judge choose withdrawal, show that the old seats stay put, then run a valid fictional relay and inspect the separately recorded real Monad proof. The complete wallet browser flow was tested locally with three controlled EOA accounts; do not describe it as a public-Monad human pilot.
