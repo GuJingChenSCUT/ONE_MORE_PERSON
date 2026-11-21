@@ -2,26 +2,54 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d0c12">
 <title>多一个人 · 保底换位</title>
-<meta name="description" content="跨主办方活动名额保底换位：整份方案全部成功才生效。可交互机制演示、独立事件复算与明确的测试网实施边界。">
+<meta name="description" content="换个时间，保住你的席位。跨主办方活动名额保底换位：每个人同意同一份方案，所有换位一起完成。">
 <link rel="stylesheet" href="styles.css">
-<style>.move-top strong{white-space:nowrap;flex:0 0 auto}.move-top span{text-align:right;min-width:0}.mode{flex:0 0 auto}@media(max-width:760px){.mode{font-size:14px;max-width:156px}.move-top{align-items:flex-start}}</style>
 </head>
 <body>
-<header><div class="brand">多一个人<small>One More Person · v0.2</small></div><nav aria-label="项目导航"><a href="https://github.com/GuJingChenSCUT/ONE_MORE_PERSON" target="_blank" rel="noopener">GitHub</a><span class="mode">机制演示 · 未连接区块链</span></nav></header>
+<header><div class="brand"><span class="brand-mark" aria-hidden="true">+</span><div>多一个人<small>ONE MORE PERSON</small></div></div><nav aria-label="项目导航"><a class="nav-demo" href="#exchange">体验换位</a><a href="https://github.com/GuJingChenSCUT/ONE_MORE_PERSON" target="_blank" rel="noopener">GitHub</a><span class="mode">机制演示 · 未连接区块链</span></nav></header>
 <main>
-  <section class="intro"><div class="eyebrow">跨主办方的活动名额互助</div><h1>换到合适的时间，<br><span>才放开原来的位置。</span></h1><p>你不用先退位冒险。每个人同意同一份方案，所有换位一起完成，还可能让一个候补者参加。</p></section>
-  <div class="scenarios" aria-label="演示场景"><button data-scenario="relay" aria-pressed="true">接上一个候补</button><button data-scenario="cycle" aria-pressed="false">两人互换时间</button><button data-scenario="full" aria-pressed="false">没有合适的空位</button></div>
-  <div class="workspace">
-    <section class="panel" aria-labelledby="seats-title"><h2 id="seats-title">现在的位置</h2><p class="sub">示例：两家社团开放的 3 个工作坊席位</p><div id="seats" class="seats"></div><div class="waiting"><span>小雨 · 想参加周六上午</span><strong id="waiting">正在候补</strong></div><div class="metric"><strong id="count">2</strong><span id="count-label">人已有名额 / 共 3 席</span></div><div class="evidence"><strong>你的原位一直有效</strong><p>查看方案、等待同意都不会退位。只有全部条件成立，才更新所有人的位置。</p></div></section>
-    <section class="panel" aria-labelledby="plan-title"><h2 id="plan-title">一次能完成的换位</h2><p class="sub" id="plan-sub">先查看方案，再模拟每位参加者的同意。</p><div id="plan"></div><div class="actions"><button class="primary" id="find">查看换位方案</button><button class="primary" id="execute" hidden>模拟整份执行</button></div><div class="promise">只接受自己同意的新场次。任何一步不成立，原位保留。</div><div id="status" class="status" role="status" aria-live="polite">先看看：一个空位怎样接上三个人的需要。</div><details><summary>现场演示控制</summary><p>以下开关模拟多人操作，不是钱包签名或链上交易。</p><div class="controls"><button id="agree-all">模拟全部同意</button><button id="cancel">模拟小陈撤回同意</button><button id="expire">模拟方案过期</button><button id="reset">重置当前场景</button></div></details></section>
-  </div>
-  <section class="verification" aria-labelledby="proof-title"><div class="section-heading"><div><div class="eyebrow">可复核的进度</div><h2 id="proof-title">演示有边界，结果有依据。</h2></div><span class="caption">不把模拟数字当作链上性能</span></div><div class="proof-grid"><article><span class="proof-tag">交互原型</span><h3>试一遍成功与失败</h3><p>上方使用虚构人物和模拟同意。拒绝、撤回、过期，都保留已有名额。</p></article><article><span class="proof-tag">本地 EVM · 31337</span><h3 id="local-proof-title">正在读取合约证据</h3><p id="local-proof">独立复算合约事件，再与同一区块的名额快照对照。</p><a id="local-proof-link" href="evidence/local-demo.json" download hidden>下载本地 EVM 证据</a></article><article><span class="proof-tag">Monad Testnet · 10143</span><h3 id="network-proof-title">测试网合约待部署</h3><p id="network-proof">尚无测试网部署地址，不显示测试网交易结果或确认耗时。</p></article></div></section>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy"><div class="eyebrow"><span class="pill">MONAD BLITZ</span> 让一个空位，多一种可能</div><h1 id="hero-title">换个时间，<br><span>保住你的席位。</span></h1><p>只有拿到你同意的新席位，才放开原位。<br>一次安全的接力，让候补也有机会。</p><div class="hero-actions"><a class="hero-cta" href="#exchange"><span class="play" aria-hidden="true">▶</span>体验一次换位</a><span class="hero-note">无需钱包，先试试看</span></div></div>
+    <div class="hero-art">
+      <svg viewBox="0 0 550 450" role="img" aria-labelledby="art-title">
+        <title id="art-title">三张席位在接力轨道上连接：保留原位、拿到新位、接上候补。机制示意。</title>
+        <defs>
+          <linearGradient id="chair-back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#cebaff"/><stop offset=".5" stop-color="#9d78e4"/><stop offset="1" stop-color="#694aa7"/></linearGradient>
+          <linearGradient id="chair-top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dfcfff"/><stop offset="1" stop-color="#9e7adf"/></linearGradient>
+          <linearGradient id="chair-side" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8863c2"/><stop offset="1" stop-color="#483367"/></linearGradient>
+          <linearGradient id="chair-lime" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9ffba"/><stop offset="1" stop-color="#95bb58"/></linearGradient>
+          <radialGradient id="art-glow"><stop stop-color="#8f5dce" stop-opacity=".19"/><stop offset="1" stop-color="#8f5dce" stop-opacity="0"/></radialGradient>
+          <g id="chair"><path d="M31 100 41 104 41 155 31 150Z" fill="#57416e"/><path d="m94 101 10-5v48l-10 6Z" fill="#352441"/><path d="M28 30Q28 20 38 24l64 26q8 3 8 13v47L28 80Z" fill="url(#chair-side)"/><path d="M22 25q0-10 10-6l64 26q8 3 8 13v45L22 75Z" fill="url(#chair-back)"/><path d="m22 75 82 28-36 21-83-28Z" fill="url(#chair-top)"/><path d="m-15 96 83 28v10l-83-28Z" fill="url(#chair-side)"/><path d="m68 124 36-21v10l-36 21Z" fill="#634685"/><path d="m-10 106 10 3v47l-10-4Z" fill="#80639c"/><path d="m61 132 10 2v46l-10-4Z" fill="#6a4f87"/><path d="m24 26 69 28" stroke="#e4d2ff" stroke-opacity=".5" stroke-linecap="round"/></g>
+        </defs>
+        <ellipse cx="280" cy="255" rx="265" ry="175" fill="url(#art-glow)"/>
+        <ellipse cx="280" cy="267" rx="220" ry="113" fill="none" stroke="#3a2e4a" transform="rotate(-12 280 267)"/>
+        <ellipse class="orbit" cx="280" cy="267" rx="208" ry="102" fill="none" stroke="#7e6399" stroke-width="1.3" transform="rotate(-12 280 267)"/>
+        <ellipse cx="280" cy="267" rx="180" ry="82" fill="none" stroke="#2c2338" transform="rotate(-12 280 267)"/>
+        <circle cx="77" cy="316" r="5" fill="#b7a2ff"/><circle cx="473" cy="198" r="5" fill="#d9ff9a"/>
+        <g transform="translate(91 174)"><ellipse cx="46" cy="171" rx="65" ry="17" fill="#09070d" opacity=".7"/><g class="chair-float"><use href="#chair"/></g></g>
+        <g transform="translate(257 62)"><ellipse cx="46" cy="171" rx="60" ry="15" fill="#09070d" opacity=".6"/><g class="chair-float chair-two"><use href="#chair"/></g></g>
+        <g transform="translate(370 215) scale(.93)"><ellipse cx="46" cy="171" rx="65" ry="17" fill="#09070d" opacity=".7"/><g class="chair-float chair-three"><use href="#chair"/><path d="M22 25q0-10 10-6l64 26q8 3 8 13v45L22 75Z" fill="url(#chair-lime)"/><path d="m22 75 82 28-36 21-83-28Z" fill="#ddfcae"/><path d="m-15 96 83 28v10l-83-28Z" fill="#7e9b51"/><path d="m68 124 36-21v10l-36 21Z" fill="#5e783c"/></g></g>
+        <g class="art-label"><text x="56" y="171">原位有保底</text><text x="323" y="64">拿到新席位</text><text x="354" y="421" fill="#d9ff9a">候补也能接上</text></g>
+        <text x="230" y="323" class="hero-plus">+1</text><text x="239" y="345" class="art-label" style="font-size:12px;fill:#aaa085">一种可能</text>
+      </svg><div class="art-caption">席位接力 · 机制示意</div>
+    </div>
+  </section>
+  <div class="benefits" aria-label="换位保障"><div class="benefit"><span class="benefit-icon" aria-hidden="true">◇</span><div><strong>原位有保底</strong><span>不必先退再抢</span></div></div><div class="benefit"><span class="benefit-icon" aria-hidden="true">✓</span><div><strong>每个人同意</strong><span>只去接受的场次</span></div></div><div class="benefit"><span class="benefit-icon" aria-hidden="true">⊞</span><div><strong>整份一起生效</strong><span>任何一步失败都保留</span></div></div></div>
+  <section id="exchange" aria-labelledby="exchange-title">
+    <div class="section-heading"><div><div class="eyebrow">TRY THE RELAY / 亲自试一次</div><h2 id="exchange-title">一份方案，大家一起换。</h2></div><span class="caption">两家社团 · 三个席位 · 虚构演示</span></div>
+    <div class="scenarios" aria-label="演示场景"><button data-scenario="relay" aria-pressed="true">接上一个候补</button><button data-scenario="cycle" aria-pressed="false">两人互换时间</button><button data-scenario="full" aria-pressed="false">没有合适空位</button></div>
+    <div class="workspace">
+      <section class="panel" aria-labelledby="seats-title"><div class="panel-heading"><h2 id="seats-title">现在的位置</h2><span class="tiny-tag">THE SEATS</span></div><p class="sub">两家社团的广彩工作坊，共享这次换位机会。</p><div id="seats" class="seats"></div><div class="waiting"><div class="waiting-person"><span class="avatar yu" aria-hidden="true">雨</span><span>小雨 · 想参加周六上午</span></div><strong id="waiting">正在候补</strong></div><div class="metric"><strong id="count">2</strong><span id="count-label">人已有名额 / 共 3 席</span><div id="metric-bar" class="metric-bar" aria-hidden="true"></div></div><div class="evidence"><span class="lock-icon" aria-hidden="true">◇</span><div><strong>你的原位一直有效</strong><p>查看方案、等待同意都不会退位。全部条件成立，才更新所有人的位置。</p></div></div></section>
+      <section class="panel plan-panel" aria-labelledby="plan-title"><div class="panel-heading"><h2 id="plan-title">一次能完成的换位</h2><span class="tiny-tag">THE RELAY</span></div><p class="sub" id="plan-sub">先查看方案，再模拟每位参加者的同意。</p><div id="plan"></div><div id="plan-progress" class="plan-progress" hidden><div class="progress-label"><span>整份方案的同意进度</span><strong id="consent-count">0 / 3</strong></div><div class="progress-track"><span id="progress-fill"></span></div></div><div class="actions"><button class="primary" id="find">查看换位方案</button><button class="primary" id="execute" hidden>模拟整份执行</button></div><div class="promise">◇ &nbsp;任何一步不成立，原位保留。</div><div id="status" class="status" role="status" aria-live="polite">先看看：一个空位怎样接上三个人的需要。</div><details><summary>现场演示控制</summary><p>这些开关模拟多人操作，不是钱包签名或链上交易。</p><div class="controls"><button id="agree-all">模拟全部同意</button><button id="cancel">模拟小陈撤回</button><button id="expire">模拟方案过期</button><button id="reset">重置当前场景</button></div></details></section>
+    </div>
+  </section>
+  <section class="verification" aria-labelledby="proof-title"><div class="section-heading"><div><div class="eyebrow">OPEN BY DESIGN / 可复核的进度</div><h2 id="proof-title">演示有边界，结果有依据。</h2></div><span class="caption">不把模拟数字当作链上性能</span></div><div class="proof-grid"><article><span class="proof-tag">交互原型</span><h3>试一遍成功与失败</h3><p>上方使用虚构人物和模拟同意。拒绝、撤回、过期，都保留已有名额。</p></article><article><span class="proof-tag">本地 EVM · 31337</span><h3 id="local-proof-title">正在读取合约证据</h3><p id="local-proof">独立复算合约事件，再与同一区块的名额快照对照。</p><a id="local-proof-link" href="evidence/local-demo.json" download hidden>下载本地 EVM 证据</a></article><article><span class="proof-tag">Monad Testnet · 10143</span><h3 id="network-proof-title">测试网合约待部署</h3><p id="network-proof">尚无测试网部署地址，不显示测试网交易结果或确认耗时。</p></article></div></section>
   <details><summary>原方案对照：同样两个位置，能不能多安排一人？</summary><p>01 上午、下午都可；02 只能上午。两场各一席。这是构造例子，不能代表每轮都有提升。</p><div class="baseline"><div>逐场先排上午<strong>1 人</strong>01 占上午；02 未获配；下午空着。</div><div>联合安排<strong>2 人</strong>01 去下午，02 去上午。数据库也可以运行这个算法。</div></div><p>v0.2 聚焦已持有席位时的条件换位：先获得你认可的新席位，才释放旧席位。</p></details>
   <details><summary>核验这次结果与 Monad 实施边界</summary><p>当前页面使用虚构人物、本地时钟和模拟同意。没有广播交易，也不生成交易哈希、区块号或 TPS。</p><ul><li>合约原型验证整份方案、当前持有者、参与资格、签名、nonce 和截止时间，再原子更新。</li><li>双主办方确认固定池；现阶段没有活动广场、售票、代币、保证金或签到。</li><li>真实接入将展示“已提交 / 暂定回执 / finalized 后生效”；正式结果按同一最终区块核对。</li><li>当前样例用于说明机制；实际空位回收率和主办方采用率尚待试点。</li></ul><button id="download">下载本次机制记录</button><p>开发资料：<a href="https://docs.monad.xyz/reference/rpc-differences" target="_blank" rel="noopener">Monad 回执与最终确认</a></p></details>
 </main>
-<footer>多一个人 · 保底换位。构造场景，只演示机制；真实机构的预留名额与线下履约需要机构确认。</footer>
-<script src="relay.js"></script>
-<script src="app.js"></script><script type="module" src="evidence.js"></script>
+<footer><span><strong>多一个人 · ONE MORE PERSON</strong><br>构造场景，只演示机制；真实名额与线下履约需要机构确认。</span><span>Built for Monad · 广州 2026</span></footer>
+<script src="relay.js"></script><script src="app.js"></script><script type="module" src="evidence.js"></script>
 </body>
 </html>
