@@ -8,7 +8,7 @@
 
 [Three-page public interaction demo](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo.html) · [Bilingual demonstration guide](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo-guide.html). Alice, Bob and Charlie have independent role pages, with approvals, withdrawal and outcomes synchronized within one browser profile. This public version is explicitly a simulation; it makes no real signatures or contract transactions. The local real-contract room remains available. [Evidence boundaries and exact steps](docs/public-three-page-demo.md).
 
-![English product story](research/validation/final-home-desktop.jpg)
+![Public planner homepage](research/validation/public-planner-home.jpg)
 
 **Change your workshop time without gambling away the seat you already have.**
 

@@ -3,5 +3,8 @@
   "url": "https://gujingchenscut.github.io/ONE_MORE_PERSON/",
   "workflow": ".github/workflows/ci.yml",
   "source": "GitHub Actions",
-  "entryQr": "entry-qr.png"
+  "entryQr": "entry-qr.png",
+  "publishedCommit": "a9b70eb768e4d1b4c0f078f43d0546f62ce2b89e",
+  "verifiedWorkflowRun": "https://github.com/GuJingChenSCUT/ONE_MORE_PERSON/actions/runs/44898526589",
+  "deploymentVerified": true
 }
