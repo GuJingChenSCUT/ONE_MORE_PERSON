@@ -12,4 +12,4 @@ The primary presentation is now English, with a Chinese option. Use [judge-demo.
 
 **中文要点：** 已有位置的人不必先退；全体同意同一方案；先让评委选择失败路径；模拟按钮和真实链上证据分开；只有撤回先上链旧签名才失效；纯互换增量为零；真实机构试点尚未发生。
 
-Terminal output, screenshots, and exported records serve different purposes. Screenshots do not replace on-chain evidence. The user will submit the final competition entry personally.
+Terminal output, screenshots, and exported records serve different purposes. Screenshots do not replace on-chain evidence. See [current submission status](SUBMIT-READY.md).

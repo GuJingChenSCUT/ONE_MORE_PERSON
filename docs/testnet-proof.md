@@ -71,4 +71,4 @@ The home page and interactive failure buttons remain simulations. The complete `
 
 The original proof's submission-to-receipt and finality timings were not recorded. A current RPC recheck measures how long that verification took, not how long the old transaction took to finalize. Live-wallet timings start when the browser receives a transaction hash and include RPC and polling delay. Report only an actually collected record and its measurement boundaries.
 
-Real identity checks, independent organizer operations, notification delivery, and real-world seat fulfillment remain outside these proofs. The user will submit the competition entry personally; no entry has been submitted by this workflow.
+Real identity checks, independent organizer operations, notification delivery, and real-world seat fulfillment remain outside these proofs. See [current submission status](SUBMIT-READY.md) for publication and organizer review status.

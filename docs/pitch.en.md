@@ -64,4 +64,4 @@ The public-network wallet route needs three eligible wallets, test MON for trans
 - [Recorded withdrawal proof](https://testnet.monadvision.com/tx/0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7)
 - [Earlier missing-consent / replay proof](https://testnet.monadvision.com/tx/0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de)
 
-Additional pages are part of the final build; confirm that the published version opens before presenting. The user will submit the entry personally.
+Additional pages are part of the final build; confirm that the published version opens before presenting. See [current submission status](SUBMIT-READY.md).

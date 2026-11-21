@@ -6,7 +6,7 @@ The current release is documented in [final QC](../research/validation/final-qc.
 - The complete wallet interface passed browser testing against an isolated local EVM: two host approvals, three distinct signatures, cancellation, old-plan rejection, fresh signatures, and successful relay.
 - Two real Monad Testnet fixtures are deployed and independently verified. The latest proof includes missing consent, actual nonce cancellation, stale-plan rejection, fresh consent, execution, and replay rejection.
 - English/Chinese pages, mobile layouts, proof downloads, and browser RPC rechecking were tested. Public Site version 3 is published.
-- The local browser test is not a public-Monad wallet run. No independent human pilot or application performance benchmark was run. The user will submit the entry personally.
+- The local browser test is not a public-Monad wallet run. No independent human pilot or application performance benchmark was run. Publication and subsequent updates are authorized; see [current submission status](SUBMIT-READY.md) for the outstanding MOJO team-leader requirement.
 
 ## Earlier checkpoint — retained as history
 

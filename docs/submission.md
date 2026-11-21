@@ -32,4 +32,4 @@ The intended use is independent organizers accepting shared execution rules. A s
 
 ## Submission status
 
-The site is public. **The user explicitly chose “Prepare everything; I will submit it myself” on 21 November.** This supersedes any automatic deadline submission reminder: no MOJO entry is submitted by this workflow. Review the final wallet QC status and published pages before copying the entry. A later successful submission would still be subject to the event's review process.
+The site is public. **On 21 November, the owner authorized submission and future synchronization after completed changes pass the relevant checks**, superseding the earlier self-submission preference. MOJO rejected the first attempt because only a team leader may submit. No entry has been created by this workflow; the owner must first resolve the submitting account or team. See [current status](SUBMIT-READY.md). Once an entry exists, update that same entry instead of creating duplicates. Successful submissions and updates remain subject to organizer review.

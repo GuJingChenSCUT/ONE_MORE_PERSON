@@ -88,4 +88,4 @@ Report the status as **“complete browser flow tested locally; independent-wall
 
 See [testnet evidence](testnet-proof.md) for the exact contracts, transactions, verification scope, and reproducible command.
 
-See [judge-demo.md](judge-demo.md) for the short stage sequence and [pilot-plan.md](pilot-plan.md) for the uncompleted real-user study. The user will submit the competition entry personally.
+See [judge-demo.md](judge-demo.md) for the short stage sequence, [pilot-plan.md](pilot-plan.md) for the uncompleted real-user study, and [SUBMIT-READY.md](SUBMIT-READY.md) for current publication and submission status.

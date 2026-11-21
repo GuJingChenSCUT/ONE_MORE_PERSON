@@ -90,4 +90,4 @@ The contract supports a bounded pool of up to 12 seats and 12 eligible addresses
 
 GitHub Actions runs the tests, local bytecode demo, event reconstruction, and build. It does not hold MOJO credentials or a deployment private key. Sites publication uses `pnpm build` and `pnpm stage:sites` to prepare an isolated source checkout, then the native Sites workflow, retaining the identity and audience in `config/site.json`.
 
-The app is public. **The user will submit the hackathon entry personally.** Prepared [entry copy](docs/submission.md) and [structured entry](docs/submission.json) do not mean that an entry has been submitted.
+The app is public. The owner has authorized publication and future updates after completed changes pass the relevant checks. The first MOJO submission was rejected because the bound account is not a team leader; the entry remains unsubmitted. See [current submission status](docs/SUBMIT-READY.md), [entry copy](docs/submission.md), and [structured entry](docs/submission.json).
