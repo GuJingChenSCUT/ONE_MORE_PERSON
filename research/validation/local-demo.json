@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-21T06:43:01.730Z",
+  "mode": "local-evm",
+  "chainId": 31337,
+  "notice": "In-process EVM with fictitious participants. Not a Monad transaction or performance benchmark.",
+  "contractAddress": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+  "deploymentTransaction": "0x400e1df35f88b3d9afb9d700831bc8cd50996f5bba23a4f279d44aace269fb39",
+  "fromBlock": "1",
+  "toBlock": "5",
+  "blockHash": "0x9fe2882874555e52fd46a38c1d354547768b85703d94ed5861c593314be40321",
+  "failure": {
+    "transactionHash": "0x2e693cf51ef8205fcc434425fa2d6b549a30bfdffbc3e8a2845727b8a6cc95b1",
+    "status": "reverted",
+    "originalSeatsPreserved": true
+  },
+  "success": {
+    "transactionHash": "0x82e24ca2ef549fadb93735353508293caee898cfbf6a15056f08f9306f81dfec",
+    "status": "success"
+  },
+  "initialSeats": [
+    "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "0x0000000000000000000000000000000000000000"
+  ],
+  "finalSeats": [
+    "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+    "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+  ],
+  "events": [
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "1",
+        "holder": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC"
+      },
+      "transactionHash": "0x400e1df35f88b3d9afb9d700831bc8cd50996f5bba23a4f279d44aace269fb39",
+      "blockNumber": "1",
+      "logIndex": 0
+    },
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "2",
+        "holder": "0x90F79bf6EB2c4f870365E785982E1f101E93b906"
+      },
+      "transactionHash": "0x400e1df35f88b3d9afb9d700831bc8cd50996f5bba23a4f279d44aace269fb39",
+      "blockNumber": "1",
+      "logIndex": 1
+    },
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "3",
+        "holder": "0x0000000000000000000000000000000000000000"
+      },
+      "transactionHash": "0x400e1df35f88b3d9afb9d700831bc8cd50996f5bba23a4f279d44aace269fb39",
+      "blockNumber": "1",
+      "logIndex": 2
+    },
+    {
+      "eventName": "PoolApproved",
+      "args": {
+        "host": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+        "configHash": "0xfec44ad151dc43427745be9a3de610ad2fc8754445badf72b0d5ef151bf9c0f4"
+      },
+      "transactionHash": "0x1f047afbcb20c5b1a7506a2e48cd91840d681e202b27ad4a6cf67e350d0cf895",
+      "blockNumber": "2",
+      "logIndex": 0
+    },
+    {
+      "eventName": "PoolApproved",
+      "args": {
+        "host": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+        "configHash": "0xfec44ad151dc43427745be9a3de610ad2fc8754445badf72b0d5ef151bf9c0f4"
+      },
+      "transactionHash": "0xfd212b569b0c675c884eac5d2272b7b4a8b5908ed54d472792aa2df272463341",
+      "blockNumber": "3",
+      "logIndex": 0
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0x0e6bd36c01d86af582ab8af8ad39f7c69817e86ad24b60228257cb4627663d58",
+        "participant": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+        "fromSeat": "1",
+        "toSeat": "2",
+        "nonce": "1"
+      },
+      "transactionHash": "0x82e24ca2ef549fadb93735353508293caee898cfbf6a15056f08f9306f81dfec",
+      "blockNumber": "5",
+      "logIndex": 0
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0x0e6bd36c01d86af582ab8af8ad39f7c69817e86ad24b60228257cb4627663d58",
+        "participant": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+        "fromSeat": "2",
+        "toSeat": "3",
+        "nonce": "1"
+      },
+      "transactionHash": "0x82e24ca2ef549fadb93735353508293caee898cfbf6a15056f08f9306f81dfec",
+      "blockNumber": "5",
+      "logIndex": 1
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0x0e6bd36c01d86af582ab8af8ad39f7c69817e86ad24b60228257cb4627663d58",
+        "participant": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+        "fromSeat": "0",
+        "toSeat": "1",
+        "nonce": "1"
+      },
+      "transactionHash": "0x82e24ca2ef549fadb93735353508293caee898cfbf6a15056f08f9306f81dfec",
+      "blockNumber": "5",
+      "logIndex": 2
+    },
+    {
+      "eventName": "PlanExecuted",
+      "args": {
+        "planHash": "0x0e6bd36c01d86af582ab8af8ad39f7c69817e86ad24b60228257cb4627663d58",
+        "moved": "3",
+        "additionalPeople": "1"
+      },
+      "transactionHash": "0x82e24ca2ef549fadb93735353508293caee898cfbf6a15056f08f9306f81dfec",
+      "blockNumber": "5",
+      "logIndex": 3
+    }
+  ]
+}

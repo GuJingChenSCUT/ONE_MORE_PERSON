@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-21T06:42:13.368Z",
+  "chainId": 10143,
+  "latestBlock": 81510038,
+  "finalizedBlock": 81510032,
+  "finalizedBlockHash": "0x2c83c8aa0800d3462384f110547708285553d1ecae3044d5008c32bb952a82d5",
+  "latestGasLimit": 150000000,
+  "contractConfigured": false,
+  "deploymentVerified": false
+}

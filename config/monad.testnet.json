@@ -1,0 +1,14 @@
+{
+  "chainId": 10143,
+  "name": "Monad Testnet",
+  "nativeCurrency": { "name": "MON", "symbol": "MON", "decimals": 18 },
+  "rpcUrl": "https://testnet-rpc.monad.xyz",
+  "explorerUrl": "https://testnet.monadvision.com",
+  "contractAddress": null,
+  "deploymentTransaction": null,
+  "deploymentBlock": null,
+  "deployerAddress": null,
+  "runtimeCodeHash": null,
+  "mode": "prototype",
+  "verifiedOn": null
+}

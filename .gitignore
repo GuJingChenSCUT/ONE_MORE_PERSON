@@ -1,0 +1,23 @@
+.mojo/
+research/source-extracts/
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+coverage/
+*.log
+__pycache__/
+contracts/artifacts/
+.claude/skills
+.local-tools/
+.agents/skills/
+.monskills
+.openai/local/
+sites/
+artifacts/
+cache/
+.mojo-submission-local.json
+# Local-only research extraction and raw mentor transcript.
+scripts/inspect_sources.py
+research/mentor-feedback.md
