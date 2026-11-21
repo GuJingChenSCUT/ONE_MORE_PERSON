@@ -26,7 +26,7 @@ Alice's presenter controls also allow incomplete-consent and replay challenges, 
 
 ## What syncs
 
-The fixed top-right Alice / Bob / Charlie control changes only the current tab's identity and preserves its room and language. Alice uses purple, Bob blue and Charlie green. Other tabs keep their own identity. The shared update number shows which room revision each page has received. The lower role links still open additional tabs. This update was published as Sites version 6.
+The fixed top-right Alice / Bob / Charlie control changes only the current tab's identity and preserves its room and language. Alice uses purple, Bob blue and Charlie green. Other tabs keep their own identity. The shared update number shows which room revision each page has received. Duplicate role links in the page body have been removed; role switching is available only at the top right. Use the lobby or guide to open three separate role pages.
 
 The public demo uses localStorage, BroadcastChannel and storage events in one browser profile. Web Locks serialize simultaneous actions. Refresh or tab re-entry reads the latest stored room. Separate room names isolate concurrent rehearsals. Other browsers, profiles and devices do not share state. The public demo creates no actual signatures, contract calls, transaction hashes or blockchain receipts.
 

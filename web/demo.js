@@ -52,7 +52,6 @@ function render() {
   text('greeting',`You're ${names[role]}.`,`你是 ${names[role]}。`);$('story').textContent=complete?t('Your new seat is confirmed. The complete exchange worked.','你的新席位已确认，完整换位已成功。'):stories[i];$('avatar').textContent=names[role][0];
   text('room-label',`ROOM ${room} · ROUND ${state.round} · PLAN ${state.plan || '—'}`,`房间 ${room} · 第 ${state.round} 轮 · 方案 ${state.plan || '未创建'}`);
   text('sync',ready?`Shared update #${state.revision} · Tabs sync automatically`:'Sync unavailable',ready?`共享更新 #${state.revision} · 三页自动同步`:'同步不可用');
-  $('role-nav').innerHTML=roles.map(r=>`<a class="${r===role?'current':''}" href="${href(r)}" target="_blank" rel="noopener" ${r===role?'aria-current="page"':''}>${r===role?t('This page: ','当前页面：'):t('Open ','打开 ')}${names[r]}</a>`).join('');
   const phase=complete?3:state.plan?2:hostReady?1:0;
   $('steps').innerHTML=(zh?['主办方确认','完整换位方案','三人分别同意','一起获得新席位']:['Hosts approve','One complete plan','Everyone agrees','New seats together']).map((label,n)=>`<li class="${n<phase?'done':n===phase?'current':''}" ${n===phase?'aria-current="step"':''}>${label}</li>`).join('');
   text('your-move-label','YOUR MOVE','你的换位');text('current-label',complete?'Before the exchange':'Your current place',complete?'换位之前':'你当前的席位');
