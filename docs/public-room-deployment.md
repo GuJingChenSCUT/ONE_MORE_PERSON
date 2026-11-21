@@ -1,5 +1,7 @@
 # Public access status
 
+**Updated scope:** the owner selected a public three-page interaction simulation with synchronization inside one browser profile, while preserving the local real-contract room and Monad proof. The new static routes are `demo.html`, `alice.html`, `bob.html`, `charlie.html` and `demo-guide.html`; see `public-three-page-demo.md` and `config/site.json` for release details. The cloud authorization blocker below applies only to hosting the real shared EVM service, not the explicitly simulated static option.
+
 The published presentation is available at https://one-more-person-guangzhou.justdog33.chatgpt.site. It is the existing static presentation, challenge simulation and wallet lab. It is not the three-person shared rehearsal service.
 
 The three-person room is still running at `http://127.0.0.1:4180/` on the prepared laptop. No public URL for that room has been issued or verified.

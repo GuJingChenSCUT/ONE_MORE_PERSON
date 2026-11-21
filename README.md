@@ -4,7 +4,7 @@
 
 [Printable system and demo guide](output/pdf/One_More_Person_Demo_Guide.pdf) · [Editable guide](docs/system-demo-guide.md): local startup, how signatures and atomic exchanges work, exact presenter actions, evidence and recovery.
 
-[Public room deployment status](docs/public-room-deployment.md): the existing public site is available; a dedicated cloud entry point for the three-person room is prepared, but provider authorization is still blocking deployment. The local room remains usable.
+[Three-page public interaction demo](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo.html) · [Bilingual demonstration guide](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo-guide.html). Alice, Bob and Charlie have independent role pages, with approvals, withdrawal and outcomes synchronized within one browser profile. This public version is explicitly a simulation; it makes no real signatures or contract transactions. The local real-contract room remains available. [Evidence boundaries and exact steps](docs/public-three-page-demo.md).
 
 ![English homepage](research/validation/final-home-desktop.jpg)
 

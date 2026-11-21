@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {publicAssets} from '../lib/web-assets.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../dist');
-const required=['index.html','zh.html','live.html','break.html','pitch.html','live.bundle.js','break.bundle.js','live-artifact.json'];
+const required=['index.html','zh.html','live.html','break.html','pitch.html','demo.html','alice.html','bob.html','charlie.html','demo-guide.html','demo.js','demo-state.mjs','demo.css','live.bundle.js','break.bundle.js','live-artifact.json'];
 for(const name of required)if(!fs.existsSync(path.join(root,name)))throw Error('Missing required web asset: '+name);
 let checked=0;
 for(const file of publicAssets.filter(x=>x.endsWith('.html'))){
@@ -28,4 +28,4 @@ for(const name of publicAssets){
     if(text.includes(prohibited))throw Error(`Private/local-only material in ${name}`);
   }
 }
-console.log(JSON.stringify({requiredPages:5,localLinksChecked:checked,publicAssets:publicAssets.filter(x=>fs.existsSync(path.join(root,x))).length,privateHarnessExcluded:true}));
+console.log(JSON.stringify({requiredPages:required.filter(x=>x.endsWith('.html')).length,localLinksChecked:checked,publicAssets:publicAssets.filter(x=>fs.existsSync(path.join(root,x))).length,privateHarnessExcluded:true}));

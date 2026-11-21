@@ -12,6 +12,8 @@ One More Person coordinates conditional seat exchanges between independent organ
 
 The prototype includes a responsive mechanism demo, a judge-led failure challenge, a Solidity contract, EIP-712 consent, automated local EVM tests, and independent event reconstruction. Two hosts approve one fixed pool configuration. Personal identity checks remain with organizers; public wallet and seat relationships are visible on-chain.
 
+The public three-page interaction demo gives Alice, Bob and Charlie independent pages, with approvals, withdrawal and results synchronized inside one browser profile. Each role sees one next-step action. This version is explicitly labeled as an interaction simulation: it produces no real signatures or blockchain transactions. The preserved local three-page app performs real signatures and isolated EVM contract execution. A bilingual public guide explains the exact four-minute walkthrough and these evidence boundaries.
+
 The unmodified product contract runs on Monad Testnet (10143). The latest verified proof rejects missing consent, cancels a holder's consent without moving their seat, rejects the old plan, completes a freshly approved relay, and rejects replay. It is one successful transaction with three rejected internal calls, using fictional contract-wallet actors under one controller. The wallet flow and a synchronized three-page Alice/Bob/Charlie demo both passed local EVM testing with three controlled EOA accounts, including browser signatures, two host approvals, cancellation, old-plan rejection and fresh-plan execution. These browser tests use isolated Hardhat, not Monad; independent-wallet execution on public Monad and a human pilot remain pending.
 
 The intended use is independent organizers accepting shared execution rules. A single organizer's database is usually simpler. The next validation is a real two-organizer pilot. No application TPS, real-user traction, or globally unique algorithm is claimed.
@@ -25,6 +27,7 @@ The intended use is independent organizers accepting shared execution rules. A s
 ## Links and evidence
 
 - Demo: [one-more-person-guangzhou.justdog33.chatgpt.site](https://one-more-person-guangzhou.justdog33.chatgpt.site)
+- [Three public role pages](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo.html) · [Bilingual live-demo guide](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo-guide.html).
 - Source: [GuJingChenSCUT/ONE_MORE_PERSON](https://github.com/GuJingChenSCUT/ONE_MORE_PERSON)
 - [Pitch](pitch.en.md), [judge runbook](judge-demo.md), [QC scope](QC-review.en.md), [testnet proof](testnet-proof.md).
 - [Latest withdrawal proof](https://testnet.monadvision.com/tx/0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7). The earlier proof is retained in [testnet-proof.md](testnet-proof.md).

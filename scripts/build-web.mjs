@@ -13,6 +13,7 @@ for (const name of sourceAssets) {
   const source=path.join(root,'web',name);
   if(fs.existsSync(source))fs.copyFileSync(source, path.join(output, name));
 }
+for (const role of ['alice','bob','charlie']) fs.copyFileSync(path.join(root,'web/demo.html'), path.join(output,`${role}.html`));
 for(const [entry,name] of Object.entries(bundles))if(fs.existsSync(path.join(root,'web',entry))) {
   await build({entryPoints:[path.join(root,'web',entry)],outfile:path.join(output,name),bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,define:{__OMP_TEST_RPC__:'undefined'}});
 }

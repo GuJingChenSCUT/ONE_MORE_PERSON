@@ -1,5 +1,7 @@
 # Three people, one live room
 
+**Public interaction option:** [open the three-role lobby](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo.html) and follow the [bilingual guide](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo-guide.html). That version synchronizes a clearly labeled simulation across three tabs of one browser profile. The instructions below still apply to the preserved real local contract deployment.
+
 This working local app has three separate demo identities, live server-sent updates, browser-created EIP-712 signatures, and actual transactions against the unchanged SafeSeatRelay contract on isolated Hardhat chain **31337**. The rehearsal needs no extension wallet, faucet or internet connection. The **Monad proof** link opens separately recorded public Testnet evidence and does require internet.
 
 These are controlled public test accounts, not production authentication or independent human testers. Alice and Bob also represent the two hosts to keep the demo to three pages. No test account is used on a public network. The server relays transactions; each tab signs its own consent. Login sessions are separate per tab. Shared pool state survives a page refresh but is lost when the server stops.
