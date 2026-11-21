@@ -1,8 +1,10 @@
 # Your submission package
 
-The entry is prepared and the demo is public. **Publication and future updates were authorized on 21 November 2026. The first MOJO submission was rejected: the bound account is not a team leader. No competition entry has been created by this workflow.**
+The entry is prepared and the demo is public. **Publication and future updates were authorized on 21 November 2026. The owner has since reported resolving the team-leader restriction and explicitly requested submission through the MOJO website. Submission is not yet confirmed.**
 
-MOJO returned: `当前活动启用了团队功能，仅队长可以提交项目`. The owner must resolve which account or team should submit this project before retrying. Existing team memberships and other projects have not been changed.
+The current browser account's refreshed profile showed no project. The event-18 form now contains the prepared name, description, public demo and repository. Fresh screenshots could not be uploaded because the Edge extension requires “Allow access to file URLs”; native file selection was also unavailable. The form is preserved for continuation. Browser security policy prevents opening `edge://extensions` through automation, so the owner must change that setting directly or upload the prepared images in the form. The local Agent is `pending_claim`, and its API project query returns `Agent has not been claimed`. No team membership or unrelated project has been changed.
+
+Submission preflight on 21 November: all 33 local tests passed; live Monad Testnet reads verified chain 10143, product runtime, deployment identity and the finalized withdrawal proof. GitHub commit `b288dc7` was pushed and its verification workflow passed. Earlier screenshot UUIDs were cleared from the draft payload because they must not be reused under a different account. Upload fresh images before retrying the API payload.
 
 - Event: [Monad Blitz@Guangzhou, event 18](https://mojo.devnads.com/events/18).
 - Confirmed deadline: **21 November 2026, 18:30 Beijing time (UTC+8)**.

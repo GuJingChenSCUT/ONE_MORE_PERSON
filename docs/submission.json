@@ -1,16 +1,7 @@
 {
   "name": "One More Person · 多一个人",
   "meta": {
-    "screenshots": [
-      {
-        "path": "mojo/uploads/1795249377578-b177760224cd4eae.jpg",
-        "uuid": "f3970051-d578-4890-8083-40b71a3cfc50"
-      },
-      {
-        "path": "mojo/uploads/1795249432171-c16956c9d8af4f49.jpg",
-        "uuid": "cd5505f8-9f99-44a5-a213-d68cf16e213e"
-      }
-    ],
+    "screenshots": [],
     "github": "https://github.com/GuJingChenSCUT/ONE_MORE_PERSON"
   },
   "eventId": 18,
