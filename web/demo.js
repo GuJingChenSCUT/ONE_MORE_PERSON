@@ -33,6 +33,9 @@ function render() {
   document.documentElement.lang=zh?'zh-CN':'en'; document.body.dataset.role=role??'lobby';
   $('lobby').hidden=!!role; $('participant').hidden=!role;
   text('language','中文','English');text('proof','Monad proof','Monad 链上证据');text('guide-link','Demo guide','演示说明');
+  text('switch-label','Switch person · this tab only','切换人物 · 仅当前页面');
+  $('role-switcher').setAttribute('aria-label',t('Switch this page’s person','切换当前页面的人物'));
+  $('role-switcher').innerHTML=roles.map(r=>`<a class="role-chip ${r===role?'selected':''}" data-person="${r}" href="${href(r)}" ${r===role?'aria-current="page"':''}><span class="chip-avatar" aria-hidden="true">${names[r][0]}</span>${names[r]}${r===role?'<span class="selected-mark" aria-hidden="true">✓</span>':''}</a>`).join('');
   text('disclosure','INTERACTION SIMULATION · Shared in this browser only · No blockchain transactions','交互模拟 · 仅在同一浏览器内同步 · 不发送区块链交易');
   text('boundary','This public demo simulates consent and execution. The local app runs real isolated EVM transactions; Monad proof opens a separate recorded Testnet result. Use one browser profile; other devices do not share this room.','公网版模拟同意和执行。本地版运行真实隔离 EVM 交易；Monad 链上证据为独立记录的真实测试网结果。请使用同一浏览器配置，不同设备不会同步。');
   text('lobby-label','THREE PAGES. ONE SHARED STORY.','三个页面，共享同一个故事。');
@@ -48,7 +51,7 @@ function render() {
   text('role-caption',i===0?'PARTICIPANT + HOST A · PRESENTER':i===1?'PARTICIPANT + HOST B':'PARTICIPANT · WAITING LIST',i===0?'参加者 + 主办方 A · 演示者':i===1?'参加者 + 主办方 B':'参加者 · 候补');
   text('greeting',`You're ${names[role]}.`,`你是 ${names[role]}。`);$('story').textContent=complete?t('Your new seat is confirmed. The complete exchange worked.','你的新席位已确认，完整换位已成功。'):stories[i];$('avatar').textContent=names[role][0];
   text('room-label',`ROOM ${room} · ROUND ${state.round} · PLAN ${state.plan || '—'}`,`房间 ${room} · 第 ${state.round} 轮 · 方案 ${state.plan || '未创建'}`);
-  text('sync',ready?'Tabs sync automatically':'Sync unavailable',ready?'页面自动同步':'同步不可用');
+  text('sync',ready?`Shared update #${state.revision} · Tabs sync automatically`:'Sync unavailable',ready?`共享更新 #${state.revision} · 三页自动同步`:'同步不可用');
   $('role-nav').innerHTML=roles.map(r=>`<a class="${r===role?'current':''}" href="${href(r)}" target="_blank" rel="noopener" ${r===role?'aria-current="page"':''}>${r===role?t('This page: ','当前页面：'):t('Open ','打开 ')}${names[r]}</a>`).join('');
   const phase=complete?3:state.plan?2:hostReady?1:0;
   $('steps').innerHTML=(zh?['主办方确认','完整换位方案','三人分别同意','一起获得新席位']:['Hosts approve','One complete plan','Everyone agrees','New seats together']).map((label,n)=>`<li class="${n<phase?'done':n===phase?'current':''}" ${n===phase?'aria-current="step"':''}>${label}</li>`).join('');
