@@ -29,3 +29,7 @@ Alice's presenter controls also allow incomplete-consent and replay challenges, 
 The public demo uses localStorage, BroadcastChannel and storage events in one browser profile. Web Locks serialize simultaneous actions. Refresh or tab re-entry reads the latest stored room. Separate room names isolate concurrent rehearsals. Other browsers, profiles and devices do not share state. The public demo creates no actual signatures, contract calls, transaction hashes or blockchain receipts.
 
 The original local service at port 4180 is preserved. Its separate role logins use real typed signatures and the unmodified SafeSeatRelay contract on isolated EVM 31337, with server-sent updates. See `three-page-demo.md` and the local PDF. The real public Monad proof remains at chain 10143; do not merge these evidence claims.
+
+## Ten-step interactive film
+
+Open `story.html` on the public site. Three embedded role pages share an isolated browser simulation room. Play/pause, next, restart, timeline seeking and speed controls are available. The ten steps split the existing rehearsal into setup, hosts, plan, consent, withdrawal, rejection, fresh plan, renewed consent, execution and evidence. No actual transactions are sent. MOJO synchronization on this update remains blocked: the project query returned 403, Agent has not been claimed.
