@@ -1,15 +1,19 @@
 {
-  "name": "多一个人 · 保底换位",
+  "name": "One More Person · 多一个人",
   "meta": {
     "screenshots": [
       {
-        "uuid": "27773b74-8768-4e7b-b49b-308d59cb285e",
-        "path": "mojo/uploads/1795244115496-8e97eee5c6794d5a.jpg"
+        "path": "mojo/uploads/1795249377578-b177760224cd4eae.jpg",
+        "uuid": "f3970051-d578-4890-8083-40b71a3cfc50"
+      },
+      {
+        "path": "mojo/uploads/1795249432171-c16956c9d8af4f49.jpg",
+        "uuid": "cd5505f8-9f99-44a5-a213-d68cf16e213e"
       }
     ],
     "github": "https://github.com/GuJingChenSCUT/ONE_MORE_PERSON"
   },
   "eventId": 18,
-  "description": "多一个人帮助两家独立活动主办方安全协调已分配的名额。参加者想换到更合适的场次，不必先退掉手上的位置：所有人签署同一份完整方案，只有每份同意、资格、持有状态与截止条件都成立，合约才一次性更新全部名额；缺签、撤回或过期时整份方案失败，原位保留。以空位为终点的接力还可能让一名候补者参加，纯互换则不增加人数。\n\n本次交付包括可交互的机制演示、Solidity 原子换位合约、EIP-712 签名消息、独立事件复算器、测试与持续集成。双主办方共同确认固定配置；个人身份资料留在机构侧。网页使用虚构场景并明确标注模拟操作。本地 EVM 已执行成功和失败两条路径，事件复算与合约快照一致；Monad Testnet（chainId 10143）已完成网络只读核验，应用合约尚未部署。测试网钱包接入、真实机构试点、代付队列与签到属于后续实施，不将模拟数字宣传为链上性能。",
+  "description": "Change your workshop time without gambling away the seat you already have.\n\nOne More Person coordinates conditional seat exchanges between independent organizers. Each participant signs the same complete plan. Only when every consent, current booking, eligibility rule, nonce, and deadline is valid does the contract update every seat together. A rejected plan leaves existing seats unchanged. A relay ending in an empty seat can also admit someone from a waitlist; a pure swap adds no attendees.\n\nThe prototype includes a responsive mechanism demo, a judge-led failure challenge, a Solidity contract, EIP-712 consent, automated local EVM tests, and independent event reconstruction. Two hosts approve one fixed pool configuration. Personal identity checks remain with organizers; public wallet and seat relationships are visible on-chain.\n\nThe unmodified product contract runs on Monad Testnet (10143). The latest verified proof rejects missing consent, cancels a holder's consent without moving their seat, rejects the old plan, completes a freshly approved relay, and rejects replay. It is one successful transaction with three rejected internal calls, using fictional contract-wallet actors under one controller. The complete wallet browser flow also passed locally with three EOA test accounts: deployment, two host approvals, signatures, cancellation, old-plan rejection, fresh signatures, and successful execution. That browser test used isolated Hardhat, not Monad; independent-wallet execution on public Monad and a human pilot remain pending.\n\nThe intended use is independent organizers accepting shared execution rules. A single organizer's database is usually simpler. The next validation is a real two-organizer pilot. No application TPS, real-user traction, or globally unique algorithm is claimed.",
   "url": "https://one-more-person-guangzhou.justdog33.chatgpt.site"
 }

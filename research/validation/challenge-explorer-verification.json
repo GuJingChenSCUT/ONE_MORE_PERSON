@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-11-21T08:17:15.7772233Z",
+  "chainId": 10143,
+  "results": [
+    {
+      "name": "ChallengeActor",
+      "result": {
+        "success": true,
+        "verified": 2,
+        "total": 2,
+        "results": {
+          "monadvision": {
+            "status": "success",
+            "message": "Verified with perfect match",
+            "url": "https://testnet.monadvision.com/address/0xA3b350631ffe9E52D127e6bD65924e93568df046"
+          },
+          "monadscan": {
+            "status": "success",
+            "message": "Pass - Verified",
+            "guid": "qvmg9ywxk6gsikb85vcmfr9zjzknjgyf8kgqcd7pjxdnxydygd",
+            "url": "https://testnet.monadscan.com/address/0xA3b350631ffe9E52D127e6bD65924e93568df046"
+          }
+        }
+      }
+    },
+    {
+      "result": {
+        "success": true,
+        "verified": 1,
+        "total": 2,
+        "results": {
+          "monadvision": {
+            "status": "success",
+            "message": "Verified with perfect match",
+            "url": "https://testnet.monadvision.com/address/0xBBBdddD59037f1656478b7f8F9A805a887ff26Eb"
+          },
+          "monadscan": {
+            "status": "failed",
+            "message": "Contract source code already verified"
+          }
+        }
+      },
+      "name": "RelayChallengeFixture"
+    },
+    {
+      "name": "SafeSeatRelay",
+      "result": {
+        "success": true,
+        "verified": 1,
+        "total": 2,
+        "results": {
+          "monadvision": {
+            "status": "success",
+            "message": "The contract 0xeAC3414f47aD5Fd2F12B8A88575eBc04c4EaF378 on chainId 10143 is already partially verified. The provided new source code also yielded a partial match and will not be stored unless it's a full match",
+            "url": "https://testnet.monadvision.com/address/0xeAC3414f47aD5Fd2F12B8A88575eBc04c4EaF378"
+          },
+          "monadscan": {
+            "status": "failed",
+            "message": "Contract source code already verified"
+          }
+        }
+      }
+    }
+  ]
+}

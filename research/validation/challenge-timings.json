@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "chainId": 10143,
+  "mode": "observed-cli-testnet-call",
+  "startedAt": "2026-11-21T08:08:35.300Z",
+  "hash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+  "cliReturnedMs": 21229,
+  "hashToReceiptObservedMs": 10701,
+  "hashToFinalizedObservedMs": 13083,
+  "receiptBlock": "81526321",
+  "receiptBlockHash": "0x756cc0686a68fe001f8b55186c331d58ef713e928079231d5925be956cd80b57",
+  "finalizedBlock": "81526365",
+  "note": "One observation from this computer. CLI duration includes startup, authorization, estimation, submission and any internal waiting. Subsequent timings start only when the CLI returned the hash; the transaction may already have finalized. RPC and polling delay are included. These are not signing-to-finality, consensus latency or TPS measurements."
+}

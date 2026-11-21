@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d0c12">
+  <title>One More Person · The pitch</title>
+  <meta name="description" content="Change your workshop time without giving up your existing seat first. A five-part introduction to One More Person on Monad.">
+  <link rel="stylesheet" href="pitch.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">+</span><span>ONE MORE PERSON<small>多一个人</small></span></a>
+    <div class="top-actions"><span class="event">MONAD BLITZ · GUANGZHOU</span><button id="language" type="button" aria-label="Switch to Chinese">中文</button><a href="break.html" data-en="Open demo" data-zh="打开演示">Open demo</a></div>
+  </header>
+  <main id="story">
+    <section class="slide cover" id="story-1" aria-labelledby="title-1">
+      <div class="cover-copy">
+        <p class="eyebrow" data-en="A BETTER TIME. THE SAME PEACE OF MIND." data-zh="换个时间，心里一样有底。">A BETTER TIME. THE SAME PEACE OF MIND.</p>
+        <h1 id="title-1" tabindex="-1"><span data-en="Change your time." data-zh="换个时间。">Change your time.</span><br><em data-en="Keep your place." data-zh="保住席位。">Keep your place.</em></h1>
+        <p class="lead" data-en="A workshop exchange where you receive the seat you accepted before your old place is released." data-zh="只有拿到自己同意的新席位，才放开原来的位置。">A workshop exchange where you receive the seat you accepted before your old place is released.</p>
+        <p class="audience" data-en="For independent organizers sharing one exchange agreement." data-zh="为独立主办方共同承认的一次换位而设计。">For independent organizers sharing one exchange agreement.</p>
+        <button class="primary" type="button" data-go="1" data-en="Meet the three people" data-zh="看看三个人的需要">Meet the three people</button>
+      </div>
+      <div class="cover-art">
+        <svg viewBox="0 0 600 470" role="img" aria-labelledby="chair-title">
+          <title id="chair-title">Three connected workshop seats. An illustration of a conditional exchange.</title>
+          <defs>
+            <linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dbc7ff"/><stop offset="1" stop-color="#8b63d6"/></linearGradient>
+            <linearGradient id="seat" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ecdeff"/><stop offset="1" stop-color="#ac87e7"/></linearGradient>
+            <radialGradient id="glow"><stop stop-color="#b7a2ff" stop-opacity=".22"/><stop offset="1" stop-color="#b7a2ff" stop-opacity="0"/></radialGradient>
+            <g id="chair"><path d="m20 92 12 5v70l-12-5zM100 96l12-6v65l-12 6z" fill="#49345f"/><path d="M15 20q0-12 12-7l83 33q10 4 10 16v49L15 72Z" fill="#68468c"/><path d="M8 15q0-12 12-7l83 33q10 4 10 16v49L8 67Z" fill="url(#back)"/><path d="m8 67 105 39-45 26-108-39Z" fill="url(#seat)"/><path d="m-40 93 108 39v12L-40 105z" fill="#8b68b6"/><path d="m68 132 45-26v12l-45 26z" fill="#63427f"/><path d="m-33 108 12 4v61l-12-5zM60 143l12 2v60l-12-5z" fill="#72558e"/></g>
+          </defs>
+          <ellipse cx="300" cy="270" rx="295" ry="190" fill="url(#glow)"/>
+          <ellipse cx="300" cy="270" rx="240" ry="120" fill="none" stroke="#49375e" transform="rotate(-11 300 270)"/>
+          <ellipse cx="300" cy="270" rx="211" ry="98" fill="none" stroke="#2e253a" transform="rotate(-11 300 270)"/>
+          <g transform="translate(93 175)"><ellipse cx="40" cy="197" rx="83" ry="20" fill="#08060c" opacity=".65"/><use href="#chair"/></g>
+          <g transform="translate(290 53)"><ellipse cx="40" cy="198" rx="80" ry="18" fill="#08060c" opacity=".65"/><use href="#chair"/></g>
+          <g transform="translate(430 228) scale(.92)"><ellipse cx="40" cy="197" rx="83" ry="20" fill="#08060c" opacity=".65"/><use href="#chair"/><path d="M8 15q0-12 12-7l83 33q10 4 10 16v49L8 67Z" fill="#c6e48d"/><path d="m8 67 105 39-45 26-108-39Z" fill="#e2ffb6"/><path d="m-40 93 108 39v12L-40 105z" fill="#8da85c"/><path d="m68 132 45-26v12l-45 26z" fill="#617c40"/></g>
+          <circle cx="61" cy="315" r="5" fill="#b7a2ff"/><circle cx="520" cy="192" r="5" fill="#d9ff9a"/>
+          <text x="250" y="326" fill="#d9ff9a" font-size="55" font-family="system-ui,sans-serif" font-weight="650">+1</text>
+        </svg>
+        <p data-en="Same seats. A new possibility." data-zh="同样的席位，多一种可能。">Same seats. A new possibility.</p>
+      </div>
+    </section>
+
+    <section class="slide" id="story-2" aria-labelledby="title-2">
+      <p class="eyebrow" data-en="THE EVERYDAY PROBLEM" data-zh="一个日常问题">THE EVERYDAY PROBLEM</p>
+      <h2 id="title-2" tabindex="-1" data-en="Three seats. One more person." data-zh="三个席位，多一个人。">Three seats. One more person.</h2>
+      <p class="lead narrow" data-en="Alice needs afternoon. Bob can take Sunday. Charlie can only attend Saturday morning." data-zh="小林想去下午，小陈周日也能参加，小雨只能来周六上午。">Alice needs afternoon. Bob can take Sunday. Charlie can only attend Saturday morning.</p>
+      <div class="seat-map" aria-label="Fictional seat exchange example">
+        <article class="seat-card"><span class="seat-symbol" aria-hidden="true">▱</span><p class="seat-time" data-en="SATURDAY MORNING" data-zh="周六上午">SATURDAY MORNING</p><div class="occupant"><span class="avatar" id="avatar-1">A</span><strong id="holder-1">Alice</strong></div><p class="seat-role" data-en="Organizer A" data-zh="主办方 A">Organizer A</p></article>
+        <article class="seat-card"><span class="seat-symbol" aria-hidden="true">▱</span><p class="seat-time" data-en="SATURDAY AFTERNOON" data-zh="周六下午">SATURDAY AFTERNOON</p><div class="occupant"><span class="avatar" id="avatar-2">B</span><strong id="holder-2">Bob</strong></div><p class="seat-role" data-en="Organizer B" data-zh="主办方 B">Organizer B</p></article>
+        <article class="seat-card empty" id="seat-3"><span class="seat-symbol" aria-hidden="true">▱</span><p class="seat-time" data-en="SUNDAY AFTERNOON" data-zh="周日下午">SUNDAY AFTERNOON</p><div class="occupant"><span class="avatar" id="avatar-3">+</span><strong id="holder-3">Empty</strong></div><p class="seat-role" data-en="Organizer B" data-zh="主办方 B">Organizer B</p></article>
+      </div>
+      <div class="relay-bottom"><div><p class="relay-state" id="relay-state" role="status" aria-live="polite">Charlie is waiting. Two people have seats.</p><p class="caption" data-en="Fictional example. A pure two-person swap adds zero attendees." data-zh="构造例子。纯粹两人互换不会增加参加人数。">Fictional example. A pure two-person swap adds zero attendees.</p></div><button class="primary" id="show-relay" type="button">Show the relay</button></div>
+    </section>
+
+    <section class="slide" id="story-3" aria-labelledby="title-3">
+      <p class="eyebrow" data-en="THE PROMISE" data-zh="核心承诺">THE PROMISE</p>
+      <h2 id="title-3" tabindex="-1"><span data-en="If one person says no," data-zh="只要一人不同意，">If one person says no,</span><br><em data-en="nobody moves." data-zh="所有原位都保留。">nobody moves.</em></h2>
+      <div class="promise-grid"><div class="promise-visual"><span class="ring" aria-hidden="true">◇</span><p data-en="Your old seat stays valid until the whole exchange succeeds." data-zh="整份换位成功之前，你的原席位一直有效。">Your old seat stays valid until the whole exchange succeeds.</p></div><div class="promise-copy">
+        <div class="rule"><span aria-hidden="true">✓</span><div><h3 data-en="One complete agreement" data-zh="同意一份完整方案">One complete agreement</h3><p data-en="Every participant signs the same plan, with an accepted new seat and an expiry." data-zh="每个人签同一份方案，明确接受的新席位和有效期。">Every participant signs the same plan, with an accepted new seat and an expiry.</p></div></div>
+        <div class="rule"><span aria-hidden="true">✓</span><div><h3 data-en="Withdrawal invalidates old consent" data-zh="撤回让旧同意失效">Withdrawal invalidates old consent</h3><p data-en="It must reach the contract before execution. It cannot undo an exchange already completed." data-zh="撤回必须先于执行进入合约；不能逆转已经完成的换位。">It must reach the contract before execution. It cannot undo an exchange already completed.</p></div></div>
+        <div class="rule"><span aria-hidden="true">✓</span><div><h3 data-en="All moves or no moves" data-zh="全部生效，或全部不动">All moves or no moves</h3><p data-en="Missing, stale, or expired consent rejects the entire exchange." data-zh="缺签、旧签名或过期，都会让整份方案失败。">Missing, stale, or expired consent rejects the entire exchange.</p></div></div>
+        <a class="primary" href="break.html" data-en="Try to break it" data-zh="试着让它失败">Try to break it</a><span class="caption" data-en="Interactive simulation; real evidence is shown separately." data-zh="交互操作为模拟；真实证据单独展示。">Interactive simulation; real evidence is shown separately.</span>
+      </div></div>
+    </section>
+
+    <section class="slide" id="story-4" aria-labelledby="title-4">
+      <p class="eyebrow" data-en="BUILT ON MONAD TESTNET" data-zh="已经运行在 MONAD 测试网">BUILT ON MONAD TESTNET</p>
+      <h2 id="title-4" tabindex="-1" data-en="A promise you can inspect." data-zh="承诺有据，可以复核。">A promise you can inspect.</h2>
+      <div class="proof-columns"><article class="proof-card"><span class="tag">CHAIN 10143 · REAL TRANSACTION</span><h3 data-en="Withdrawal, proved on-chain" data-zh="撤回有据，原位保留">Withdrawal, proved on-chain</h3><ol class="proof-steps"><li><span class="state rejected" data-en="REJECTED" data-zh="已拒绝">REJECTED</span><span data-en="One consent missing. Original seats intact." data-zh="缺少一人同意，原席位不变。">One consent missing. Original seats intact.</span></li><li><span class="state rejected" data-en="REJECTED" data-zh="已拒绝">REJECTED</span><span data-en="Consent withdrawn. Old plan fails; seats stay put." data-zh="真实撤回后旧方案失败，原席位不变。">Consent withdrawn. Old plan fails; seats stay put.</span></li><li><span class="state accepted" data-en="EXECUTED" data-zh="已执行">EXECUTED</span><span data-en="Fresh consent. Three people get seats." data-zh="重新同意新方案，三个人各有一席。">Fresh consent. Three people get seats.</span></li><li><span class="state rejected" data-en="REJECTED" data-zh="已拒绝">REJECTED</span><span data-en="Replay attempted. Completed result intact." data-zh="重放旧方案，完成后的结果不变。">Replay attempted. Completed result intact.</span></li></ol><a href="https://testnet.monadvision.com/tx/0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7" target="_blank" rel="noopener" data-en="Inspect the proof transaction" data-zh="查看证明交易">Inspect the proof transaction</a><p class="caption" data-en="One successful outer transaction; three rejected internal calls. Fictional test wallets share one controller." data-zh="一笔成功外层交易，三个被拒的内部调用。虚构测试钱包由同一控制者管理。">One successful outer transaction; three rejected internal calls. Fictional test wallets share one controller.</p></article><article class="why-card"><h3 data-en="Why a shared contract?" data-zh="为什么是共同合约？">Why a shared contract?</h3><p data-en="Two organizers approve the same rules. Each participant authorizes the whole plan. Anyone can submit it and inspect the result." data-zh="两家主办方确认同一规则，每人授权完整方案，任何人都可以代发和复核。">Two organizers approve the same rules. Each participant authorizes the whole plan. Anyone can submit it and inspect the result.</p><div class="mono-note"><span data-en="ONE ORGANIZER?" data-zh="只有一家主办方？">ONE ORGANIZER?</span><p data-en="An existing booking database is usually simpler." data-zh="现有报名数据库通常更简单。">An existing booking database is usually simpler.</p></div><h3 data-en="Why Monad?" data-zh="为什么选择 Monad？">Why Monad?</h3><p data-en="EVM signing and a finality-aware experience. The wallet lab separates submission, receipt, and finalized state." data-zh="复用 EVM 签名，明确区分提交、回执和 finalized 状态。">EVM signing and a finality-aware experience. The wallet lab separates submission, receipt, and finalized state.</p><p class="caption" data-en="No application TPS or real-user adoption benchmark is claimed." data-zh="没有宣称应用 TPS 或真实用户采用成绩。">No application TPS or real-user adoption benchmark is claimed.</p><a class="text-link" href="https://docs.monad.xyz/reference/json-rpc/overview" target="_blank" rel="noopener" data-en="Monad's finality documentation" data-zh="Monad 最终确认文档">Monad's finality documentation</a></article></div>
+    </section>
+
+    <section class="slide closing" id="story-5" aria-labelledby="title-5">
+      <p class="eyebrow" data-en="THE NEXT PROOF" data-zh="下一份证明">THE NEXT PROOF</p>
+      <h2 id="title-5" tabindex="-1"><span data-en="Two organizers." data-zh="两家真实机构。">Two organizers.</span><br><em data-en="Real seats. Real choices." data-zh="真实名额，真实选择。">Real seats. Real choices.</em></h2>
+      <p class="lead narrow" data-en="The mechanism is testable. Demand and real-world fulfillment are the next questions." data-zh="机制已经可以检验；需求和线下履约，是接下来要回答的问题。">The mechanism is testable. Demand and real-world fulfillment are the next questions.</p>
+      <div class="pilot-questions"><article><span aria-hidden="true">◇</span><h3 data-en="Will organizers honor it?" data-zh="机构愿意承认结果吗？">Will organizers honor it?</h3><p data-en="Reserve real capacity and accept the final list." data-zh="真实预留席位，承认最终名单。">Reserve real capacity and accept the final list.</p></article><article><span aria-hidden="true">⊞</span><h3 data-en="Do useful exchanges exist?" data-zh="有足够合适的换位吗？">Do useful exchanges exist?</h3><p data-en="Count feasible plans, including rounds with no match." data-zh="记录可行方案，也记录没有匹配的情况。">Count feasible plans, including rounds with no match.</p></article><article><span aria-hidden="true">✓</span><h3 data-en="Can people use it unaided?" data-zh="参加者能独立用懂吗？">Can people use it unaided?</h3><p data-en="Observe consent, withdrawal, and wallet friction." data-zh="观察同意、撤回和钱包使用的阻碍。">Observe consent, withdrawal, and wallet friction.</p></article></div>
+      <div class="closing-actions"><a class="primary" href="live.html" data-en="Open the wallet lab" data-zh="打开钱包实验页">Open the wallet lab</a><a class="secondary" href="break.html" data-en="Test the promise" data-zh="检验这个承诺">Test the promise</a><a class="text-link" href="https://github.com/GuJingChenSCUT/ONE_MORE_PERSON" target="_blank" rel="noopener" data-en="Explore the code" data-zh="查看源代码">Explore the code</a></div>
+      <p class="caption" data-en="No real-user pilot has been completed. Organizers must reserve and honor physical seats; the chain cannot enforce admission." data-zh="真实用户试点尚未完成。机构需要预留名额并履约，链不能强制线下入场。">No real-user pilot has been completed. Organizers must reserve and honor physical seats; the chain cannot enforce admission.</p>
+    </section>
+  </main>
+  <footer class="presenter-controls" aria-label="Presentation controls">
+    <nav class="chapters" aria-label="Presentation sections"><button type="button" data-go="0" data-en="Promise" data-zh="承诺" aria-current="step">Promise</button><button type="button" data-go="1" data-en="People" data-zh="需要">People</button><button type="button" data-go="2" data-en="Failure" data-zh="失败">Failure</button><button type="button" data-go="3" data-en="Proof" data-zh="证明">Proof</button><button type="button" data-go="4" data-en="Next test" data-zh="试点">Next test</button></nav>
+    <div class="pager"><button id="previous" type="button" data-en="Previous" data-zh="上一页">Previous</button><span id="page-count" aria-live="polite">1 / 5</span><button id="next" type="button" data-en="Next" data-zh="下一页">Next</button></div>
+  </footer>
+  <p class="keyboard-hint" data-en="Use the left and right arrow keys to present. Print to keep all five sections." data-zh="可用键盘左右方向键翻页。打印可保留全部五页。">Use the left and right arrow keys to present. Print to keep all five sections.</p>
+  <noscript><p class="noscript">All five sections are shown. Enable JavaScript for navigation, the illustrative relay, and Chinese translation.</p></noscript>
+  <script src="pitch.js"></script>
+</body>
+</html>

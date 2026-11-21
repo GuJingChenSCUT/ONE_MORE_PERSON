@@ -1,16 +1,53 @@
-# 多一个人 · One More Person
+# One More Person · 多一个人
 
-**换到合适的时间，才放开原来的位置。**
+![English homepage](research/validation/final-home-desktop.jpg)
 
-面向两家独立活动主办方的保底换位原型。每个参与者签署同一份完整方案；所有条件成立才同时更新名额。少一份有效同意、有人撤回或方案过期，整份方案失败，已有名额保留。一个以空位为终点的换位链可能接入候补者；纯互换不会增加获配人数。
+**Change your workshop time without gambling away the seat you already have.**
 
-本项目参加 [Monad Blitz@广州](https://mojo.devnads.com/events/18)，目标网络为 **Monad Testnet，chainId 10143**。网页使用明确标注的虚构数据；本地 EVM 测试不能证明 Monad 性能。测试网合约尚未部署，配置中的地址保持 `null`。
+One More Person coordinates seat exchanges between independent organizers. Everyone approves the same complete plan. Your old seat is released only when you receive the new seat you accepted. All moves happen together; an invalid plan leaves every existing seat unchanged.
 
-[公开在线演示](https://one-more-person-guangzhou.justdog33.chatgpt.site) · [技术方案](docs/technical-plan.md) · [验证记录](docs/validation.md) · [参赛提交稿（暂不提交）](docs/submission.md)
+Built for [Monad Blitz@Guangzhou](https://mojo.devnads.com/events/18) on **Monad Testnet, chain ID 10143**. The app is English-first, with Chinese available.
 
-## 本地运行
+[Try the app](https://one-more-person-guangzhou.justdog33.chatgpt.site) · [Try to break it](https://one-more-person-guangzhou.justdog33.chatgpt.site/break.html) · [Use real wallets](https://one-more-person-guangzhou.justdog33.chatgpt.site/live.html) · [The pitch](https://one-more-person-guangzhou.justdog33.chatgpt.site/pitch.html) · [中文演示](https://one-more-person-guangzhou.justdog33.chatgpt.site/zh.html)
 
-需要 Node.js 24 LTS 和 pnpm 11.25.0。
+## The three-seat example
+
+Alice needs a later time. Bob can move to Sunday. Charlie is waiting for Saturday morning.
+
+| Seat | Before | After everyone accepts |
+| --- | --- | --- |
+| Saturday morning | Alice | Charlie |
+| Saturday afternoon | Bob | Alice |
+| Sunday afternoon | Empty | Bob |
+
+The same three seats now give three people a place instead of two. This is a fictional example, not a measured attendance improvement. A two-person swap adds zero people. If someone withdraws before execution or a signature expires, the old plan cannot run.
+
+## What you can review
+
+| Route | What it does | Evidence boundary |
+| --- | --- | --- |
+| [Home](https://one-more-person-guangzhou.justdog33.chatgpt.site) | Explore a relay, a two-person swap, and a case with no available plan. | Fictional people and simulated approvals; these buttons do not send transactions. |
+| [Challenge](https://one-more-person-guangzhou.justdog33.chatgpt.site/break.html) | Test missing consent, withdrawal, and a valid relay; compare seats before and after. | Interactive challenges are simulations. A separate RPC action verifies a recorded real testnet proof. |
+| [Wallet lab](https://one-more-person-guangzhou.justdog33.chatgpt.site/live.html) | Deploy a pool, collect two host approvals and three signatures, cancel, check, and execute. | The complete browser flow passed locally with three EOA test accounts. A run with independent wallets on public Monad Testnet remains pending. |
+| [Pitch](https://one-more-person-guangzhou.justdog33.chatgpt.site/pitch.html) | Present the problem, promise, evidence, and next pilot in English or Chinese. | Fictional demonstration; no customer pilot or adoption claim. |
+
+The unmodified `SafeSeatRelay` contract has a real, verified Monad Testnet withdrawal proof. It rejects missing consent, cancels one holder's consent without moving their seat, rejects the old plan, accepts a freshly approved 2→3 relay, and rejects replay. Those are **three rejected internal calls inside one successful outer transaction**, plus a recorded cancellation and successful relay. The test uses fictional contract-wallet actors under one controller. It does not prove consent from independent people. [Inspect the latest transaction](https://testnet.monadvision.com/tx/0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7) or read the [reproducible evidence, including the earlier proof](docs/testnet-proof.md).
+
+The actual wallet page also passed a complete browser test: deployment, code verification, two host approvals, three signatures, cancellation, rejection of the old plan, fresh signatures, and final seats C/A/B. This used an isolated Hardhat test provider and one operator, producing [5 local transactions and 6 typed signatures](research/validation/wallet-local-browser-log.json). Its chain ID 10143 was used only to exercise the signing domain. **That browser run was local, not Monad, and supplies no network-finality measurement.**
+
+[QC checklist](docs/QC-review.en.md) · [Judge's demo runbook](docs/judge-demo.md) · [English pitch](docs/pitch.en.md) · [中文讲稿](docs/pitch.zh.md) · [Pilot plan](docs/pilot-plan.md)
+
+## Why use a shared contract?
+
+A single organizer can usually solve this more simply in its database. The intended case is two independent organizers that accept shared execution rules but do not want either party to control everyone's changes.
+
+Both hosts approve a fixed pool. Participants sign the whole plan, including its chain, contract, seats, nonces, and expiry. Anyone may submit a valid plan. No administrator can replace a participant's destination or seize their seat. Cancellation takes effect when its transaction is included before execution; it cannot undo an already completed exchange.
+
+Monad provides the EVM environment and a finality-aware RPC workflow. The app distinguishes transaction submission, receipt observation, and a finalized seat snapshot. It does not claim application TPS or unique access to atomic transactions. See [Monad's commitment states](https://docs.monad.xyz/reference/json-rpc/overview).
+
+## Run locally
+
+Use Node.js 24 LTS and pnpm 11.25.0.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -20,34 +57,37 @@ pnpm build
 pnpm dev
 ```
 
-打开终端打印的本地地址。`pnpm demo:local` 执行独立的本地合约演示并导出事件证据；`pnpm verify:events` 复算证据文件；`pnpm check:network` 只读检查 Monad Testnet。
+Open the local address printed by the server. The build bundles the browser wallet and verification code locally; it does not require a browser CDN dependency. The wallet lab requires an injected EVM wallet, three participant addresses, and test MON for transactions. Participants can share the same session through JSON or a URL fragment; signatures must match the same complete plan.
 
-## 工程边界
+`pnpm demo:local` executes the compiled contract on a local EVM and exports its events. `pnpm verify:events` checks the event record. `pnpm check:network` reads Monad Testnet without writing to it. Follow [testnet-proof.md](docs/testnet-proof.md) to recheck the published chain evidence.
 
-| 路径 | 职责 |
+## Repository map
+
+| Path | Responsibility |
 | --- | --- |
-| `web/` | 可直接运行的交互演示，拒绝把模拟结果显示为链上交易 |
-| `contracts/src/SafeSeatRelay.sol` | 双主办方配置确认、EIP-712 同意、nonce 撤回和原子换位 |
-| `lib/` | 签名消息与独立事件复算 |
-| `scripts/` | 编译、打包、网络核验、本地演示与 MOJO 接入 |
-| `tests/` | 成功路径、回滚、重放、资格、签名域与复算测试 |
-| `config/monad.testnet.json` | 唯一测试网部署记录；未部署字段为空 |
-| `docs/` | 产品收敛、架构、验收与参赛说明 |
+| `web/` | English/Chinese app, simulation, wallet lab, challenge, and presentation. |
+| `contracts/src/SafeSeatRelay.sol` | Fixed pool, two host approvals, EIP-712 consent, cancellation nonces, and atomic seat updates. |
+| `contracts/demo/` | Clearly labeled fictional proof fixtures; separate from the unmodified product contract. |
+| `lib/` | Shared signing protocol, validation, and independent event reconstruction. |
+| `scripts/` | Compile, bundle, serve, verify, and prepare evidence. |
+| `tests/` | Success, rejection, cancellation, replay, eligibility, signature-domain, and reconstruction checks. |
+| `config/monad.testnet.json` | Empty template for a separate direct deployment; not the fixture deployment record. |
+| `config/testnet-proof.json` | Verified CreateX fixture and product-contract deployment provenance. |
+| `config/challenge-proof.json` | Verified withdrawal fixture and its separate product-contract deployment. |
+| `docs/` | Technical plan, QC scope, pitch, judge script, and entry copy. |
 
-完整范围和实现映射见 [技术方案](docs/technical-plan.md)。首次场次分配是背景对照，当前合约实现的是已持有名额的条件换位。身份核验、通知、签到、代付队列和生产钱包接入属于后续工作。
+The contract supports a bounded pool of up to 12 seats and 12 eligible addresses. It validates a proposed exchange; it is not a global matching optimizer. [Technical details](docs/technical-plan.md) · [Sources and research scope](docs/sources.md).
 
-## 诚信与隐私
+## What remains outside this prototype
 
-- 两家须在线下真实预留席位；合约不能保证机构履约。
-- 一地址至多一席不等于一自然人一席；资格与身份由机构核验。
-- 链上地址、资格掩码和名额关系可关联；不写入姓名、手机或证件资料。
-- `.mojo/`、`.env`、私钥、原始附件与本地工具不进入仓库或部署包。
-- 往届比较有覆盖限制，不宣称全球首创或已查尽全部项目。
+- Real organizers must reserve capacity and honor the final list. The blockchain cannot enforce physical admission.
+- One seat per address is not one seat per human. Organizers must check identities and eligibility.
+- Wallet addresses, eligibility, and seat relationships are public. Names, phone numbers, and identity documents stay off-chain.
+- No real-user study has been completed. There is no payment, tradable ticket, token, attendance deposit, check-in, production identity service, or notification queue.
+- `.mojo/`, `.env`, private keys, original attachments, and local tools stay out of the public repository and deployment bundle.
 
-来源与范围见 [来源记录](docs/sources.md)。
+## Publishing and entry status
 
-## 同步与发布
+GitHub Actions runs the tests, local bytecode demo, event reconstruction, and build. It does not hold MOJO credentials or a deployment private key. Sites publication uses `pnpm build` and `pnpm stage:sites` to prepare an isolated source checkout, then the native Sites workflow, retaining the identity and audience in `config/site.json`.
 
-已连接 `origin/main`。每次代码提交推送后，GitHub Actions 自动运行测试、本地字节码演示、事件复算和静态构建。它不持有 MOJO 凭证或部署私钥。
-
-Sites 更新使用 `pnpm build`、`pnpm stage:sites` 准备隔离的发布源码，再由 Sites 原生工具同步和发布，保留 `config/site.json` 中的项目身份与访问范围。暂存不等于发布；不会在后台悄悄同步本地未提交文件。
+The app is public. **The user will submit the hackathon entry personally.** Prepared [entry copy](docs/submission.md) and [structured entry](docs/submission.json) do not mean that an entry has been submitted.

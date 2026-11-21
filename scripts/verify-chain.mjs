@@ -4,6 +4,7 @@ import { monadTestnet } from 'viem/chains';
 import { compile } from './compile.mjs';
 import { verifyDeployment } from '../lib/deployment.mjs';
 import { verifyEvidence } from '../lib/replay.mjs';
+import { getLogsBounded } from '../lib/log-ranges.mjs';
 
 try {
   const config = JSON.parse(fs.readFileSync(new URL('../config/monad.testnet.json', import.meta.url)));
@@ -13,7 +14,7 @@ try {
   const toBlock = BigInt(deployment.finalizedBlock), events = [];
   for (let fromBlock = BigInt(config.deploymentBlock); fromBlock <= toBlock; fromBlock += 1000n) {
     const end = fromBlock + 999n < toBlock ? fromBlock + 999n : toBlock;
-    const logs = await client.getLogs({ address: config.contractAddress, fromBlock, toBlock: end });
+    const logs = await getLogsBounded(client, { address: config.contractAddress, fromBlock, toBlock: end });
     events.push(...logs.map(log => ({ ...decodeEventLog({ abi: artifact.abi, data: log.data, topics: log.topics }), transactionHash: log.transactionHash, blockNumber: log.blockNumber, logIndex: log.logIndex })));
   }
   const finalSeats = await client.readContract({ address: config.contractAddress, abi: artifact.abi, functionName: 'getSeats', blockNumber: toBlock });

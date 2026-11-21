@@ -9,7 +9,7 @@
   },
   "packageManager": "pnpm@11.25.0",
   "scripts": {
-    "dev": "node scripts/serve.mjs",
+    "dev": "node scripts/build-web.mjs && node scripts/serve.mjs",
     "build": "node scripts/compile.mjs && node scripts/build-web.mjs",
     "build:contracts": "node scripts/compile.mjs",
     "build:web": "node scripts/build-web.mjs",
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@openzeppelin/contracts": "5.4.0",
+    "esbuild": "0.25.12",
     "hardhat": "3.0.9",
     "solc": "0.8.30",
     "viem": "2.37.9",

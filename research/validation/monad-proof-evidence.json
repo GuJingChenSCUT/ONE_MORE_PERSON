@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "mode": "monad-testnet",
+  "chainId": 10143,
+  "fixtureType": "single-controller-fictional-actors",
+  "generatedAt": "2026-11-21T07:50:00.892Z",
+  "contractAddress": "0x7D7DAB361AB5cBA009541491886b4dC9B16c450b",
+  "deployment": {
+    "schemaVersion": 1,
+    "chainId": 10143,
+    "mode": "fictional-testnet-proof",
+    "verifiedAt": "2026-11-21T07:49:54.146Z",
+    "deploymentMethod": "createx-fixture",
+    "controller": "0x59bf32CF785cC9Cc515080d0C6fe890C65d741a0",
+    "fixture": "0x6Ac08dceC963e381D12355C05a016F5229b1F2e3",
+    "relay": "0x7D7DAB361AB5cBA009541491886b4dC9B16c450b",
+    "secondHost": "0x6443BD3734365BC505d1b3E1f619F0A1c5C65eCc",
+    "lin": "0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7",
+    "chen": "0x59E513f81Ec2975259776E0dfC68006981BA115c",
+    "yu": "0xC29c08C68B354D4B6FCFcB562C3e62b7c9C1124F",
+    "deadline": "1795333291",
+    "deploymentHash": "0x00635026bd8c5b2291043c660616ad5386ed568794892d1036ff8efce72aa70c",
+    "deploymentBlock": "81521195",
+    "deploymentGasLimit": "4034031",
+    "deploymentGasUsed": "4034031",
+    "effectiveGasPrice": "102000000000",
+    "finalizedBlock": "81522696",
+    "finalizedBlockHash": "0x245d457ea4fd051ac471bb0cc76413d742e373136abd02e7be671bfbfebcde3f",
+    "fixtureRuntimeHash": "0xfd981c9bb16fd18e9aaec99272f028fafc8879142ffc3d279a6c69d7db5c65d5",
+    "relayRuntimeHash": "0xc5b5c13e3777fd2588bdd64a58d67c1500fc632bbde8b54d787b791eb339b77e",
+    "warning": "Single controller and fictional contract-wallet actors; not independent human signatures, real seats, or a throughput benchmark."
+  },
+  "proofHash": "0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de",
+  "proofBlock": "81521526",
+  "proofBlockHash": "0xa92335eded20043c866c5fd0b43b5ee9683d92c55563671be7004ba6461d3adf",
+  "proofGasLimit": "568785",
+  "proofGasUsed": "568785",
+  "proofEffectiveGasPrice": "102000000000",
+  "fromBlock": "81521195",
+  "toBlock": "81521526",
+  "finalSeats": [
+    "0xC29c08C68B354D4B6FCFcB562C3e62b7c9C1124F",
+    "0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7",
+    "0x59E513f81Ec2975259776E0dfC68006981BA115c"
+  ],
+  "events": [
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "1",
+        "holder": "0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7"
+      },
+      "transactionHash": "0x00635026bd8c5b2291043c660616ad5386ed568794892d1036ff8efce72aa70c",
+      "blockNumber": "81521195",
+      "logIndex": 40
+    },
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "2",
+        "holder": "0x59E513f81Ec2975259776E0dfC68006981BA115c"
+      },
+      "transactionHash": "0x00635026bd8c5b2291043c660616ad5386ed568794892d1036ff8efce72aa70c",
+      "blockNumber": "81521195",
+      "logIndex": 41
+    },
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "3",
+        "holder": "0x0000000000000000000000000000000000000000"
+      },
+      "transactionHash": "0x00635026bd8c5b2291043c660616ad5386ed568794892d1036ff8efce72aa70c",
+      "blockNumber": "81521195",
+      "logIndex": 42
+    },
+    {
+      "eventName": "PoolApproved",
+      "args": {
+        "host": "0x6Ac08dceC963e381D12355C05a016F5229b1F2e3",
+        "configHash": "0xc39db5e268c77791c04b96ebc8fa266184eef3c26a749b0ca33dbfe750014581"
+      },
+      "transactionHash": "0x00635026bd8c5b2291043c660616ad5386ed568794892d1036ff8efce72aa70c",
+      "blockNumber": "81521195",
+      "logIndex": 43
+    },
+    {
+      "eventName": "PoolApproved",
+      "args": {
+        "host": "0x6443BD3734365BC505d1b3E1f619F0A1c5C65eCc",
+        "configHash": "0xc39db5e268c77791c04b96ebc8fa266184eef3c26a749b0ca33dbfe750014581"
+      },
+      "transactionHash": "0x00635026bd8c5b2291043c660616ad5386ed568794892d1036ff8efce72aa70c",
+      "blockNumber": "81521195",
+      "logIndex": 44
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0xb8c7a337086d427cdea8926a355e52ac078332667c4320c81ce6f31e742f8777",
+        "participant": "0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7",
+        "fromSeat": "1",
+        "toSeat": "2",
+        "nonce": "1"
+      },
+      "transactionHash": "0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de",
+      "blockNumber": "81521526",
+      "logIndex": 6
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0xb8c7a337086d427cdea8926a355e52ac078332667c4320c81ce6f31e742f8777",
+        "participant": "0x59E513f81Ec2975259776E0dfC68006981BA115c",
+        "fromSeat": "2",
+        "toSeat": "3",
+        "nonce": "1"
+      },
+      "transactionHash": "0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de",
+      "blockNumber": "81521526",
+      "logIndex": 7
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0xb8c7a337086d427cdea8926a355e52ac078332667c4320c81ce6f31e742f8777",
+        "participant": "0xC29c08C68B354D4B6FCFcB562C3e62b7c9C1124F",
+        "fromSeat": "0",
+        "toSeat": "1",
+        "nonce": "1"
+      },
+      "transactionHash": "0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de",
+      "blockNumber": "81521526",
+      "logIndex": 8
+    },
+    {
+      "eventName": "PlanExecuted",
+      "args": {
+        "planHash": "0xb8c7a337086d427cdea8926a355e52ac078332667c4320c81ce6f31e742f8777",
+        "moved": "3",
+        "additionalPeople": "1"
+      },
+      "transactionHash": "0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de",
+      "blockNumber": "81521526",
+      "logIndex": 9
+    }
+  ],
+  "proofEvents": [
+    {
+      "eventName": "RejectionProved",
+      "args": {
+        "reason": "0x376d72d649f675cb77de9c41c3bb9911c4dbd2c1beb2126bdb6df2e328ebc331",
+        "revertSelector": "0x8baa579f",
+        "seatsHash": "0x2da36cdb3cc93e9ea0784702c8c34951c036a6c960990ee909126e782b3f2fc2"
+      }
+    },
+    {
+      "eventName": "RejectionProved",
+      "args": {
+        "reason": "0x706f77484a116797aa85a8cd429509d18b8f4b13dcf5ca337548de5ef1ff2427",
+        "revertSelector": "0x562a8d38",
+        "seatsHash": "0xe472f40708ed1447433aec1e8193c49534ca4470c28dea0dd588cc6b94d74aff"
+      }
+    },
+    {
+      "eventName": "ProofCompleted",
+      "args": {
+        "assignedBefore": "2",
+        "assignedAfter": "3"
+      }
+    }
+  ],
+  "warning": "Single controller and fictional contract-wallet actors; not independent human signatures, real seats, or a throughput benchmark."
+}

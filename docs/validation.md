@@ -1,4 +1,16 @@
-# 验证记录 · 2026-11-21
+# Verification status · 21 November 2026
+
+The current release is documented in [final QC](../research/validation/final-qc.md), the [reviewer guide](QC-review.en.md), and [real testnet proof](testnet-proof.md).
+
+- 32 automated tests passed; final wallet readiness checks passed separately.
+- The complete wallet interface passed browser testing against an isolated local EVM: two host approvals, three distinct signatures, cancellation, old-plan rejection, fresh signatures, and successful relay.
+- Two real Monad Testnet fixtures are deployed and independently verified. The latest proof includes missing consent, actual nonce cancellation, stale-plan rejection, fresh consent, execution, and replay rejection.
+- English/Chinese pages, mobile layouts, proof downloads, and browser RPC rechecking were tested. Public Site version 3 is published.
+- The local browser test is not a public-Monad wallet run. No independent human pilot or application performance benchmark was run. The user will submit the entry personally.
+
+## Earlier checkpoint — retained as history
+
+The items below describe the earlier build before the real testnet proofs and wallet interface were added.
 
 - 本地 `pnpm test`：19 项通过，包含 13 项合约场景、ERC-1271 测试夹具及模型、复算检查（测试框架统计包含父测试）。单控制者的虚构夹具不代表真实参与者签名。
 - `pnpm demo:local`：部署编译后的字节码到进程内 EVM（31337）；缺签交易回滚，完整方案成功；同样 3 席从 2 人变 3 人。

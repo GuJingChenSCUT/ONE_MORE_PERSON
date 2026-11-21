@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "mode": "monad-testnet",
+  "chainId": 10143,
+  "fixtureType": "single-controller-fictional-actors",
+  "generatedAt": "2026-11-21T08:10:22.979Z",
+  "contractAddress": "0xeAC3414f47aD5Fd2F12B8A88575eBc04c4EaF378",
+  "deployment": {
+    "schemaVersion": 1,
+    "chainId": 10143,
+    "mode": "fictional-testnet-proof",
+    "verifiedAt": "2026-11-21T08:10:12.737Z",
+    "deploymentMethod": "createx-fixture",
+    "controller": "0x59bf32CF785cC9Cc515080d0C6fe890C65d741a0",
+    "fixture": "0xBBBdddD59037f1656478b7f8F9A805a887ff26Eb",
+    "relay": "0xeAC3414f47aD5Fd2F12B8A88575eBc04c4EaF378",
+    "secondHost": "0x219628DD1Fbf1AD6692389D55c73943f427365f5",
+    "lin": "0xA3b350631ffe9E52D127e6bD65924e93568df046",
+    "chen": "0x9C58AD9b6d110605E571BeFa9AF35EC2A9B4239C",
+    "yu": "0x62d08594b144315487775eE7e4B7CB327e4E5AA3",
+    "deadline": "1795334817",
+    "deploymentHash": "0x6372b72935ce6ba2b75f5ce6e8ccb9938dad5baa22ae4c618100c66e1bf5ef1c",
+    "deploymentBlock": "81525968",
+    "deploymentGasLimit": "4438126",
+    "deploymentGasUsed": "4438126",
+    "effectiveGasPrice": "102000000000",
+    "finalizedBlock": "81526518",
+    "finalizedBlockHash": "0xac61dbee3b43e230d289d2ca96fb6fac8c514cd3ee9aaa3b5a76b89c0507970a",
+    "fixtureRuntimeHash": "0x35143d60c532878327052330ef3773a60057c4e86bddfb8208a273ae5c486db8",
+    "relayRuntimeHash": "0xbb9a0f4a5e9b3a8f316e90b34e24bde65fcdcbbbdd98b3eb930ff316b9f39aed",
+    "warning": "Single controller and fictional contract-wallet actors; not independent human signatures, real seats, or a throughput benchmark."
+  },
+  "proofHash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+  "proofBlock": "81526321",
+  "proofBlockHash": "0x756cc0686a68fe001f8b55186c331d58ef713e928079231d5925be956cd80b57",
+  "proofGasLimit": "729760",
+  "proofGasUsed": "729760",
+  "proofEffectiveGasPrice": "102000000000",
+  "fromBlock": "81525968",
+  "toBlock": "81526321",
+  "finalSeats": [
+    "0x62d08594b144315487775eE7e4B7CB327e4E5AA3",
+    "0xA3b350631ffe9E52D127e6bD65924e93568df046",
+    "0x9C58AD9b6d110605E571BeFa9AF35EC2A9B4239C"
+  ],
+  "events": [
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "1",
+        "holder": "0xA3b350631ffe9E52D127e6bD65924e93568df046"
+      },
+      "transactionHash": "0x6372b72935ce6ba2b75f5ce6e8ccb9938dad5baa22ae4c618100c66e1bf5ef1c",
+      "blockNumber": "81525968",
+      "logIndex": 12
+    },
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "2",
+        "holder": "0x9C58AD9b6d110605E571BeFa9AF35EC2A9B4239C"
+      },
+      "transactionHash": "0x6372b72935ce6ba2b75f5ce6e8ccb9938dad5baa22ae4c618100c66e1bf5ef1c",
+      "blockNumber": "81525968",
+      "logIndex": 13
+    },
+    {
+      "eventName": "SeatSeeded",
+      "args": {
+        "seat": "3",
+        "holder": "0x0000000000000000000000000000000000000000"
+      },
+      "transactionHash": "0x6372b72935ce6ba2b75f5ce6e8ccb9938dad5baa22ae4c618100c66e1bf5ef1c",
+      "blockNumber": "81525968",
+      "logIndex": 14
+    },
+    {
+      "eventName": "PoolApproved",
+      "args": {
+        "host": "0xBBBdddD59037f1656478b7f8F9A805a887ff26Eb",
+        "configHash": "0xb5111c8330b96910e32f29665e04e1fb337c86121339c7e537ed26a7a5d4bf92"
+      },
+      "transactionHash": "0x6372b72935ce6ba2b75f5ce6e8ccb9938dad5baa22ae4c618100c66e1bf5ef1c",
+      "blockNumber": "81525968",
+      "logIndex": 15
+    },
+    {
+      "eventName": "PoolApproved",
+      "args": {
+        "host": "0x219628DD1Fbf1AD6692389D55c73943f427365f5",
+        "configHash": "0xb5111c8330b96910e32f29665e04e1fb337c86121339c7e537ed26a7a5d4bf92"
+      },
+      "transactionHash": "0x6372b72935ce6ba2b75f5ce6e8ccb9938dad5baa22ae4c618100c66e1bf5ef1c",
+      "blockNumber": "81525968",
+      "logIndex": 16
+    },
+    {
+      "eventName": "ConsentCancelled",
+      "args": {
+        "participant": "0x9C58AD9b6d110605E571BeFa9AF35EC2A9B4239C",
+        "nonce": "1"
+      },
+      "transactionHash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+      "blockNumber": "81526321",
+      "logIndex": 45
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0x5fc3fefb6403e046bf612f96dd88ecf67035bc744d8c87bff98c48eb04fe9b42",
+        "participant": "0xA3b350631ffe9E52D127e6bD65924e93568df046",
+        "fromSeat": "1",
+        "toSeat": "2",
+        "nonce": "1"
+      },
+      "transactionHash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+      "blockNumber": "81526321",
+      "logIndex": 48
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0x5fc3fefb6403e046bf612f96dd88ecf67035bc744d8c87bff98c48eb04fe9b42",
+        "participant": "0x9C58AD9b6d110605E571BeFa9AF35EC2A9B4239C",
+        "fromSeat": "2",
+        "toSeat": "3",
+        "nonce": "2"
+      },
+      "transactionHash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+      "blockNumber": "81526321",
+      "logIndex": 49
+    },
+    {
+      "eventName": "SeatMoved",
+      "args": {
+        "planHash": "0x5fc3fefb6403e046bf612f96dd88ecf67035bc744d8c87bff98c48eb04fe9b42",
+        "participant": "0x62d08594b144315487775eE7e4B7CB327e4E5AA3",
+        "fromSeat": "0",
+        "toSeat": "1",
+        "nonce": "1"
+      },
+      "transactionHash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+      "blockNumber": "81526321",
+      "logIndex": 50
+    },
+    {
+      "eventName": "PlanExecuted",
+      "args": {
+        "planHash": "0x5fc3fefb6403e046bf612f96dd88ecf67035bc744d8c87bff98c48eb04fe9b42",
+        "moved": "3",
+        "additionalPeople": "1"
+      },
+      "transactionHash": "0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7",
+      "blockNumber": "81526321",
+      "logIndex": 51
+    }
+  ],
+  "proofEvents": [
+    {
+      "eventName": "RejectionProved",
+      "args": {
+        "reason": "0x376d72d649f675cb77de9c41c3bb9911c4dbd2c1beb2126bdb6df2e328ebc331",
+        "revertSelector": "0x8baa579f",
+        "seatsHash": "0x0e130710bb7e6871e759c820e8dbb0d154e095a1dc6909be3736ce86b5ff9029"
+      }
+    },
+    {
+      "eventName": "WithdrawalProved",
+      "args": {
+        "participant": "0x9C58AD9b6d110605E571BeFa9AF35EC2A9B4239C",
+        "oldNonce": "0",
+        "newNonce": "1",
+        "seatsHash": "0x0e130710bb7e6871e759c820e8dbb0d154e095a1dc6909be3736ce86b5ff9029"
+      }
+    },
+    {
+      "eventName": "RejectionProved",
+      "args": {
+        "reason": "0x1d0e21d5e4f7723e2f2f85cbf0e6ffeaf5b986383237193d14f81725203046c3",
+        "revertSelector": "0x562a8d38",
+        "seatsHash": "0x0e130710bb7e6871e759c820e8dbb0d154e095a1dc6909be3736ce86b5ff9029"
+      }
+    },
+    {
+      "eventName": "RejectionProved",
+      "args": {
+        "reason": "0x706f77484a116797aa85a8cd429509d18b8f4b13dcf5ca337548de5ef1ff2427",
+        "revertSelector": "0x562a8d38",
+        "seatsHash": "0xc2bd67ddea7b98ddcd0b2c889da103b57489470b44230bb90180d36510332309"
+      }
+    },
+    {
+      "eventName": "ProofCompleted",
+      "args": {
+        "assignedBefore": "2",
+        "assignedAfter": "3"
+      }
+    }
+  ],
+  "warning": "Single controller and fictional contract-wallet actors; not independent human signatures, real seats, or a throughput benchmark."
+}

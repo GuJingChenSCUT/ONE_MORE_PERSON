@@ -1,0 +1,77 @@
+{
+  "mode": "local-browser-harness",
+  "chainId": 10143,
+  "warning": "Isolated Hardhat chain uses testnet chainId only to exercise the exact signature domain. NOT Monad; no measured network finality.",
+  "accounts": [
+    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+    "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+    "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc"
+  ],
+  "requests": [
+    {
+      "type": "transaction",
+      "hash": "0x1964ceff6cc4a18da37e84370c1e946629d74fd7b801f3982bb6392392e289fc",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": null,
+      "at": "2026-11-21T08:11:26.584Z"
+    },
+    {
+      "type": "transaction",
+      "hash": "0x6a3ad4e6f9cf8a04b36c2814ef955cabf29432050de0c7c4778f06f6bda43216",
+      "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "at": "2026-11-21T08:12:21.202Z"
+    },
+    {
+      "type": "transaction",
+      "hash": "0x7edc17bd90723e0b5f5d44e0ad15eeabd00a06f600be76a6cb5dee2ff99d8810",
+      "from": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "at": "2026-11-21T08:12:48.011Z"
+    },
+    {
+      "type": "typed-signature",
+      "account": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+      "at": "2026-11-21T08:12:53.075Z"
+    },
+    {
+      "type": "typed-signature",
+      "account": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "at": "2026-11-21T08:13:02.391Z"
+    },
+    {
+      "type": "typed-signature",
+      "account": "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+      "at": "2026-11-21T08:13:05.066Z"
+    },
+    {
+      "type": "transaction",
+      "hash": "0xa4773f733e623fd0cca1f396f336c9eb3594ee02b9ffbedf354c4d1e27d5c765",
+      "from": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "at": "2026-11-21T08:13:16.644Z"
+    },
+    {
+      "type": "typed-signature",
+      "account": "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+      "at": "2026-11-21T08:14:08.086Z"
+    },
+    {
+      "type": "typed-signature",
+      "account": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+      "at": "2026-11-21T08:14:20.242Z"
+    },
+    {
+      "type": "typed-signature",
+      "account": "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+      "at": "2026-11-21T08:14:23.068Z"
+    },
+    {
+      "type": "transaction",
+      "hash": "0x08eb93a7b4b18ca8c68faa3efe539f310b9cf3b41e56355aa479475b69236f38",
+      "from": "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+      "to": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      "at": "2026-11-21T08:14:24.317Z"
+    }
+  ]
+}

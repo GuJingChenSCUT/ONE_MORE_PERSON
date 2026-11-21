@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-21T08:04:14.571Z",
+  "mode": "fictional-testnet-proof",
+  "chainId": 10143,
+  "controller": "0x59bf32cf785cc9cc515080d0c6fe890c65d741a0",
+  "factory": "0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed",
+  "factoryCodeHash": "0xbd8a7ea8cfca7b4e5f5041d7d4b17bc317c5ce42cfbc42066a00cf26b43eb53f",
+  "salt": "0x000000000000000000000000000000000000000001a3d43d37364dc9575c9845",
+  "guardedSalt": "0x3af278d0f2d9b6c81adc549f6acc6864e0b587bd51c9cde8a1c9ed585aa7e21c",
+  "predicted": "0xBBBdddD59037f1656478b7f8F9A805a887ff26Eb",
+  "initCodeHash": "0x8984a90aed2b346ba70e8760c22bcb48131fc001f75a100fb40a0182112447b7",
+  "gasEstimate": "4438126",
+  "gasPrice": "102000000000",
+  "balance": "1530512768000000000",
+  "deployed": false,
+  "compiler": "0.8.30+commit.73712a01.Emscripten.clang",
+  "warning": "All actors are controlled by one fixture; not independent humans or real institutional seats."
+}

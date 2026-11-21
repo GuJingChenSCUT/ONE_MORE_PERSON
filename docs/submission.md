@@ -1,19 +1,35 @@
-# MOJO 项目提交稿
+# MOJO entry — ready-to-edit copy
 
-活动：Monad Blitz@广州（eventId=18）。截止：2026-11-21 18:30，北京时间。
+Event: **Monad Blitz@Guangzhou**, event ID 18. Deadline: **21 November 2026, 18:30 Beijing time**.
 
-项目名：**多一个人 · 保底换位**
+Name: **One More Person · 多一个人**
 
-简介：
+## English description
 
-多一个人帮助两家独立活动主办方安全协调已分配的名额。参加者想换到更合适的场次，不必先退掉手上的位置：所有人签署同一份完整方案，只有每份同意、资格、持有状态与截止条件都成立，合约才一次性更新全部名额；缺签、撤回或过期时整份方案失败，原位保留。以空位为终点的接力还可能让一名候补者参加，纯互换则不增加人数。
+Change your workshop time without gambling away the seat you already have.
 
-本次交付包括可交互的机制演示、Solidity 原子换位合约、EIP-712 签名消息、独立事件复算器、测试与持续集成。双主办方共同确认固定配置；个人身份资料留在机构侧。网页使用虚构场景并明确标注模拟操作。本地 EVM 已执行成功和失败两条路径，事件复算与合约快照一致；Monad Testnet（chainId 10143）已完成网络只读核验，应用合约尚未部署。测试网钱包接入、真实机构试点、代付队列与签到属于后续实施，不将模拟数字宣传为链上性能。
+One More Person coordinates conditional seat exchanges between independent organizers. Each participant signs the same complete plan. Only when every consent, current booking, eligibility rule, nonce, and deadline is valid does the contract update every seat together. A rejected plan leaves existing seats unchanged. A relay ending in an empty seat can also admit someone from a waitlist; a pure swap adds no attendees.
 
-GitHub：https://github.com/GuJingChenSCUT/ONE_MORE_PERSON
+The prototype includes a responsive mechanism demo, a judge-led failure challenge, a Solidity contract, EIP-712 consent, automated local EVM tests, and independent event reconstruction. Two hosts approve one fixed pool configuration. Personal identity checks remain with organizers; public wallet and seat relationships are visible on-chain.
 
-演示地址：https://one-more-person-guangzhou.justdog33.chatgpt.site
+The unmodified product contract runs on Monad Testnet (10143). The latest verified proof rejects missing consent, cancels a holder's consent without moving their seat, rejects the old plan, completes a freshly approved relay, and rejects replay. It is one successful transaction with three rejected internal calls, using fictional contract-wallet actors under one controller. The complete wallet browser flow also passed locally with three EOA test accounts: deployment, two host approvals, signatures, cancellation, old-plan rejection, fresh signatures, and successful execution. That browser test used isolated Hardhat, not Monad; independent-wallet execution on public Monad and a human pilot remain pending.
 
-截图：`docs/screenshots/relay-success.jpg`；可附撤回失败路径和移动端截图。
+The intended use is independent organizers accepting shared execution rules. A single organizer's database is usually simpler. The next validation is a real two-organizer pilot. No application TPS, real-user traction, or globally unique algorithm is claimed.
 
-提交前状态：网站已发布并公开访问；截图已上传并经 MOJO 确认。用户明确选择“只公开演示，暂不提交”，因此本稿保留待用，未执行项目提交。将来 MOJO 提交成功后进入 pending；不代表入选。
+## 中文简介
+
+换个时间，不必拿已有席位冒险。多一个人帮助独立主办方协调条件换位：每个人同意同一完整方案，只有签名、资格、当前持有状态、nonce 和截止条件全部成立，才一次更新所有位置；失败时原位保留。以空位为终点的接力可能让候补参加，纯互换不增加人数。
+
+原型包含交互演示、失败挑战、Solidity 合约、EIP-712 签名、自动测试与事件复算。产品合约已部署 Monad Testnet（10143），最新证明记录缺签被拒、撤回不丢席位、旧方案被拒、重新同意后接力成功，以及重放被拒。一笔成功外层交易包含三个被拒的内部调用，虚构合约钱包由同一控制者管理，不代表真人试点。完整钱包浏览器流程也已使用三个 EOA 测试账户通过本地验收：建池、双方确认、签名、撤回、旧方案拒绝、重新签名和成功执行。这次浏览器验收运行在隔离的 Hardhat，不是 Monad；公共测试网独立钱包全程操作与真人试点仍待完成。机构须真实预留名额并履约；身份信息留在机构侧，链上地址及名额关系公开。单一机构使用数据库通常更简单，不宣称应用 TPS、用户采用或全球首创。
+
+## Links and evidence
+
+- Demo: [one-more-person-guangzhou.justdog33.chatgpt.site](https://one-more-person-guangzhou.justdog33.chatgpt.site)
+- Source: [GuJingChenSCUT/ONE_MORE_PERSON](https://github.com/GuJingChenSCUT/ONE_MORE_PERSON)
+- [Pitch](pitch.en.md), [judge runbook](judge-demo.md), [QC scope](QC-review.en.md), [testnet proof](testnet-proof.md).
+- [Latest withdrawal proof](https://testnet.monadvision.com/tx/0x4694e41130890603ecc7b979a5e92880099fb3b66a46649a7a1ff735c46746d7). The earlier proof is retained in [testnet-proof.md](testnet-proof.md).
+- `docs/submission.json` holds the structured English entry. Its two screenshot references are the current English homepage and withdrawal challenge, uploaded to your MOJO account. Uploading images does not submit the competition entry.
+
+## Submission status
+
+The site is public. **The user explicitly chose “Prepare everything; I will submit it myself” on 21 November.** This supersedes any automatic deadline submission reminder: no MOJO entry is submitted by this workflow. Review the final wallet QC status and published pages before copying the entry. A later successful submission would still be subject to the event's review process.

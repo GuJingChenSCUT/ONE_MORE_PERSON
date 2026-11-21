@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-11-21T07:44:20.769Z",
+  "chainId": 10143,
+  "results": [
+    {
+      "name": "RelayProofFixture",
+      "address": "0x6Ac08dceC963e381D12355C05a016F5229b1F2e3",
+      "httpStatus": 200,
+      "result": {
+        "success": true,
+        "verified": 2,
+        "total": 2,
+        "results": {
+          "monadvision": {
+            "status": "success",
+            "message": "Verified with perfect match",
+            "url": "https://testnet.monadvision.com/address/0x6Ac08dceC963e381D12355C05a016F5229b1F2e3"
+          },
+          "monadscan": {
+            "status": "success",
+            "message": "Pass - Verified",
+            "guid": "lfgcmctwmzdv3k1wdbwjeqv3khxujnx5xz9izanrveaciexzz5",
+            "url": "https://testnet.monadscan.com/address/0x6Ac08dceC963e381D12355C05a016F5229b1F2e3"
+          }
+        }
+      }
+    },
+    {
+      "name": "SafeSeatRelay",
+      "address": "0x7D7DAB361AB5cBA009541491886b4dC9B16c450b",
+      "httpStatus": 200,
+      "result": {
+        "success": true,
+        "verified": 2,
+        "total": 2,
+        "results": {
+          "monadvision": {
+            "status": "success",
+            "message": "Verified with perfect match",
+            "url": "https://testnet.monadvision.com/address/0x7D7DAB361AB5cBA009541491886b4dC9B16c450b"
+          },
+          "monadscan": {
+            "status": "success",
+            "message": "Pass - Verified",
+            "guid": "wjwx71ay4jfndxssff6t3twap5dxd1gtpphi2fqkbknaujn7vh",
+            "url": "https://testnet.monadscan.com/address/0x7D7DAB361AB5cBA009541491886b4dC9B16c450b"
+          }
+        }
+      }
+    },
+    {
+      "name": "ProofActor",
+      "address": "0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7",
+      "httpStatus": 200,
+      "result": {
+        "success": true,
+        "verified": 2,
+        "total": 2,
+        "results": {
+          "monadvision": {
+            "status": "success",
+            "message": "Verified with perfect match",
+            "url": "https://testnet.monadvision.com/address/0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7"
+          },
+          "monadscan": {
+            "status": "success",
+            "message": "Pass - Verified",
+            "guid": "snjhnbem82mdm33mzpfzrzrkhhxvg6i6tk8ja72h5fxnyyzjy7",
+            "url": "https://testnet.monadscan.com/address/0x0C344c8B1Ad3Cbd5fcF5E390f381D994f3F033F7"
+          }
+        }
+      }
+    }
+  ]
+}

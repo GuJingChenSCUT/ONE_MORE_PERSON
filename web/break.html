@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d0c12">
+  <title>Try to break it · One More Person</title>
+  <meta name="description" content="A judge-led challenge for protected seat swaps. Try missing consent, withdrawal and a valid relay, then inspect real Monad testnet evidence.">
+  <link rel="stylesheet" href="break.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">+</span><span>ONE MORE PERSON<small data-i18n="brandSub">Keep your place. Open a possibility.</small></span></a>
+    <nav aria-label="Page navigation"><a href="live.html" data-i18n="navWallet">Wallet demo</a><a href="pitch.html" data-i18n="navPitch">The pitch</a><button id="language" type="button" lang="zh-CN">中文</button></nav>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="challenge-title">
+      <div><p class="eyebrow" data-i18n="eyebrow">MONAD BLITZ / THE JUDGE CHALLENGE</p><h1 id="challenge-title"><span data-i18n="title1">Try to break it.</span><br><em data-i18n="title2">Keep the seat.</em></h1><p class="intro-copy" data-i18n="intro">Changing your workshop time shouldn’t mean gambling away your booking. Make a swap fail and see what happens to the seats.</p></div>
+      <aside class="promise-card"><div class="promise-icon" aria-hidden="true">◇</div><p data-i18n="promiseLabel">THE ONE PROMISE</p><h2 data-i18n="promiseTitle">Your old seat stays yours until the whole plan succeeds.</h2><span data-i18n="promiseScope">Atomic coordination. No token required.</span></aside>
+    </section>
+
+    <section id="challenge" class="challenge-section" aria-labelledby="choose-title">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="sandboxEyebrow">FIRST, TEST THE RULE</p><h2 id="choose-title" data-i18n="chooseTitle">You choose what goes wrong.</h2></div><span class="scope-badge" data-i18n="simulationBadge">SIMULATION · NO TRANSACTION</span></div>
+      <p class="section-copy" data-i18n="scenario">Alice has Saturday morning. Bob has Saturday afternoon. Sunday has one empty seat. Charlie is waiting for Saturday morning. All people and seats are fictional.</p>
+      <div class="challenge-buttons" aria-label="Challenge choices">
+        <button id="test-missing" data-challenge="missing" aria-pressed="false"><span class="button-symbol" aria-hidden="true">−</span><strong data-i18n="missingButton">Test missing consent</strong><span data-i18n="missingSub">Charlie has not agreed.</span></button>
+        <button id="test-cancel" data-challenge="cancel" aria-pressed="false"><span class="button-symbol" aria-hidden="true">×</span><strong data-i18n="cancelButton">Withdraw, then try old plan</strong><span data-i18n="cancelSub">Bob changes his mind.</span></button>
+        <button id="test-valid" data-challenge="valid" aria-pressed="false"><span class="button-symbol" aria-hidden="true">✓</span><strong data-i18n="validButton">Run valid relay</strong><span data-i18n="validSub">Everyone agrees to the same plan.</span></button>
+      </div>
+      <p class="fresh-scene-note" data-i18n="freshScene">Each choice starts a fresh fictional scene, so you can compare the outcomes.</p>
+
+      <div class="challenge-board" id="challenge-board" data-outcome="idle">
+        <div class="board-title"><span id="outcome-label" class="outcome-label" data-i18n="readyLabel">READY TO CHALLENGE</span><div class="seat-count"><strong id="occupancy">2</strong><span data-i18n="ofThree">of 3 seats occupied</span></div></div>
+        <div class="snapshots">
+          <section aria-labelledby="before-title"><h3 id="before-title" data-i18n="beforeTitle">Before the attempt</h3><div id="before-seats" class="seat-list"></div></section>
+          <div class="snapshot-divider" aria-hidden="true"><span>→</span></div>
+          <section aria-labelledby="after-title"><h3 id="after-title" data-i18n="afterTitle">After the attempt</h3><div id="after-seats" class="seat-list"></div></section>
+        </div>
+        <div class="outcome-message" role="status" aria-live="polite" aria-atomic="true"><span id="outcome-symbol" aria-hidden="true">◇</span><div><h3 id="outcome-title"></h3><p id="outcome-detail"></p></div></div>
+        <ol id="trace" class="trace"></ol>
+        <div class="board-bottom"><span id="check-summary"></span><button id="reset-challenge" data-i18n="resetButton">Reset challenge</button></div>
+      </div>
+      <div class="next-step"><p data-i18n="walletInvitation">Ready to replace simulated agreement with your own wallet?</p><a href="live.html#challenge" data-i18n="walletLink">Open the real wallet flow</a></div>
+    </section>
+
+    <section class="chain-section" aria-labelledby="chain-title">
+      <div class="section-head"><div><p class="eyebrow" data-i18n="chainEyebrow">THEN, INSPECT THE EVIDENCE</p><h2 id="chain-title" data-i18n="chainTitle">A real transaction. A checkable result.</h2></div><span class="scope-badge chain-badge">MONAD TESTNET · 10143</span></div>
+      <p class="section-copy" data-i18n="chainIntro">This separate on-chain test uses contract-wallet actors controlled by one fixture. It proves contract behavior, not independent people or real workshop attendance.</p>
+      <article class="proof-card cancellation-proof" id="cancellation-card" hidden aria-labelledby="cancellation-title">
+        <span class="proof-label" data-i18n="cancellationEyebrow">LATEST CONTRACT TEST</span><h3 id="cancellation-title" data-i18n="cancellationTitle">Withdraw. Reject the old plan. Re-sign.</h3><p id="cancellation-description"></p>
+        <div class="proof-details"><div><span data-i18n="proofBlockLabel">Proof block</span><strong id="cancellation-block">—</strong></div><div><span data-i18n="gasLabel">Outer transaction gas limit</span><strong id="cancellation-gas">—</strong></div><div><span data-i18n="rejectionsLabel">Rejected internal calls</span><strong id="cancellation-rejections">—</strong></div></div>
+        <div id="cancellation-result" class="verification-status" role="status"></div><div id="cancellation-links" class="proof-actions"></div><div id="cancellation-rpc-status" class="rpc-status" role="status" aria-live="polite" hidden></div>
+        <p class="proof-footnote" data-i18n="cancellationRpcNote">Read-only verification. Any elapsed time shown measures RPC reads, not the transaction’s confirmation speed.</p>
+      </article>
+      <details class="earlier-proof"><summary data-i18n="earlierProof">Earlier proof: missing consent and replay</summary>
+      <article class="proof-card" aria-labelledby="proof-title">
+        <div class="proof-heading"><div><span class="proof-label" data-i18n="recordLabel">RECORDED CONTRACT TEST</span><h3 id="proof-title" data-i18n="proofTitle">One successful outer transaction.</h3><p data-i18n="innerNote">Two internal calls were rejected. Those are not two failed outer transactions.</p></div><div class="proof-gain"><strong>+1</strong><span data-i18n="gainLabel">person seated in this constructed case</span></div></div>
+        <ol class="proof-timeline">
+          <li><span class="timeline-mark rejected" aria-hidden="true">×</span><div><strong data-i18n="proofMissingTitle">Missing consent rejected</strong><p data-i18n="proofMissingText">Original seats and all consent counters stayed unchanged.</p></div><code>InvalidSignature</code></li>
+          <li><span class="timeline-mark completed" aria-hidden="true">✓</span><div><strong data-i18n="proofValidTitle">Complete relay executed</strong><p data-i18n="proofValidText">Alice moved to afternoon, Bob to Sunday, Charlie to morning.</p></div><span class="small-stat">2 → 3</span></li>
+          <li><span class="timeline-mark rejected" aria-hidden="true">×</span><div><strong data-i18n="proofReplayTitle">Old plan replay rejected</strong><p data-i18n="proofReplayText">The completed assignment stayed unchanged.</p></div><code>StaleConsent</code></li>
+        </ol>
+        <div class="proof-details"><div><span data-i18n="proofBlockLabel">Proof block</span><strong id="proof-block">—</strong></div><div><span data-i18n="gasLabel">Outer transaction gas limit</span><strong id="proof-gas">—</strong></div><div><span data-i18n="latencyLabel">Historical send-to-finalized time</span><strong data-i18n="notRecorded">Not recorded</strong></div></div>
+        <div class="verification-status" id="snapshot-status" role="status" data-i18n="snapshotLoading">Checking the downloaded event snapshot…</div>
+        <div class="proof-actions"><button id="verify-chain" class="primary" disabled data-i18n="verifyButton">Verify against Monad now</button><a id="proof-explorer" href="https://testnet.monadvision.com/tx/0x20b562b401290c76d9d3070d79d8e6ac02cc80be5f504afc469cb5abc52907de" target="_blank" rel="noopener" data-i18n="explorerLink">Inspect transaction</a><a href="evidence/monad-proof-evidence.json" download data-i18n="downloadProof">Download proof JSON</a></div>
+        <div id="rpc-status" class="rpc-status" role="status" aria-live="polite" hidden></div>
+        <p class="proof-footnote" data-i18n="rpcNote">The button only reads the public RPC: transaction, finality, contract code, complete seat-event history and seats at the same block. It never signs or sends. A read duration is not a transaction-speed benchmark.</p>
+      </article>
+      </details>
+      <div class="scope-note"><span aria-hidden="true">◇</span><p data-i18n="scopeNote">What this does not prove: real organizer adoption, identity checks, real-world seat delivery, or maximum Monad throughput. The gain is specific to a vacancy chain; a simple two-person swap adds no attendee.</p></div>
+    </section>
+    <section class="reviewer-card"><div><p class="eyebrow" data-i18n="reviewerEyebrow">YOUR QC TAKEAWAY</p><h2 data-i18n="reviewerTitle">Failure should protect people, too.</h2><p data-i18n="reviewerCopy">A correct demo is not just a happy path. Check what stays unchanged when someone says no.</p></div><button id="download-review" data-i18n="downloadReview">Download my challenge record</button></section>
+  </main>
+  <footer><span>ONE MORE PERSON · MONAD BLITZ GUANGZHOU</span><a href="https://github.com/GuJingChenSCUT/ONE_MORE_PERSON" target="_blank" rel="noopener">GitHub</a><span data-i18n="footerScope">Fictional scenarios. Explicit evidence.</span></footer>
+  <script src="relay.js"></script><script type="module" src="break.bundle.js"></script>
+</body>
+</html>
