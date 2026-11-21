@@ -26,6 +26,7 @@
     "@openzeppelin/contracts": "5.4.0",
     "esbuild": "0.25.12",
     "hardhat": "3.0.9",
+    "qrcode": "1.5.4",
     "solc": "0.8.30",
     "viem": "2.37.9",
     "yaml": "2.8.1"

@@ -10,7 +10,7 @@ const server=http.createServer((req,res)=>{
   const name=new URL(req.url,'http://localhost').pathname.slice(1)||'index.html';
   const file=allowed.has(name)?path.join(root,name):null;
   if(!file||!fs.existsSync(file)){res.writeHead(404);res.end('Not found');return;}
-  const mime=name.endsWith('.js')||name.endsWith('.mjs')?'text/javascript':name.endsWith('.css')?'text/css':name.endsWith('.json')?'application/json':'text/html';
+  const mime=name.endsWith('.js')||name.endsWith('.mjs')?'text/javascript':name.endsWith('.css')?'text/css':name.endsWith('.json')?'application/json':name.endsWith('.png')?'image/png':'text/html';
   res.writeHead(200,{'content-type':mime+'; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff'});
   res.end(fs.readFileSync(file));
 });

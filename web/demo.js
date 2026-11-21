@@ -1,4 +1,6 @@
 import { initialRoom, changeRoom, roles } from './demo-state.mjs';
+import { initRoleMenu } from './role-menu.js';
+initRoleMenu();
 const $ = id => document.getElementById(id);
 const params = new URLSearchParams(location.search);
 const pageRole = location.pathname.split('/').pop().replace(/\.html$/, '');
@@ -34,7 +36,11 @@ function render() {
   document.documentElement.lang=zh?'zh-CN':'en'; document.body.dataset.role=role??'lobby';
   $('lobby').hidden=!!role; $('participant').hidden=!role;
   text('language','中文','English');text('proof','Monad proof','Monad 链上证据');text('guide-link','Demo guide','演示说明');
-  text('switch-label','Switch person · this tab only','切换人物 · 仅当前页面');
+  text('switch-label','Choose participant','选择演示人物');
+  text('menu-copy','Choose a person for this tab. Your shared room stays the same.','仅切换当前页面的人物，保留共享房间进度。');
+  $('role-menu-trigger').setAttribute('aria-label',t('Choose participant','选择演示人物'));
+  $('role-menu-trigger').title=t('Choose participant','选择演示人物');
+  $('role-menu-close').setAttribute('aria-label',t('Close participant chooser','关闭人物选择'));
   $('role-switcher').setAttribute('aria-label',t('Switch this page’s person','切换当前页面的人物'));
   $('role-switcher').innerHTML=roles.map(r=>`<a class="role-chip ${r===role?'selected':''}" data-person="${r}" href="${href(r)}" ${r===role?'aria-current="page"':''}><span class="chip-avatar" aria-hidden="true">${names[r][0]}</span>${names[r]}${r===role?'<span class="selected-mark" aria-hidden="true">✓</span>':''}</a>`).join('');
   text('disclosure','INTERACTION SIMULATION · Shared in this browser only · No blockchain transactions','交互模拟 · 仅在同一浏览器内同步 · 不发送区块链交易');

@@ -1,18 +1,20 @@
 # One More Person · 多一个人
 
+**Public entry:** [Personal plans and event invitations](https://gujingchenscut.github.io/ONE_MORE_PERSON/) · [Download the entry QR code](https://gujingchenscut.github.io/ONE_MORE_PERSON/entry-qr.png). Add/edit local plans, export calendars, or create an event link and QR code that recipients can open on another device. The small **#** button opens the demo-person chooser. [Capabilities and data boundaries](docs/public-portal.md).
+
 **Three-page laptop demo:** run `node scripts/serve-rehearsal.mjs` (or `Start-Demo.cmd` on the prepared laptop), then open the Alice, Bob and Charlie links. Separate demo logins share a live room backed by actual local EVM transactions. [Exact 3–4 minute rundown](docs/three-page-demo.md). This rehearsal uses local chain 31337; the public Monad proof remains separate.
 
 [Printable system and demo guide](output/pdf/One_More_Person_Demo_Guide_Named_Hosts.pdf) · [Editable guide](docs/system-demo-guide.md): local startup, how signatures and atomic exchanges work, exact presenter actions, evidence and recovery.
 
 [Three-page public interaction demo](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo.html) · [Bilingual demonstration guide](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo-guide.html). Alice, Bob and Charlie have independent role pages, with approvals, withdrawal and outcomes synchronized within one browser profile. This public version is explicitly a simulation; it makes no real signatures or contract transactions. The local real-contract room remains available. [Evidence boundaries and exact steps](docs/public-three-page-demo.md).
 
-![English homepage](research/validation/final-home-desktop.jpg)
+![English product story](research/validation/final-home-desktop.jpg)
 
 **Change your workshop time without gambling away the seat you already have.**
 
 One More Person coordinates seat exchanges between independent organizers. Everyone approves the same complete plan. Your old seat is released only when you receive the new seat you accepted. All moves happen together; an invalid plan leaves every existing seat unchanged.
 
-Built for [Monad Blitz@Guangzhou](https://mojo.devnads.com/events/18) on **Monad Testnet, chain ID 10143**. The app is English-first, with Chinese available.
+Built for [Monad Blitz@Guangzhou](https://mojo.devnads.com/events/18) on **Monad Testnet, chain ID 10143**. The public planner opens in Chinese; the pitch and contract demo retain English and Chinese content.
 
 [Try the app](https://one-more-person-guangzhou.justdog33.chatgpt.site) · [Try to break it](https://one-more-person-guangzhou.justdog33.chatgpt.site/break.html) · [Use real wallets](https://one-more-person-guangzhou.justdog33.chatgpt.site/live.html) · [The pitch](https://one-more-person-guangzhou.justdog33.chatgpt.site/pitch.html) · [中文演示](https://one-more-person-guangzhou.justdog33.chatgpt.site/zh.html)
 

@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {publicAssets} from '../lib/web-assets.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../dist');
-const required=['index.html','zh.html','live.html','break.html','pitch.html','demo.html','alice.html','bob.html','charlie.html','demo-guide.html','demo.js','demo-state.mjs','demo.css','live.bundle.js','break.bundle.js','live-artifact.json'];
+const required=['index.html','about.html','event.html','zh.html','live.html','break.html','pitch.html','demo.html','alice.html','bob.html','charlie.html','demo-guide.html','demo.js','demo-state.mjs','demo.css','role-menu.js','role-menu.css','planner.js','planner.css','planner-core.mjs','planner-store.mjs','qr.bundle.js','entry-qr.png','live.bundle.js','break.bundle.js','live-artifact.json'];
 for(const name of required)if(!fs.existsSync(path.join(root,name)))throw Error('Missing required web asset: '+name);
 let checked=0;
 for(const file of publicAssets.filter(x=>x.endsWith('.html'))){

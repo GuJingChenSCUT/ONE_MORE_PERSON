@@ -1,0 +1,7 @@
+{
+  "repository": "GuJingChenSCUT/ONE_MORE_PERSON",
+  "url": "https://gujingchenscut.github.io/ONE_MORE_PERSON/",
+  "workflow": ".github/workflows/ci.yml",
+  "source": "GitHub Actions",
+  "entryQr": "entry-qr.png"
+}

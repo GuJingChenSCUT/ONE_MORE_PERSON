@@ -5,9 +5,11 @@ import { verifyEvidence } from '../lib/replay.mjs';
 import { sourceAssets, bundles, evidenceAssets } from '../lib/web-assets.mjs';
 import { compile } from './compile.mjs';
 import { build } from 'esbuild';
+import QRCode from 'qrcode';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const output = path.join(root, 'dist');
 fs.mkdirSync(path.join(output, 'evidence'), { recursive: true });
+await QRCode.toFile(path.join(output,'entry-qr.png'),'https://gujingchenscut.github.io/ONE_MORE_PERSON/',{width:960,margin:4,errorCorrectionLevel:'M'});
 // Explicit allowlist: credentials and local research attachments cannot enter the bundle.
 for (const name of sourceAssets) {
   const source=path.join(root,'web',name);
