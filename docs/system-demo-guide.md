@@ -44,7 +44,7 @@ Sunday starts empty. The same **three seats** serve **three people instead of tw
 | Local coordinator | A Node server receives signatures, relays transactions and broadcasts live updates using server-sent events. The demo plan is predefined. |
 | SafeSeatRelay contract | The unchanged product contract checks permissions and updates seats atomically in a local Hardhat EVM. The display reads the mined contract state. |
 
-The flow is **review -> sign -> submit -> validate -> update all pages**. Signing never moves a seat. Both hosts first approve the fixed pool in separate transactions. Alice and Bob also play Host A and Host B for this three-page demo.
+The flow is **review -> sign -> submit -> validate -> update all pages**. Signing never moves a seat. Both hosts first approve the fixed pool in separate transactions. Alice and Bob also play Host Dr. Alice and Host Dr. Bob for this three-page demo.
 
 ### What the contract checks
 
@@ -75,7 +75,7 @@ Opening: **"Alice and Bob already have workshop seats. Charlie is waiting. We le
 | Step | Click | Show or say |
 | --- | --- | --- |
 | 1 | Show Alice, Bob and Charlie's pages. | Alice holds morning; Bob holds afternoon; Sunday is empty; Charlie is waiting. "Three seats, two people with places." |
-| 2 | Alice: **Approve pool as Host A**. Bob: **Approve pool as Host B**. | All pages show **2 / 2** host approvals. "Both organizers accept the same pool." |
+| 2 | Alice: **Approve pool as Dr. Alice**. Bob: **Approve pool as Dr. Bob**. | All pages show **2 / 2** host approvals. "Both organizers accept the same pool." |
 | 3 | Alice: **Create shared plan**. | Alice moves to afternoon, Bob to Sunday, Charlie to morning. "This is one complete exchange." |
 | 4 | Each page: **Approve my move**, once. Wait for all three signed badges. | Original seats are unchanged. "Approving a move does not give away your seat." |
 | 5 | Bob: **Withdraw my approval**. Alice: **Try withdrawn plan**. | A real local transaction is **REVERTED**; every original seat remains. "One person changed their mind, so the whole old plan fails." |

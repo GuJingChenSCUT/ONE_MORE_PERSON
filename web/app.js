@@ -1,6 +1,6 @@
 const errorTranslations={"还没有可执行的共同方案。":"There is no jointly approved plan to run.","方案已过期或超出名额池截止时间，原有名额保持不变。":"This plan has expired. Every existing seat stays put.","换位人数不符合范围。":"This plan contains an unsupported number of people.","目标位置无效。":"A destination seat is invalid.","同一人或同一个位置重复出现。":"A person or destination appears twice.","还有人没有同意。大家的原名额都保留。":"Someone has not agreed. Everyone keeps their existing seat.","目标场次不在这位参加者的资格范围内。":"A participant is not eligible for the destination.","有人撤回或名额状态已变化。整个旧方案失效，大家保留原名额。":"An approval was withdrawn or a seat changed. The old plan fails; everyone keeps their existing seat.","目标位置的持有人没有参与本次换位。":"A destination holder has not agreed to move."};
 const names={lin:'Alice',chen:'Bob',yu:'Charlie',ning:'Dana'};
-const venues=[['Sat · 10:00 AM','Lingnan Makers · workshop'],['Sat · 2:00 PM','Xiguan Youth · workshop'],['Sun · 2:00 PM','Xiguan Youth · workshop']];
+const venues=[['Sat · 10:00 AM','Dr. Alice · workshop'],['Sat · 2:00 PM','Dr. Bob · workshop'],['Sun · 2:00 PM','Dr. Bob · workshop']];
 let state=SeatRelay.createState(),plan=null,consent={},outcome=null;
 const $=id=>document.getElementById(id);
 function status(message,kind=''){ $('status').textContent=message;$('status').className='status '+kind; }

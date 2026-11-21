@@ -34,7 +34,7 @@ const zh = {
 const dynamic = {
   en: {
     names: { lin: 'Alice', chen: 'Bob', yu: 'Charlie', empty: 'Empty' },
-    times: ['Saturday morning', 'Saturday afternoon', 'Sunday afternoon'], hosts: ['Host A', 'Host B', 'Host B'],
+    times: ['Saturday morning', 'Saturday afternoon', 'Sunday afternoon'], hosts: ['Host Dr. Alice', 'Host Dr. Bob', 'Host Dr. Bob'],
     idleTitle: 'Choose a challenge. Nobody has moved.', idleDetail: 'The plan would move Alice to afternoon, Bob to Sunday and Charlie into the morning vacancy. Looking at it releases no seats.',
     missingTitle: 'Plan rejected. Every original seat is protected.', missingDetail: 'Charlie did not agree. Two approvals cannot move three people. Alice keeps morning; Bob keeps afternoon.',
     cancelTitle: 'Old plan rejected. Bob still has his seat.', cancelDetail: 'Bob withdrew before execution. His consent counter changed, making the old plan stale even though it once had three approvals.',
@@ -60,7 +60,7 @@ const dynamic = {
   },
   zh: {
     names: { lin: '小林', chen: '小陈', yu: '小雨', empty: '空位' },
-    times: ['周六上午', '周六下午', '周日下午'], hosts: ['主办方 A', '主办方 B', '主办方 B'],
+    times: ['周六上午', '周六下午', '周日下午'], hosts: ['主办方 Dr. Alice', '主办方 Dr. Bob', '主办方 Dr. Bob'],
     idleTitle: '请选择一次挑战，还没有人换位。', idleDetail: '方案让小林去下午、小陈去周日、小雨拿到上午场。仅查看方案，不会释放任何席位。',
     missingTitle: '方案被拒绝，所有原位受到保护。', missingDetail: '小雨尚未同意。两份同意不能让三个人换位。小林仍在上午，小陈仍在下午。',
     cancelTitle: '旧方案被拒绝，小陈仍保有原位。', cancelDetail: '小陈在执行前撤回，同意计数已经变化。旧方案即使曾集齐三份同意，也已失效。',

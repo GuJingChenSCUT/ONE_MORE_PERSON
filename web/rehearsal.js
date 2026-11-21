@@ -3,6 +3,7 @@ import { consentTypedData } from '../lib/live-protocol.mjs';
 const $ = id => document.getElementById(id);
 const roles = ['alice','bob','charlie'];
 const names = ['Alice','Bob','Charlie'];
+const hostNames = ['Dr. Alice','Dr. Bob'];
 const linkRole = new URL(location.href).searchParams.get('role');
 const storageKey = `omp-rehearsal-${roles.includes(linkRole) ? linkRole : 'tab'}`;
 let login = null; try { login = JSON.parse(sessionStorage.getItem(storageKey)); } catch {}
@@ -18,6 +19,10 @@ const esc = v => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 const slot = n => [t('Waiting list','候补'),t('Sat · 10 AM','周六 · 上午10点'),t('Sat · 2 PM','周六 · 下午2点'),t('Sun · 2 PM','周日 · 下午2点')][Number(n)];
 const text = (id, en, cn) => { $(id).textContent = t(en, cn); };
 function eventText(message) {
+  const hostApproval = /^(Alice|Bob) approved the fixed pool as host ([AB])\.$/.exec(message);
+  if(hostApproval){const host=hostNames[hostApproval[2]==='A'?0:1];return t(`${host} approved the fixed pool.`,`${host} 已确认席位池。`);}
+  const hostReceipt = /^(Alice|Bob) approved the pool$/.exec(message);
+  if(hostReceipt){const host=hostNames[hostReceipt[1]==='Alice'?0:1];return t(`${host} approved the pool`,`${host} 确认席位池`);}
   if (!zh) return message;
   const translations = {
     'Working…':'处理中…',
@@ -69,12 +74,12 @@ function render() {
   text('mode','LOCAL BLOCKCHAIN REHEARSAL · Real signatures and EVM transactions · Fictional people and seats · Not public Monad','本地链彩排 · 真实签名与 EVM 交易 · 虚构人物和席位 · 非公共 Monad');
   text('connection',connected?'Live room connected':'Room disconnected',connected?'房间已实时连接':'房间已断开');
   document.body.classList.toggle('disconnected',!connected);
-  document.querySelectorAll('[data-login]').forEach((b,j)=>{b.classList.toggle('selected',b.dataset.login===linkRole);b.disabled=!connected||busy;b.setAttribute('aria-label',t(`Log in as ${names[j]}`,`以 ${names[j]} 身份登录`));b.querySelectorAll('span')[1].textContent=[t('Has morning. Wants afternoon.','已有上午席位，想换到下午。'),t('Has afternoon. Can move to Sunday.','已有下午席位，可以换到周日。'),t('Waiting. Can only attend morning.','正在候补，只能参加上午。')][j];b.querySelector('small').textContent=[t('Participant + Host A · presenter','参加者 + 主办方 A · 演示者'),t('Participant + Host B','参加者 + 主办方 B'),t('Participant · waiting list','参加者 · 候补')][j];});
+  document.querySelectorAll('[data-login]').forEach((b,j)=>{b.classList.toggle('selected',b.dataset.login===linkRole);b.disabled=!connected||busy;b.setAttribute('aria-label',t(`Log in as ${names[j]}`,`以 ${names[j]} 身份登录`));b.querySelectorAll('span')[1].textContent=[t('Has morning. Wants afternoon.','已有上午席位，想换到下午。'),t('Has afternoon. Can move to Sunday.','已有下午席位，可以换到周日。'),t('Waiting. Can only attend morning.','正在候补，只能参加上午。')][j];b.querySelector('small').textContent=[t('Participant + Host Dr. Alice · presenter','参加者 + 主办方 Dr. Alice · 演示者'),t('Participant + Host Dr. Bob','参加者 + 主办方 Dr. Bob'),t('Participant · waiting list','参加者 · 候补')][j];});
   if(!state||!login)return;
   const i=roles.indexOf(login.role),name=names[i],a=state.actors[i], s=state.snapshot,stage=state.readiness.stage;
   const mine=state.signatures[a.address.toLowerCase()];
   document.title=`${name} · One More Person live room`;
-  text('identity-type',i<2?`PARTICIPANT + HOST ${i===0?'A':'B'}`:'WAITING LIST PARTICIPANT',i<2?`参加者 + 主办方 ${i===0?'A':'B'}`:'候补参加者');
+  text('identity-type',i<2?`PARTICIPANT + HOST · ${hostNames[i]}`:'WAITING LIST PARTICIPANT',i<2?`参加者 + 主办方 ${hostNames[i]}`:'候补参加者');
   text('greeting',`You're ${name}.`,`你是 ${name}。`);
   text('identity',`${name} · this tab only`,`${name} · 仅此标签页`);
   text('personal-story',i===0?'You have morning. Afternoon works better.':i===1?'You have afternoon. You can move to Sunday.':'You are waiting. Only Saturday morning works.',i===0?'已有上午席位，想换到下午。':i===1?'已有下午席位，可以改到周日。':'正在候补，只能参加周六上午。');
@@ -82,13 +87,13 @@ function render() {
   text('room-title','The same 3 seats. Room for one more.','相同的 3 个席位，多一个人参加。');
   $('attendees').textContent=s.seatOf.filter(x=>x!=='0').length;
   text('attendee-label','people attending / 3 seats','人参加 / 共 3 席');
-  $('seats').innerHTML=s.seats.map((holder,j)=>{const actor=state.actors.find(p=>p.address.toLowerCase()===holder.toLowerCase());const isMe=actor?.role===login.role;return `<article class="seat ${actor?'':'open'} ${isMe?'mine':''}"><div class="seat-top"><span>${t('SEAT','席位')} ${j+1}</span><span>${isMe?t('YOUR SEAT','你的席位'):actor?t('RESERVED','已保留'):t('AVAILABLE','空缺')}</span></div><h3>${slot(j+1)}</h3><div class="holder">${actor?actor.name:t('Empty seat','空位')}</div><small>${j===0?t('Host A · morning workshop','主办方 A · 上午工作坊'):t('Host B · alternative workshop','主办方 B · 可选场次')}</small></article>`;}).join('');
+  $('seats').innerHTML=s.seats.map((holder,j)=>{const actor=state.actors.find(p=>p.address.toLowerCase()===holder.toLowerCase());const isMe=actor?.role===login.role;return `<article class="seat ${actor?'':'open'} ${isMe?'mine':''}"><div class="seat-top"><span>${t('SEAT','席位')} ${j+1}</span><span>${isMe?t('YOUR SEAT','你的席位'):actor?t('RESERVED','已保留'):t('AVAILABLE','空缺')}</span></div><h3>${slot(j+1)}</h3><div class="holder">${actor?actor.name:t('Empty seat','空位')}</div><small>${j===0?t('Host Dr. Alice · morning workshop','主办方 Dr. Alice · 上午工作坊'):t('Host Dr. Bob · alternative workshop','主办方 Dr. Bob · 可选场次')}</small></article>`;}).join('');
   $('outcome').hidden=!state.lastResult;
   if(state.lastResult){$('outcome').className=`outcome ${state.lastResult.kind}`;$('outcome').textContent=t('Latest contract result: ','最近一次合约结果：')+eventText(state.lastResult.message);}
-  text('hosts-title','Both hosts lock the rules','两位主办方确认规则');text('hosts-copy','Alice and Bob each approve this fixed pool. Neither can move a participant alone.','Alice 和 Bob 分别确认固定席位池，任何一方都不能单独移动参加者。');
+  text('hosts-title','Both hosts lock the rules','两位主办方确认规则');text('hosts-copy','Dr. Alice and Dr. Bob each approve this fixed pool. Neither can move a participant alone.','Dr. Alice 和 Dr. Bob 分别确认固定席位池，任何一方都不能单独移动参加者。');
   $('host-count').textContent=`${(s.approvals&1?1:0)+(s.approvals&2?1:0)} / 2`;
-  $('hosts').innerHTML=[0,1].map(j=>`<span class="${s.approvals&(j+1)?'yes':''}">${names[j]} · ${s.approvals&(j+1)?t('Approved','已确认'):t('Waiting','待确认')}</span>`).join('');
-  $('approve').hidden=i===2; $('approve').disabled=busy||!connected||!!(s.approvals&(i+1));text('approve',`Approve pool as Host ${i===0?'A':'B'}`,`作为主办方 ${i===0?'A':'B'} 确认`);
+  $('hosts').innerHTML=[0,1].map(j=>`<span class="${s.approvals&(j+1)?'yes':''}">${hostNames[j]} · ${s.approvals&(j+1)?t('Approved','已确认'):t('Waiting','待确认')}</span>`).join('');
+  $('approve').hidden=i===2; $('approve').disabled=busy||!connected||!!(s.approvals&(i+1));text('approve',`Approve pool as ${hostNames[i]??'a host'}`,`以 ${hostNames[i]??'主办方'} 身份确认`);
   text('plan-title','One plan. Three yeses.','一份方案，三人同意。');
   const stages={none:t('NO PLAN','未创建'),active:t('COLLECTING CONSENT','收集同意'),stale:t('WITHDRAWN','已撤回'),completed:t('COMPLETED','已完成'),expired:t('EXPIRED','已过期'),waiting:t('WAITING','等待')};
   $('plan-status').textContent=stages[stage];
@@ -106,7 +111,7 @@ function render() {
   if(!state.plan)text('execute-help','Both hosts approve, then Alice creates one shared plan.','先由双方主办方确认，再由 Alice 创建共享方案。');
   text('next-label','YOUR NEXT STEP','你的下一步');
   let next,copy;
-  if(s.approvals!==3){next=i<2&&!((i+1)&s.approvals)?t('Approve your host pool','确认你的席位池'):t('Wait for both hosts','等待两位主办方');copy=t('Alice approves Host A. Bob approves Host B. Watch both badges update.','Alice 确认 A，Bob 确认 B，观察两个状态实时变化。');}
+  if(s.approvals!==3){next=i<2&&!((i+1)&s.approvals)?t('Approve your host pool','确认你的席位池'):t('Wait for both hosts','等待两位主办方');copy=t('Dr. Alice and Dr. Bob approve their pools. Watch both badges update.','Dr. Alice 与 Dr. Bob 分别确认席位池，观察两个状态实时变化。');}
   else if(!state.plan){next=i===0?t('Create the shared plan','创建共享方案'):t('Alice creates one plan','等待 Alice 创建方案');copy=t('The plan includes all three moves, not just your own.','方案包含三个人的全部换位。');}
   else if(stage==='completed'){next=t('One more person gets in','多一个人参加');copy=t('Charlie has morning. Alice has afternoon. Bob has Sunday. No extra seats were added.','Charlie 上午，Alice 下午，Bob 周日，没有增加席位。');}
   else if(stage==='stale'){const rejected=state.lastResult?.kind==='rejected';next=i===0?(rejected?t('Create a fresh plan','创建一份新方案'):t('Prove the old plan fails','证明旧方案失败')):t('Your original seat is safe','你的原位仍然安全');copy=rejected?t('Rejection is proven. Alice creates a fresh plan; then everyone approves again.','旧方案已确认失败。由 Alice 创建新方案，然后三人重新同意。'):t('On Alice: Try withdrawn plan, then Create fresh plan. Everyone signs again.','Alice 尝试已撤回方案，再创建新方案，三人重新同意。');}
@@ -115,7 +120,7 @@ function render() {
   else{next=count===3?t('Ready for the safety challenge','可以开始撤回挑战'):t('Wait for the other signatures','等待其他人签名');copy=t('Once all three sign, Bob withdraws. Then Alice tries the old plan. After fresh signatures, execute.','三人签名后由 Bob 撤回，Alice 尝试旧方案。重新同意后执行成功。');}
   if(stage==='active'&&count===3&&state.plan.moves.some(m=>BigInt(m.nonce)>0n)){next=t('Execute the fresh plan','执行重新同意的方案');copy=t('All three signed again after withdrawal. Alice can now execute all three moves.','撤回后，三人已重新同意。现在由 Alice 执行三人换位。');text('execute-help','Fresh consent is complete. Execute all three moves together.','三份新同意已齐全，可以执行三人整批换位。');}
   $('next-step').textContent=next;$('next-copy').textContent=copy;
-  $('rundown').innerHTML=(zh?['Alice 与 Bob 确认席位池','Alice 创建方案','三人分别同意换位','Bob 撤回，Alice 尝试失败','创建新方案，三人重新同意','Alice 执行，2 人变成 3 人']:['Alice & Bob approve the pool','Alice creates the shared plan','Each person approves their move','Bob withdraws; Alice proves rejection','Fresh plan; all three approve again','Alice executes: 2 people become 3']).map(x=>`<li>${x}</li>`).join('');
+  $('rundown').innerHTML=(zh?['Dr. Alice 与 Dr. Bob 确认席位池','Alice 创建方案','三人分别同意换位','Bob 撤回，Alice 尝试失败','创建新方案，三人重新同意','Alice 执行，2 人变成 3 人']:['Dr. Alice & Dr. Bob approve the pool','Alice creates the shared plan','Each person approves their move','Bob withdraws; Alice proves rejection','Fresh plan; all three approve again','Alice executes: 2 people become 3']).map(x=>`<li>${x}</li>`).join('');
   text('activity-title','Live activity','实时记录');$('activity').innerHTML=state.activity.slice(-7).reverse().map(x=>`<li>${esc(eventText(x))}</li>`).join('');
   text('evidence-title','Receipts & contract evidence','回执与合约证据');$('contract').textContent=`Local EVM 31337 · verified contract ${state.pool.contractAddress} · block ${s.blockNumber}`;$('account').textContent=`${name}: ${a.address} · consent nonce ${s.nonces[i]}`;
   $('transactions').innerHTML=state.transactions.slice().reverse().map(tx=>`<div class="receipt"><strong class="${tx.status==='success'?'yes':''}">${esc(eventText(tx.action))} · ${zh?(tx.status==='success'?'成功':'已回滚'):tx.status.toUpperCase()}</strong> · ${t('block','区块')} ${tx.blockNumber}<code>${tx.hash}</code></div>`).join('');

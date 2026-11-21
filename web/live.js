@@ -9,6 +9,7 @@ const $ = id => document.getElementById(id);
 const same = (a, b) => String(a).toLowerCase() === String(b).toLowerCase();
 const short = value => value ? `${value.slice(0, 6)}…${value.slice(-4)}` : '—';
 const explorer = 'https://testnet.monadvision.com';
+const hostNames = ['Dr. Alice', 'Dr. Bob'];
 // The build-time override is used only by the loopback browser test harness. Public builds use Monad RPC.
 const RPC_URL = typeof __OMP_TEST_RPC__ === 'string' && ['127.0.0.1', 'localhost'].includes(location.hostname)
   ? __OMP_TEST_RPC__ : 'https://testnet-rpc.monad.xyz';
@@ -55,6 +56,7 @@ function renderButtons() {
     'clear-session': !!pool, 'download-record': state.records.length > 0,
   };
   for (const [id, enabled] of Object.entries(allowed)) $(id).disabled = state.busy || !enabled;
+  $('approve').textContent = hostIndex >= 0 ? say(`Approve as ${hostNames[hostIndex]}`, `以 ${hostNames[hostIndex]} 身份确认`) : say('Approve pool as host', '以主办方身份确认');
   $('execute').textContent = readiness.stage === 'completed' ? say('Relay completed', '换位已完成') : say('Execute all three moves', '执行三人整份换位');
   $('provider-select').disabled = state.busy;
   $('create-form').querySelectorAll('input,select').forEach(el => { el.disabled = state.busy || !!pool; });
@@ -87,7 +89,7 @@ function renderPool() {
   const contract = element('p'); contract.append(document.createTextNode(`${say('Pool', '席位池')} · `), link(pool.contractAddress, `${explorer}/address/${pool.contractAddress}`));
   const close = element('p', '', `${say('Closes', '截止')} · ${new Date(Number(pool.closesAt) * 1000).toLocaleString(state.lang === 'zh' ? 'zh-CN' : 'en-GB')}`);
   $('pool-meta').replaceChildren(contract, close);
-  $('host-status').replaceChildren(...[0, 1].map(i => element('span', `host-pill${snap.approvals & (1 << i) ? ' approved' : ''}`, `${say('Host', '主办方')} ${['A', 'B'][i]} · ${snap.approvals & (1 << i) ? say('approved', '已确认') : say('waiting', '待确认')}`)));
+  $('host-status').replaceChildren(...[0, 1].map(i => element('span', `host-pill${snap.approvals & (1 << i) ? ' approved' : ''}`, `${hostNames[i]} · ${snap.approvals & (1 << i) ? say('approved', '已确认') : say('waiting', '待确认')}`)));
 }
 function renderPlan() {
   const plan = state.session?.plan; const sigs = state.session?.signatures ?? {};
@@ -290,7 +292,7 @@ async function write(functionName, args, actionName) {
 }
 async function approvePool() {
   const account = await ensureWallet(); const pool = state.session.pool;
-  if (!pool.participants.slice(0, 2).some(x => same(x, account))) throw new Error('Only host A or B can approve this pool');
+  if (!pool.participants.slice(0, 2).some(x => same(x, account))) throw new Error('Only the demo hosts Dr. Alice or Dr. Bob can approve this pool');
   await write('approvePool', [poolConfigHash(pool)], 'approve');
   status(say('Host approval finalized. Both host approvals are required before the relay can execute.', '主办方确认已最终生效。换位执行需要两位主办方都确认。'), 'success');
 }
@@ -380,6 +382,6 @@ await action(async () => {
   if (!Array.isArray(artifact.abi) || !artifact.bytecode?.startsWith('0x') || !artifact.runtimeBytecode?.startsWith('0x') || !artifact.immutableReferences) throw new Error('Invalid contract artifact');
   state.artifact = artifact;
   if (location.hash.startsWith('#relay=')) { const encoded = location.hash.slice(7); if (encoded.length > 72000) throw new Error('Shared session link is too large'); await importSession(decodeURIComponent(encoded)); }
-  else status(say('Start with three different wallets. A and B also act as the two demo hosts.', '请准备三个不同的钱包。A、B 同时担任两位演示主办方。'));
+  else status(say('Start with three different wallets. A acts as Dr. Alice; B acts as Dr. Bob.', '请准备三个不同的钱包。A 担任 Dr. Alice，B 担任 Dr. Bob。'));
   if (location.hash === '#challenge') { $('challenge').open = true; $('shared-plan').scrollIntoView({ block: 'start' }); }
 });

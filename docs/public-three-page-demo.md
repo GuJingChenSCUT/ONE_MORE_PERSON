@@ -15,7 +15,7 @@ These routes were published as Sites version 4 on 21 November 2026. Three real b
 ## Four-minute flow
 
 1. Show initial seats: Alice morning, Bob afternoon, Charlie waiting, Sunday empty.
-2. Alice approves Host A; Bob approves Host B. Charlie's page updates automatically.
+2. Alice approves as Dr. Alice; Bob approves as Dr. Bob. Charlie's page updates automatically.
 3. Alice creates the shared plan. Each person approves their own move on their page. No seat moves yet.
 4. Bob withdraws. Alice tries the withdrawn plan. All pages show rejection and unchanged seats.
 5. Alice creates a fresh plan; each participant approves again.

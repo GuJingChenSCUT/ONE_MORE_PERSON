@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id), room='film-'+Math.random().toString(36)
 const channel=new BroadcastChannel(key);
 const steps=[
  ['三个页面，同一个席位池','Alice 已有上午席位，Bob 已有下午席位，Charlie 候补；周日空缺。',[]],
- ['双方主办方确认','Alice 确认后，Bob 和 Charlie 收到进度；Bob 再确认，三页都看到双方同意。',[['alice','host'],['bob','host']]],
+ ['双方主办方确认','Dr. Alice 确认后，其他页面收到进度；Dr. Bob 再确认，三页都看到双方同意。',[['alice','host'],['bob','host']]],
  ['创建完整换位方案','Alice 去下午，Bob 去周日，Charlie 去上午。完整方案同步给三个人。',[['alice','plan']]],
  ['三个人分别同意','逐个收集同意；其他页面收到确认。注意：原来的席位还没有改变。',roles.map(r=>[r,'agree'])],
  ['Bob 撤回同意','Bob 改变主意，Alice 和 Charlie 立即收到撤回信息。',[['bob','withdraw']]],

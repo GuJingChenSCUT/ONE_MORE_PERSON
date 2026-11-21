@@ -16,7 +16,7 @@ from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "docs/system-demo-guide.md"
-OUTPUT = ROOT / "output/pdf/One_More_Person_Demo_Guide.pdf"
+OUTPUT = ROOT / "output/pdf/One_More_Person_Demo_Guide_Named_Hosts.pdf"
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 WIDTH = 504
 styles = getSampleStyleSheet()

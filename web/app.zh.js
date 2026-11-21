@@ -1,5 +1,5 @@
 const names={lin:'小林',chen:'小陈',yu:'小雨',ning:'小宁'};
-const venues=[['周六上午 10:00','岭南手作社 · 广彩体验'],['周六下午 14:00','西关青年社 · 广彩体验'],['周日下午 14:00','西关青年社 · 广彩体验']];
+const venues=[['周六上午 10:00','Dr. Alice · 广彩体验'],['周六下午 14:00','Dr. Bob · 广彩体验'],['周日下午 14:00','Dr. Bob · 广彩体验']];
 let state=SeatRelay.createState(),plan=null,consent={},outcome=null;
 const $=id=>document.getElementById(id);
 function status(message,kind=''){ $('status').textContent=message;$('status').className='status '+kind; }

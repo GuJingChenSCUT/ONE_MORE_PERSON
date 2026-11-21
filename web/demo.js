@@ -7,6 +7,7 @@ const rawRoom = params.get('room') ?? 'stage';
 const room = /^[a-zA-Z0-9_-]{1,40}$/.test(rawRoom) ? rawRoom : 'stage';
 const key = `omp-interaction-v1:${room}`;
 const names = { alice: 'Alice', bob: 'Bob', charlie: 'Charlie' };
+const hostNames = { alice: 'Dr. Alice', bob: 'Dr. Bob' };
 let zh = params.get('lang') === 'zh', state, busy = false, ready = false, feedback = '', error = false, primaryAction = null;
 let channel; try { channel = new BroadcastChannel(key); } catch {}
 const t = (en, cn) => zh ? cn : en;
@@ -48,7 +49,7 @@ function render() {
   if(!role||!state)return;
   const i=roles.indexOf(role), complete=state.phase==='completed', stale=state.phase==='withdrawn', signed=state.consents.includes(role), hostReady=state.hosts.every(Boolean);
   document.title=`${names[role]} · ${t('Shared demo','共享演示')} · One More Person`;
-  text('role-caption',i===0?'PARTICIPANT + HOST A · PRESENTER':i===1?'PARTICIPANT + HOST B':'PARTICIPANT · WAITING LIST',i===0?'参加者 + 主办方 A · 演示者':i===1?'参加者 + 主办方 B':'参加者 · 候补');
+  text('role-caption',i===0?'PARTICIPANT + HOST · Dr. Alice · PRESENTER':i===1?'PARTICIPANT + HOST · Dr. Bob':'PARTICIPANT · WAITING LIST',i===0?'参加者 + 主办方 Dr. Alice · 演示者':i===1?'参加者 + 主办方 Dr. Bob':'参加者 · 候补');
   text('greeting',`You're ${names[role]}.`,`你是 ${names[role]}。`);$('story').textContent=complete?t('Your new seat is confirmed. The complete exchange worked.','你的新席位已确认，完整换位已成功。'):stories[i];$('avatar').textContent=names[role][0];
   text('room-label',`ROOM ${room} · ROUND ${state.round} · PLAN ${state.plan || '—'}`,`房间 ${room} · 第 ${state.round} 轮 · 方案 ${state.plan || '未创建'}`);
   text('sync',ready?`Shared update #${state.revision} · Tabs sync automatically`:'Sync unavailable',ready?`共享更新 #${state.revision} · 三页自动同步`:'同步不可用');
@@ -63,8 +64,8 @@ function render() {
   let title,copy,label;primaryAction=null;
   if(!hostReady){
     const can=i<2&&!state.hosts[i];title=can?t('Lock your workshop seats','确认你的活动席位'):t('Waiting for the hosts','等待主办方确认');
-    copy=t('Alice and Bob each approve the fixed pool. Everyone keeps their current place.', 'Alice 与 Bob 分别确认固定席位池。所有人的原有席位保持不变。');
-    label=can?t(`Approve pool as Host ${i===0?'A':'B'}`,`作为主办方 ${i===0?'A':'B'} 确认`):t('Waiting for Alice / Bob','等待 Alice / Bob');if(can)primaryAction='host';
+    copy=t('Dr. Alice and Dr. Bob each approve the fixed pool. Everyone keeps their current place.', 'Dr. Alice 与 Dr. Bob 分别确认固定席位池。所有人的原有席位保持不变。');
+    label=can?t(`Approve pool as ${hostNames[role]}`,`以 ${hostNames[role]} 身份确认`):t('Waiting for Dr. Alice / Dr. Bob','等待 Dr. Alice / Dr. Bob');if(can)primaryAction='host';
   }else if(state.phase==='ready'){
     title=role==='alice'?t('Connect all three moves','把三个换位连起来'):t('Alice is preparing the plan','等待 Alice 创建方案');copy=t('Alice moves to afternoon, Bob to Sunday, and Charlie gets morning.','Alice 去下午，Bob 去周日，Charlie 获得上午。');label=role==='alice'?t('Create shared plan','创建共享方案'):t('Waiting for Alice','等待 Alice');if(role==='alice')primaryAction='plan';
   }else if(complete){title=t('One more person gets in.','多一个人参加。');copy=t('Charlie has morning. Alice has afternoon. Bob has Sunday. Same three seats, now three people.','Charlie 上午，Alice 下午，Bob 周日。同样三个席位，现在三人参加。');label=t('Your new place is confirmed','你的新席位已确认');
@@ -76,8 +77,8 @@ function render() {
   $('withdraw').hidden=state.phase!=='consent'||!signed;$('withdraw').disabled=busy||!ready;text('withdraw','Withdraw my approval','撤回我的同意');
   $('feedback').textContent=feedback;$('feedback').className=error?'error':'';
   text('shared-label','EVERYONE SEES THIS','三页共同看到');text('shared-title','Three seats. Shared progress.','三个席位，共同进度。');$('count').innerHTML=`${state.seats.filter(Boolean).length}<span>/3</span>`;
-  $('seat-list').innerHTML=state.seats.map((r,n)=>`<div class="seat-row"><div><strong>${slots()[n]}</strong><small>${n===0?t('Host A','主办方 A'):t('Host B','主办方 B')}</small></div><b class="${r?'':'empty'}">${r?names[r]:t('Available','空缺')}</b></div>`).join('');
-  $('agreements').className='agreements';$('agreements').innerHTML=(!hostReady?['alice','bob']:roles).map((r,n)=>{const yes=!hostReady?state.hosts[n]:state.consents.includes(r);return `<span class="badge ${stale?'stale':yes?'yes':''}">${names[r]} · ${stale?t('renew approval','需重新同意'):yes?t('approved','已同意'):t('waiting','等待')}</span>`;}).join('');
+  $('seat-list').innerHTML=state.seats.map((r,n)=>`<div class="seat-row"><div><strong>${slots()[n]}</strong><small>${n===0?t('Host Dr. Alice','主办方 Dr. Alice'):t('Host Dr. Bob','主办方 Dr. Bob')}</small></div><b class="${r?'':'empty'}">${r?names[r]:t('Available','空缺')}</b></div>`).join('');
+  $('agreements').className='agreements';$('agreements').innerHTML=(!hostReady?['alice','bob']:roles).map((r,n)=>{const yes=!hostReady?state.hosts[n]:state.consents.includes(r);return `<span class="badge ${stale?'stale':yes?'yes':''}">${!hostReady?hostNames[r]:names[r]} · ${stale?t('renew approval','需重新同意'):yes?t('approved','已同意'):t('waiting','等待')}</span>`;}).join('');
   text('guarantee','No one gives up a seat before the whole exchange succeeds.','整份换位成功前，没有人需要先放弃原位。');
   $('result').hidden=!state.result;
   if(state.result){const kind=state.result.kind;$('result').className=`result ${kind}`;$('result').innerHTML=kind==='success'?`<h2>${t('+1 person. Zero extra seats.','多 1 人参加，不增加席位。')}</h2><p>${t('Simulated exchange completed. Every page shows the same new assignments.','模拟换位完成。三个页面展示相同的新席位结果。')}</p>`:kind==='withdrawn'?`<h2>${t('Approval withdrawn. Seats unchanged.','同意已撤回，席位保持不变。')}</h2><p>${t('The old plan is invalid. Nobody has lost their original place.','旧方案失效，没有人失去原有席位。')}</p>`:`<h2>${t('Plan rejected. Seats unchanged.','方案已拒绝，席位保持不变。')}</h2><p>${t('This is a simulated rejection, not a blockchain receipt.','这是交互模拟的拒绝结果，不是区块链交易回执。')}</p>`;}
@@ -88,7 +89,7 @@ function render() {
   text('challenge',complete?'Try used plan':stale?'Try withdrawn plan':'Try incomplete plan',complete?'尝试重放旧方案':stale?'尝试已撤回方案':'尝试缺少同意的方案');$('challenge').disabled=!ready||busy||!state.plan;
   text('reset','Restart this room','重新开始本房间');text('download','Download simulation record','下载模拟记录');$('reset').disabled=busy||!ready;
   text('activity-title','Shared activity','共同操作记录');const verbs={host:t('approved the host pool','确认了主办方席位池'),plan:t('created a fresh plan','创建了换位方案'),agree:t('approved the complete plan','同意了完整方案'),withdraw:t('withdrew approval; seats unchanged','撤回了同意，席位不变'),execute:t('tried execution','尝试执行')};
-  $('history').innerHTML=state.history.slice(-8).reverse().map(h=>`<li>${names[h.role]??'Participant'} · ${verbs[h.action]??'updated'}${h.action==='execute'?' · '+(h.result==='success'?t('completed','已完成'):t('rejected','已拒绝')):''}</li>`).join('')||`<li>${t('Ready for the first host approval.','等待第一位主办方确认。')}</li>`;
+  $('history').innerHTML=state.history.slice(-8).reverse().map(h=>`<li>${(h.action==='host'?hostNames[h.role]:names[h.role])??'Participant'} · ${verbs[h.action]??'updated'}${h.action==='execute'?' · '+(h.result==='success'?t('completed','已完成'):t('rejected','已拒绝')):''}</li>`).join('')||`<li>${t('Ready for the first host approval.','等待第一位主办方确认。')}</li>`;
 }
 async function act(action){
   if(!ready||busy||!action)return;busy=true;error=false;feedback='';const seen={round:state.round,plan:state.plan};render();

@@ -17,16 +17,4 @@
 - 后续每次完成一轮修改并通过相关检查后，同步 GitHub、现有 Sites 站点及同一个 MOJO 参赛条目中的相关内容，无需重复询问常规更新许可。
 - 更新前查询 MOJO 现有项目，已有条目走更新，不重复创建；截图、简介与已发布版本保持一致。提交成功后记录项目 ID 和审核状态，不能把上传截图或提交尝试写成提交成功。
 - 切换参赛账号后，截图须由新账号的 Agent 重新上传并确认，不能直接复用旧账号的截图引用。三页本地演示使用 `Start-Demo.cmd` 或 `node scripts/serve-rehearsal.mjs`，操作脚本见 `docs/three-page-demo.md`；始终标注 local EVM 31337，不得宣传为公共 Monad 实测。
-- 用户已表示解决“仅队长可以提交项目”问题，并要求通过 MOJO 网页提交当前版本。网页资料已填好，尚待截图上传：Edge 扩展未开启本地文件访问，当前本地 Agent 仍为 pending_claim。尚未确认提交成功；不得擅自退出、替换现有队伍或覆盖其他项目。实际状态见 `docs/SUBMIT-READY.md`。
-
-<!-- mojo:start -->
-## MOJO 参赛提醒（由 MOJO skills 维护，勿手改）
-- 活动：「Monad Blitz@广州」（eventId=18）
-- 提交截止：2026-11-21 18:30（北京时间，UTC+8；ISO：2026-11-21T18:30:00+08:00）
-- 活动类型：hackathon；加速阈值：剩余 ≤ 2 小时；冻结阈值：剩余 ≤ 30 分钟
-- 每次开始工作先用系统时间算剩余时长，并告诉用户还剩多少。
-- 剩余 ≤ 加速阈值：停止开新功能，优先让现有成果可运行、可演示，准备截图与项目描述。
-- 剩余 ≤ 冻结阈值：先查项目是否已提交；没提交就立刻提交现有成果，已提交只做必要更新。
-- 已过截止时间：删除本提醒块（AGENTS.md 与已有的 CLAUDE.md 都删）。
-- 怎么查、怎么提交：装了 MOJO skills 就用 mojo-submit；没装就读取 https://mojo.devnads.com/api/agent/instructions/18/skill.md 照做。凭证在 .mojo/agent.json。
-<!-- mojo:end -->
+- 已通过登录后的项目页确认 MOJO 条目 #471（https://mojo.devnads.com/projects/471），状态为待审核；后续仅更新该条目，不再创建。当前本地 Agent 仍为 pending_claim，Edge 本地文件权限阻止了新称呼截图的上传，本轮 MOJO 内容未修改。不得擅自退出、替换现有队伍或覆盖其他项目。实际状态见 `docs/SUBMIT-READY.md`。

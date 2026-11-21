@@ -27,7 +27,7 @@ Opening: **“Alice and Bob already have workshop seats. Charlie is waiting. We 
 | Step | Exact action | Expected result / what to say |
 | --- | --- | --- |
 | 1 · 20 sec | Show each page logged in as its named person. | Alice has Sat 10 AM; Bob has Sat 2 PM; Sun 2 PM is empty; Charlie waits. **“Three seats, but only two people can attend right now.”** |
-| 2 · 20 sec | Alice: **Approve pool as Host A**. Bob: **Approve pool as Host B**. | All pages show **2 / 2**. **“Both organizers agree to the same fixed pool.”** |
+| 2 · 20 sec | Alice: **Approve pool as Dr. Alice**. Bob: **Approve pool as Dr. Bob**. | All pages show **2 / 2**. **“Both organizers agree to the same fixed pool.”** |
 | 3 · 15 sec | Alice: **Create shared plan**. | Alice → afternoon, Bob → Sunday, Charlie → morning. **“This is one complete plan.”** |
 | 4 · 20 sec | Alice, Bob and Charlie: **Approve my move** once each. Wait for three “signed” badges. | Seats remain Alice / Bob / empty. **“Agreement alone never gives away your seat.”** |
 | 5 · 25 sec | Bob: **Withdraw my approval**. Alice: **Try withdrawn plan**. | **WITHDRAWN**, a real local transaction is **REVERTED**, all seats unchanged. **“Bob changed his mind. The whole plan fails, so nobody loses a seat.”** |

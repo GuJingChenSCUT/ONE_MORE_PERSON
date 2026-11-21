@@ -2,7 +2,7 @@
 
 **Three-page laptop demo:** run `node scripts/serve-rehearsal.mjs` (or `Start-Demo.cmd` on the prepared laptop), then open the Alice, Bob and Charlie links. Separate demo logins share a live room backed by actual local EVM transactions. [Exact 3–4 minute rundown](docs/three-page-demo.md). This rehearsal uses local chain 31337; the public Monad proof remains separate.
 
-[Printable system and demo guide](output/pdf/One_More_Person_Demo_Guide.pdf) · [Editable guide](docs/system-demo-guide.md): local startup, how signatures and atomic exchanges work, exact presenter actions, evidence and recovery.
+[Printable system and demo guide](output/pdf/One_More_Person_Demo_Guide_Named_Hosts.pdf) · [Editable guide](docs/system-demo-guide.md): local startup, how signatures and atomic exchanges work, exact presenter actions, evidence and recovery.
 
 [Three-page public interaction demo](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo.html) · [Bilingual demonstration guide](https://one-more-person-guangzhou.justdog33.chatgpt.site/demo-guide.html). Alice, Bob and Charlie have independent role pages, with approvals, withdrawal and outcomes synchronized within one browser profile. This public version is explicitly a simulation; it makes no real signatures or contract transactions. The local real-contract room remains available. [Evidence boundaries and exact steps](docs/public-three-page-demo.md).
 
